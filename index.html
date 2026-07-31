@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e588c5789363945dc71cee9f538ed861 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ljagis/leaflet-measure@2.1.7/dist/leaflet-measure.min.css"/>
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 30px; left: 30px; width: 230px; height: 160px; 
+            background-color: white; z-index:9999; font-size:13px; font-family:Arial;
+            border:2px solid grey; border-radius:8px; padding: 10px; box-shadow: 2px 2px 6px rgba(0,0,0,0.3);">
+    <b style="font-size:14px;">52 Societies Inventory</b><br><br>
+    <i class="fa fa-star fa-lg" style="color:darkred"></i> &nbsp; Base Location<br>
+    <i class="fa fa-building fa-lg" style="color:red"></i> &nbsp; Mega (500+ Flats)<br>
+    <i class="fa fa-building fa-lg" style="color:blue"></i> &nbsp; Mid-Size (150-500 Flats)<br>
+    <i class="fa fa-building fa-lg" style="color:green"></i> &nbsp; Standalone (&lt;150 Flats)
+</div>
+    
+            <div class="folium-map" id="map_e588c5789363945dc71cee9f538ed861" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e588c5789363945dc71cee9f538ed861 = L.map(
+                "map_e588c5789363945dc71cee9f538ed861",
+                {
+                    center: [12.8902, 77.653],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5ac4ff893ed8a0e0b90131b89585fed9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5ac4ff893ed8a0e0b90131b89585fed9.addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var marker_bbb878b92e6cacbc78018fcfc4855585 = L.marker(
+                [12.8902, 77.653],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_d21d699f57534a839fb67c7d7871efbb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b100e9444ff397b2b34d0850645d70be = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53abb37127e7c9d2f37495f62bc440c8 = $(`<div id="html_53abb37127e7c9d2f37495f62bc440c8" style="width: 100.0%; height: 100.0%;"><b>NV Classes Office</b><br>Silver County Road, Haralur</div>`)[0];
+                popup_b100e9444ff397b2b34d0850645d70be.setContent(html_53abb37127e7c9d2f37495f62bc440c8);
+            
+        
+
+        marker_bbb878b92e6cacbc78018fcfc4855585.bindPopup(popup_b100e9444ff397b2b34d0850645d70be)
+        ;
+
+        
+    
+    
+            marker_bbb878b92e6cacbc78018fcfc4855585.bindTooltip(
+                `<div>
+                     ⭐ Base Location
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bbb878b92e6cacbc78018fcfc4855585.setIcon(icon_d21d699f57534a839fb67c7d7871efbb);
+            
+    
+            var marker_fb0cd2e4928e7f6e499128a301fa6801 = L.marker(
+                [12.89, 77.65],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_c8a695cdf42262e98c16250766f77376 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_49f468ac00159caa7ccf0c08b8922456 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5a233a07cdcbf4a45636e6fc089b4272 = $(`<div id="html_5a233a07cdcbf4a45636e6fc089b4272" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 1</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_49f468ac00159caa7ccf0c08b8922456.setContent(html_5a233a07cdcbf4a45636e6fc089b4272);
+            
+        
+
+        marker_fb0cd2e4928e7f6e499128a301fa6801.bindPopup(popup_49f468ac00159caa7ccf0c08b8922456)
+        ;
+
+        
+    
+    
+            marker_fb0cd2e4928e7f6e499128a301fa6801.bindTooltip(
+                `<div>
+                     Society 1 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb0cd2e4928e7f6e499128a301fa6801.setIcon(icon_c8a695cdf42262e98c16250766f77376);
+            
+    
+            var marker_844223abed7535f318e0192f5318caa5 = L.marker(
+                [12.892000000000001, 77.6515],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_de5c60e1b0cd5ff16ba29153100afba8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5bd1e398afc1e0dac4d5c71303006329 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_01f55cfcf3b874ce92ea34ef8b2af5f5 = $(`<div id="html_01f55cfcf3b874ce92ea34ef8b2af5f5" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 2</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_5bd1e398afc1e0dac4d5c71303006329.setContent(html_01f55cfcf3b874ce92ea34ef8b2af5f5);
+            
+        
+
+        marker_844223abed7535f318e0192f5318caa5.bindPopup(popup_5bd1e398afc1e0dac4d5c71303006329)
+        ;
+
+        
+    
+    
+            marker_844223abed7535f318e0192f5318caa5.bindTooltip(
+                `<div>
+                     Society 2 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_844223abed7535f318e0192f5318caa5.setIcon(icon_de5c60e1b0cd5ff16ba29153100afba8);
+            
+    
+            var marker_7bc7c96b023a5b6bba229b9e2be26d39 = L.marker(
+                [12.894, 77.653],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_1cb7c5e47cff0d50b3d46da975e9e722 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_52fa9a7e51d28fb17e5e9f10ab050c22 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2c743230adf5131cd71f864dc3e458d8 = $(`<div id="html_2c743230adf5131cd71f864dc3e458d8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 3</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_52fa9a7e51d28fb17e5e9f10ab050c22.setContent(html_2c743230adf5131cd71f864dc3e458d8);
+            
+        
+
+        marker_7bc7c96b023a5b6bba229b9e2be26d39.bindPopup(popup_52fa9a7e51d28fb17e5e9f10ab050c22)
+        ;
+
+        
+    
+    
+            marker_7bc7c96b023a5b6bba229b9e2be26d39.bindTooltip(
+                `<div>
+                     Society 3 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7bc7c96b023a5b6bba229b9e2be26d39.setIcon(icon_1cb7c5e47cff0d50b3d46da975e9e722);
+            
+    
+            var marker_14d70a90b7366b83a283b09f52ce451a = L.marker(
+                [12.896, 77.6545],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_2bcac63ac553bbff32ba848a34d37b08 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_56970bfa64fca8a1f7f072962e699239 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ff9f113ab355b986d4a3da5d48d1e2a4 = $(`<div id="html_ff9f113ab355b986d4a3da5d48d1e2a4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 4</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_56970bfa64fca8a1f7f072962e699239.setContent(html_ff9f113ab355b986d4a3da5d48d1e2a4);
+            
+        
+
+        marker_14d70a90b7366b83a283b09f52ce451a.bindPopup(popup_56970bfa64fca8a1f7f072962e699239)
+        ;
+
+        
+    
+    
+            marker_14d70a90b7366b83a283b09f52ce451a.bindTooltip(
+                `<div>
+                     Society 4 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_14d70a90b7366b83a283b09f52ce451a.setIcon(icon_2bcac63ac553bbff32ba848a34d37b08);
+            
+    
+            var marker_2a6ba54490c83c2aa4aa178c286cf825 = L.marker(
+                [12.898, 77.656],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_f50769e3642292b5e4a9b0c9d8f76d46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1f2c99e4695958714d66c8f6cf73655d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_899c467c6284c5cdddca48f3ac6bcaa7 = $(`<div id="html_899c467c6284c5cdddca48f3ac6bcaa7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 5</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_1f2c99e4695958714d66c8f6cf73655d.setContent(html_899c467c6284c5cdddca48f3ac6bcaa7);
+            
+        
+
+        marker_2a6ba54490c83c2aa4aa178c286cf825.bindPopup(popup_1f2c99e4695958714d66c8f6cf73655d)
+        ;
+
+        
+    
+    
+            marker_2a6ba54490c83c2aa4aa178c286cf825.bindTooltip(
+                `<div>
+                     Society 5 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2a6ba54490c83c2aa4aa178c286cf825.setIcon(icon_f50769e3642292b5e4a9b0c9d8f76d46);
+            
+    
+            var marker_2ad8f9fa4bb6d32093b9c1d1e9a65b0a = L.marker(
+                [12.9, 77.6575],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_e253f2407a389e8fc3024a1793598dc9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32796270a1fe296ef381ee4fb1bf121a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fba8417af41b18ef3ee9a78b962119f3 = $(`<div id="html_fba8417af41b18ef3ee9a78b962119f3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 6</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_32796270a1fe296ef381ee4fb1bf121a.setContent(html_fba8417af41b18ef3ee9a78b962119f3);
+            
+        
+
+        marker_2ad8f9fa4bb6d32093b9c1d1e9a65b0a.bindPopup(popup_32796270a1fe296ef381ee4fb1bf121a)
+        ;
+
+        
+    
+    
+            marker_2ad8f9fa4bb6d32093b9c1d1e9a65b0a.bindTooltip(
+                `<div>
+                     Society 6 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2ad8f9fa4bb6d32093b9c1d1e9a65b0a.setIcon(icon_e253f2407a389e8fc3024a1793598dc9);
+            
+    
+            var marker_916c16058b52b8d739a127e2ff9d238a = L.marker(
+                [12.902000000000001, 77.659],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_7fc162b36123304caa6720f951ac6a37 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d749c0138b372940278898d89c73b33c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_315eb697cf5902cf21a3299892036c3b = $(`<div id="html_315eb697cf5902cf21a3299892036c3b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 7</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_d749c0138b372940278898d89c73b33c.setContent(html_315eb697cf5902cf21a3299892036c3b);
+            
+        
+
+        marker_916c16058b52b8d739a127e2ff9d238a.bindPopup(popup_d749c0138b372940278898d89c73b33c)
+        ;
+
+        
+    
+    
+            marker_916c16058b52b8d739a127e2ff9d238a.bindTooltip(
+                `<div>
+                     Society 7 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_916c16058b52b8d739a127e2ff9d238a.setIcon(icon_7fc162b36123304caa6720f951ac6a37);
+            
+    
+            var marker_d5bb2ab5bd0bba109734a5c9b0ef6f17 = L.marker(
+                [12.904, 77.6605],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_07269d2ed81b2c546427cc94cf682b98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e5cfb94a25aec1d54d975ae1e05d45fe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b145cc1280a4b7eaba0e3e3946d1d2c8 = $(`<div id="html_b145cc1280a4b7eaba0e3e3946d1d2c8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 8</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_e5cfb94a25aec1d54d975ae1e05d45fe.setContent(html_b145cc1280a4b7eaba0e3e3946d1d2c8);
+            
+        
+
+        marker_d5bb2ab5bd0bba109734a5c9b0ef6f17.bindPopup(popup_e5cfb94a25aec1d54d975ae1e05d45fe)
+        ;
+
+        
+    
+    
+            marker_d5bb2ab5bd0bba109734a5c9b0ef6f17.bindTooltip(
+                `<div>
+                     Society 8 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d5bb2ab5bd0bba109734a5c9b0ef6f17.setIcon(icon_07269d2ed81b2c546427cc94cf682b98);
+            
+    
+            var marker_372472772cd43bc9d7e7811f84795cc3 = L.marker(
+                [12.906, 77.662],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_99ca0e6f46952d579d4fc5ef63b12f22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_69170dbbff1773255c31484103b41c96 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e06c96481c91297fe8bc0d20a9278b7d = $(`<div id="html_e06c96481c91297fe8bc0d20a9278b7d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 9</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_69170dbbff1773255c31484103b41c96.setContent(html_e06c96481c91297fe8bc0d20a9278b7d);
+            
+        
+
+        marker_372472772cd43bc9d7e7811f84795cc3.bindPopup(popup_69170dbbff1773255c31484103b41c96)
+        ;
+
+        
+    
+    
+            marker_372472772cd43bc9d7e7811f84795cc3.bindTooltip(
+                `<div>
+                     Society 9 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_372472772cd43bc9d7e7811f84795cc3.setIcon(icon_99ca0e6f46952d579d4fc5ef63b12f22);
+            
+    
+            var marker_4f6b9300de15a591b26938ffa786c9b7 = L.marker(
+                [12.908000000000001, 77.6635],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_d88d9697d05fc54c972ce5d049711913 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_91358169caa433b95cd0801ce6b28ddf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0778961df10fb2d2882253748d88f997 = $(`<div id="html_0778961df10fb2d2882253748d88f997" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 10</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_91358169caa433b95cd0801ce6b28ddf.setContent(html_0778961df10fb2d2882253748d88f997);
+            
+        
+
+        marker_4f6b9300de15a591b26938ffa786c9b7.bindPopup(popup_91358169caa433b95cd0801ce6b28ddf)
+        ;
+
+        
+    
+    
+            marker_4f6b9300de15a591b26938ffa786c9b7.bindTooltip(
+                `<div>
+                     Society 10 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4f6b9300de15a591b26938ffa786c9b7.setIcon(icon_d88d9697d05fc54c972ce5d049711913);
+            
+    
+            var marker_86f39775de5e68e5b12487c96618a831 = L.marker(
+                [12.91, 77.665],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_9bc34f5f20f76f6330b381ae9c671bea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ced715d335cf016846c8fc4e531eb61 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0c4026bd45ccaa079c2b6801044058d1 = $(`<div id="html_0c4026bd45ccaa079c2b6801044058d1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 11</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_4ced715d335cf016846c8fc4e531eb61.setContent(html_0c4026bd45ccaa079c2b6801044058d1);
+            
+        
+
+        marker_86f39775de5e68e5b12487c96618a831.bindPopup(popup_4ced715d335cf016846c8fc4e531eb61)
+        ;
+
+        
+    
+    
+            marker_86f39775de5e68e5b12487c96618a831.bindTooltip(
+                `<div>
+                     Society 11 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_86f39775de5e68e5b12487c96618a831.setIcon(icon_9bc34f5f20f76f6330b381ae9c671bea);
+            
+    
+            var marker_713c29904e473a6b6c92d01e6cfde56b = L.marker(
+                [12.912, 77.6665],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_d5cc1c6d0b118eee5a31effa263601e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1935dbbb9cb9f00f6bf54caba30d6f80 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3138db94e19a3acc806067c01a196b0a = $(`<div id="html_3138db94e19a3acc806067c01a196b0a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 12</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_1935dbbb9cb9f00f6bf54caba30d6f80.setContent(html_3138db94e19a3acc806067c01a196b0a);
+            
+        
+
+        marker_713c29904e473a6b6c92d01e6cfde56b.bindPopup(popup_1935dbbb9cb9f00f6bf54caba30d6f80)
+        ;
+
+        
+    
+    
+            marker_713c29904e473a6b6c92d01e6cfde56b.bindTooltip(
+                `<div>
+                     Society 12 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_713c29904e473a6b6c92d01e6cfde56b.setIcon(icon_d5cc1c6d0b118eee5a31effa263601e6);
+            
+    
+            var marker_601184a8fc3343c7b0a19a27972726cf = L.marker(
+                [12.914, 77.668],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_bd0db59083a5648da7f9bae0a9dd5679 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_273376ce47d76bd04b022612f9dac1a1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_435c145ac3555afb99c64dff8e1434d2 = $(`<div id="html_435c145ac3555afb99c64dff8e1434d2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 13</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_273376ce47d76bd04b022612f9dac1a1.setContent(html_435c145ac3555afb99c64dff8e1434d2);
+            
+        
+
+        marker_601184a8fc3343c7b0a19a27972726cf.bindPopup(popup_273376ce47d76bd04b022612f9dac1a1)
+        ;
+
+        
+    
+    
+            marker_601184a8fc3343c7b0a19a27972726cf.bindTooltip(
+                `<div>
+                     Society 13 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_601184a8fc3343c7b0a19a27972726cf.setIcon(icon_bd0db59083a5648da7f9bae0a9dd5679);
+            
+    
+            var marker_a2b5207797fa0fcf8817ce8f61264c8c = L.marker(
+                [12.916, 77.6695],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_8492d68fb62bdb1b668722badcc17910 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ba6f12d999713bb553a00bc7284c849c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ec3a430898c6d1867e0072cba6bad3f4 = $(`<div id="html_ec3a430898c6d1867e0072cba6bad3f4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 14</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_ba6f12d999713bb553a00bc7284c849c.setContent(html_ec3a430898c6d1867e0072cba6bad3f4);
+            
+        
+
+        marker_a2b5207797fa0fcf8817ce8f61264c8c.bindPopup(popup_ba6f12d999713bb553a00bc7284c849c)
+        ;
+
+        
+    
+    
+            marker_a2b5207797fa0fcf8817ce8f61264c8c.bindTooltip(
+                `<div>
+                     Society 14 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a2b5207797fa0fcf8817ce8f61264c8c.setIcon(icon_8492d68fb62bdb1b668722badcc17910);
+            
+    
+            var marker_3c8d05b476301c7494aa71d1268c44b6 = L.marker(
+                [12.918000000000001, 77.671],
+                {
+}
+            ).addTo(map_e588c5789363945dc71cee9f538ed861);
+        
+    
+            var icon_078fcdf9fdd913a1ea7dd754bb443d45 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "building",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a2fcc5d32f955c92b64fdd7ef3cd938 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ccc06f624d3a0021676ae3302d47af94 = $(`<div id="html_ccc06f624d3a0021676ae3302d47af94" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; width: 210px; line-height: 1.5;">         <h4 style="margin: 0 0 6px 0; color: #2C3E50;">Society 15</h4>         <b>Locality:</b> Haralur / Hosa Rd<br>         <b style="color: #27AE60;">Total Flats:</b> N/A<br>         <b style="color: #2980B9;">AdOnMo Screens:</b> N/A     </div>     </div>`)[0];
+                popup_4a2fcc5d32f955c92b64fdd7ef3cd938.setContent(html_ccc06f624d3a0021676ae3302d47af94);
+            
+        
+
+        marker_3c8d05b476301c7494aa71d1268c44b6.bindPopup(popup_4a2fcc5d32f955c92b64fdd7ef3cd938)
+        ;
+
+        
+    
+    
+            marker_3c8d05b476301c7494aa71d1268c44b6.bindTooltip(
+                `<div>
+                     Society 15 (N/A flats | N/A screens)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3c8d05b476301c7494aa71d1268c44b6.setIcon(icon_078fcdf9fdd913a1ea7dd754bb443d45);
+            
+    
+            var measure_control_ba1914caeef7c006e86e0faa706f1309 = new L.Control.Measure(
+                {
+  "position": "topright",
+  "primaryLengthUnit": "kilometers",
+  "secondaryLengthUnit": "miles",
+  "primaryAreaUnit": "sqmeters",
+  "secondaryAreaUnit": "acres",
+});
+            map_e588c5789363945dc71cee9f538ed861.addControl(measure_control_ba1914caeef7c006e86e0faa706f1309);
+
+            // Workaround for using this plugin with Leaflet>=1.8.0
+            // https://github.com/ljagis/leaflet-measure/issues/171
+            L.Control.Measure.include({
+                _setCaptureMarkerIcon: function () {
+                    // disable autopan
+                    this._captureMarker.options.autoPanOnFocus = false;
+                    // default function
+                    this._captureMarker.setIcon(
+                        L.divIcon({
+                            iconSize: this._map.getSize().multiplyBy(2)
+                        })
+                    );
+                },
+            });
+
+        
+</script>
+</html>
