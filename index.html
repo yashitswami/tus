@@ -10,7 +10,7 @@
         body, html { margin: 0; padding: 0; height: 100%; font-family: 'Segoe UI', Arial, sans-serif; }
         #map { height: 100vh; width: 100%; }
         
-        /* Floating Legend Box */
+        /* Legend Box */
         .map-legend {
             position: fixed;
             bottom: 25px;
@@ -22,7 +22,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.25);
             font-size: 13px;
             line-height: 1.8;
-            max-width: 270px;
+            max-width: 280px;
         }
         .legend-title { font-weight: bold; font-size: 14px; margin-bottom: 6px; color: #1E293B; }
         .badge {
@@ -45,66 +45,70 @@
 
 <div class="map-legend">
     <div class="legend-title">📍 52 AdOnMo Property Directory</div>
-    <div><span class="badge bg-base"></span> <b>NV Classes</b> (Base Location)</div>
+    <div><span class="badge bg-base"></span> <b>NV Classes</b> (Silver County Road)</div>
     <div><span class="badge bg-mega"></span> <b>Mega</b> (500+ Flats)</div>
     <div><span class="badge bg-mid"></span> <b>Mid-Size</b> (150–500 Flats)</div>
     <div><span class="badge bg-boutique"></span> <b>Boutique / Small</b> (&lt;150 Flats)</div>
 </div>
 
 <script>
-    // 1. Initialize Map Centered at NV Classes (Silver County Road / SNN Raj Eternia Hub)
-    const nvClassesCoords = [12.8845, 77.6535];
-    const map = L.map('map').setView(nvClassesCoords, 13);
+    // 1. Exact Coordinates for NV Classes & SNN Raj Etternia on Silver County Road
+    const nvClassesCoords = [12.8902, 77.6679];
+    const map = L.map('map').setView(nvClassesCoords, 14);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors | NV Classes AdOnMo Inventory'
+        attribution: '© OpenStreetMap contributors | NV Classes AdOnMo Directory'
     }).addTo(map);
 
     // 2. Base Location Marker (NV Classes)
     const baseIcon = L.divIcon({
         className: 'custom-div-icon',
-        html: "<div style='background-color:#DC2626; width:20px; height:20px; border-radius:50%; border:3px solid white; box-shadow:0 0 8px rgba(0,0,0,0.5);'></div>",
-        iconSize: [20, 20],
-        iconAnchor: [10, 10]
+        html: "<div style='background-color:#DC2626; width:22px; height:22px; border-radius:50%; border:3px solid white; box-shadow:0 0 10px rgba(0,0,0,0.6);'></div>",
+        iconSize: [22, 22],
+        iconAnchor: [11, 11]
     });
 
     L.marker(nvClassesCoords, { icon: baseIcon }).addTo(map)
-        .bindPopup("<div style='font-size:14px; font-weight:bold; color:#DC2626;'>⭐ NV Classes Base Office</div><div>Silver County Road, Parappana Agrahara, Haralur</div>")
-        .bindTooltip("⭐ NV Classes Base", { permanent: true, direction: 'top', offset: [0, -10] });
+        .bindPopup("<div style='font-size:14px; font-weight:bold; color:#DC2626;'>⭐ NV Classes Base Office</div><div>Silver County Road, Haralur / Kudlu, Bengaluru</div>")
+        .bindTooltip("⭐ NV Classes Base", { permanent: true, direction: 'top', offset: [0, -12] });
 
-    // 3. Exact 52 Properties from AdOnMo CSV
+    // 3. Complete 52 Properties with Geocoded Locations
     const properties = [
-        // Harlur Zone
+        // Silver County Road / Haralur Primary Cluster
+        { name: "SNN Raj Etternia", locality: "Hosa Road / Silver County", pin: "560068", screens: 24, flats: 822, lat: 12.8902, lon: 77.6679 },
+        { name: "Sobha Cinnamon and Saffron", locality: "Harlur", pin: "560068", screens: 7, flats: 259, lat: 12.8905, lon: 77.6650 },
         { name: "Prestige Ferns Residency", locality: "Harlur", pin: "560102", screens: 50, flats: 1485, lat: 12.8993, lon: 77.6534 },
-        { name: "Purva Skydale", locality: "HSR Layout", pin: "560068", screens: 8, flats: 314, lat: 12.8912, lon: 77.6485 },
+        { name: "Purva Skydale", locality: "HSR Layout / Kudlu", pin: "560068", screens: 8, flats: 314, lat: 12.8940, lon: 77.6624 },
+        { name: "Shriram Chirping Woods", locality: "Harlur", pin: "560103", screens: 9, flats: 608, lat: 12.8965, lon: 77.6605 },
+        { name: "Aakruthi Silverline", locality: "HSR Layout", pin: "560102", screens: 3, flats: 80, lat: 12.8985, lon: 77.6450 },
+        { name: "Aban Essence", locality: "Kudlu", pin: "560068", screens: 2, flats: 72, lat: 12.8910, lon: 77.6515 },
+        { name: "Bren Imperia", locality: "Varthur / Haralur", pin: "560035", screens: 10, flats: 540, lat: 12.8975, lon: 77.6500 },
+        { name: "ND Passion", locality: "Kudlu", pin: "560068", screens: 15, flats: 0, lat: 12.8890, lon: 77.6530 },
+        { name: "Mahaveer Seasons", locality: "HSR Layout", pin: "560102", screens: 4, flats: 120, lat: 12.8995, lon: 77.6430 },
+        { name: "Manar Elegance", locality: "HSR Layout", pin: "560068", screens: 4, flats: 128, lat: 12.8950, lon: 77.6460 },
+        { name: "RBD Stillwaters", locality: "HSR Layout", pin: "560102", screens: 10, flats: 288, lat: 12.9010, lon: 77.6620 },
+        { name: "Zonasha Elegance", locality: "HSR Layout", pin: "560102", screens: 9, flats: 240, lat: 12.8930, lon: 77.6470 },
+        { name: "Sai Poorna Premier", locality: "Kudlu", pin: "560068", screens: 7, flats: 228, lat: 12.8880, lon: 77.6560 },
+        { name: "Siddartha Saphire Apartment", locality: "Bellandur / Kudlu", pin: "560068", screens: 5, flats: 102, lat: 12.8860, lon: 77.6570 },
+
+        // Kasavanahalli / Sarjapur Belt
         { name: "Purva Whitehall", locality: "Bellandur", pin: "560103", screens: 5, flats: 166, lat: 12.9265, lon: 77.6690 },
         { name: "Salapuria Sancity", locality: "Sarjapur Road", pin: "560035", screens: 8, flats: 237, lat: 12.9150, lon: 77.6750 },
         { name: "Salarpuria Sattva Senorita", locality: "Sarjapur Road", pin: "560035", screens: 8, flats: 423, lat: 12.9182, lon: 77.6710 },
-        { name: "Shriram Chirping Woods", locality: "Harlur", pin: "560103", screens: 9, flats: 608, lat: 12.8965, lon: 77.6605 },
-        { name: "Sobha Cinnamon and Saffron", locality: "Harlur", pin: "560068", screens: 7, flats: 259, lat: 12.8872, lon: 77.6521 },
-        { name: "Aakruthi Silverline", locality: "HSR Layout", pin: "560102", screens: 3, flats: 80, lat: 12.8985, lon: 77.6450 },
-        { name: "Aban Essence", locality: "Kudlu", pin: "560068", screens: 2, flats: 72, lat: 12.8910, lon: 77.6515 },
         { name: "Bren Celestia", locality: "Marathahalli", pin: "560035", screens: 6, flats: 207, lat: 12.9195, lon: 77.6780 },
         { name: "Bren Edge Waters", locality: "Doddakannelli", pin: "560035", screens: 7, flats: 304, lat: 12.9140, lon: 77.6730 },
-        { name: "Bren Imperia", locality: "Varthur", pin: "560035", screens: 10, flats: 540, lat: 12.8975, lon: 77.6500 },
         { name: "Century Infinity", locality: "Doddakannelli", pin: "560035", screens: 5, flats: 153, lat: 12.9110, lon: 77.6720 },
-        { name: "Emmanuel Heights", locality: "Choodasandra", pin: "560099", screens: 10, flats: 293, lat: 12.8790, lon: 77.6740 },
-        { name: "Estella Maple Square", locality: "Choodasandra", pin: "560099", screens: 6, flats: 0, lat: 12.8770, lon: 77.6720 },
         { name: "Golden Corner", locality: "Bellandur", pin: "560103", screens: 4, flats: 187, lat: 12.9240, lon: 77.6680 },
         { name: "HM Symphony", locality: "Doddakannelli", pin: "560035", screens: 10, flats: 330, lat: 12.9130, lon: 77.6750 },
         { name: "Ittina Soupernika", locality: "Kasavanahalli", pin: "560035", screens: 3, flats: 180, lat: 12.9030, lon: 77.6670 },
         { name: "Klassik Landmark", locality: "Sarjapur Road", pin: "560035", screens: 15, flats: 698, lat: 12.9090, lon: 77.6780 },
-        { name: "Mahaveer Seasons", locality: "HSR Layout", pin: "560102", screens: 4, flats: 120, lat: 12.8995, lon: 77.6430 },
-        { name: "Manar Elegance", locality: "HSR Layout", pin: "560068", screens: 4, flats: 128, lat: 12.8950, lon: 77.6460 },
-        { name: "ND Passion", locality: "Kudlu", pin: "560068", screens: 15, flats: 0, lat: 12.8890, lon: 77.6530 },
         { name: "Purva Sunshine", locality: "Kaikondrahalli", pin: "560035", screens: 5, flats: 206, lat: 12.9100, lon: 77.6680 },
-        { name: "RBD Stillwaters", locality: "HSR Layout", pin: "560102", screens: 10, flats: 288, lat: 12.9010, lon: 77.6620 },
         { name: "Sattva signet", locality: "Varthur Hobli", pin: "560035", screens: 7, flats: 208, lat: 12.9160, lon: 77.6790 },
-        { name: "SNN Raj Etternia", locality: "Hosa Road", pin: "560068", screens: 24, flats: 822, lat: 12.8845, lon: 77.6538 },
         { name: "Sri Mitra Spring Valley", locality: "Kaikondrahalli", pin: "560035", screens: 5, flats: 90, lat: 12.9080, lon: 77.6670 },
-        { name: "Zonasha Elegance", locality: "HSR Layout", pin: "560102", screens: 9, flats: 240, lat: 12.8930, lon: 77.6470 },
 
-        // Hosa Road Zone
+        // Hosa Road / Choodasandra / Rayasandra Belt
+        { name: "Emmanuel Heights", locality: "Choodasandra", pin: "560099", screens: 10, flats: 293, lat: 12.8790, lon: 77.6740 },
+        { name: "Estella Maple Square", locality: "Choodasandra", pin: "560099", screens: 6, flats: 0, lat: 12.8770, lon: 77.6720 },
         { name: "Ajantha Prime", locality: "Singasandra", pin: "560100", screens: 5, flats: 115, lat: 12.8760, lon: 77.6480 },
         { name: "Alpine Square", locality: "Rayasandra", pin: "560100", screens: 2, flats: 56, lat: 12.8680, lon: 77.6710 },
         { name: "Brindavan Palms", locality: "Rayasandra", pin: "560100", screens: 5, flats: 211, lat: 12.8695, lon: 77.6730 },
@@ -116,9 +120,7 @@
         { name: "Paramount Sumadhura Serene", locality: "Begur", pin: "560068", screens: 6, flats: 158, lat: 12.8730, lon: 77.6360 },
         { name: "Prestige Casabella", locality: "Electronic City P1", pin: "560100", screens: 13, flats: 210, lat: 12.8530, lon: 77.6610 },
         { name: "Royal Citadel Apartments", locality: "Begur", pin: "560014", screens: 4, flats: 115, lat: 12.8740, lon: 77.6330 },
-        { name: "Sai Poorna Premier", locality: "Kudlu", pin: "560068", screens: 7, flats: 228, lat: 12.8880, lon: 77.6560 },
         { name: "Salarpuria Symphony", locality: "Basapura", pin: "560010", screens: 10, flats: 298, lat: 12.8630, lon: 77.6460 },
-        { name: "Siddartha Saphire Apartment", locality: "Bellandur", pin: "560068", screens: 5, flats: 102, lat: 12.8860, lon: 77.6570 },
         { name: "Siddartha Solitaire", locality: "Electronic City P2", pin: "560100", screens: 2, flats: 75, lat: 12.8510, lon: 77.6630 },
         { name: "silverstone Apartement", locality: "Begur", pin: "560068", screens: 2, flats: 56, lat: 12.8725, lon: 77.6370 },
         { name: "SKV Hanging Gardens", locality: "Singasandra", pin: "560100", screens: 4, flats: 133, lat: 12.8780, lon: 77.6490 },
@@ -131,14 +133,12 @@
         { name: "VRR Nest", locality: "Singasandra", pin: "560100", screens: 7, flats: 249, lat: 12.8745, lon: 77.6500 }
     ];
 
-    // Helper to Determine Color
     function getColor(flats) {
-        if (flats >= 500) return "#EF4444"; // Red for Mega
-        if (flats >= 150) return "#2563EB"; // Blue for Mid-size
-        return "#10B981";                   // Green for Boutique
+        if (flats >= 500) return "#EF4444"; // Red
+        if (flats >= 150) return "#2563EB"; // Blue
+        return "#10B981";                   // Green
     }
 
-    // 4. Render All 52 Properties as Interactive Circles
     properties.forEach(p => {
         const color = getColor(p.flats);
         const radius = p.flats >= 500 ? 10 : (p.flats >= 150 ? 7 : 5);
