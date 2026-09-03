@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Unbound School | Beyond Conventional Learning</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-base: #F5F7F1;
+      --bg-white: #FFFFFF;
+      --navy: #12213D;
+      --slate: #495B70;
+      --sage-light: #DCE3D6;
+      --forest: #146E62;
+      --amber: #BD7A1E;
+      --border-color: #D6DCD0;
+      
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+      
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-soft: 0 4px 20px -2px rgba(18, 33, 61, 0.06);
+      --shadow-hover: 0 10px 30px -4px rgba(18, 33, 61, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--slate);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      font-size: 1rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-serif {
+      font-family: var(--font-display);
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-py {
+      padding: 96px 0;
+    }
+
+    .mono-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--forest);
+      font-weight: 600;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-lead {
+      font-size: 1.15rem;
+      color: var(--slate);
+      max-width: 720px;
+      margin-bottom: 48px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 26px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      gap: 8px;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background-color: var(--navy);
+      color: var(--bg-white);
+    }
+    .btn-primary:hover {
+      background-color: #1c325c;
+    }
+
+    .btn-secondary {
+      background-color: var(--forest);
+      color: var(--bg-white);
+    }
+    .btn-secondary:hover {
+      background-color: #0f544b;
+    }
+
+    .btn-outline {
+      border-color: var(--navy);
+      color: var(--navy);
+      background-color: transparent;
+    }
+    .btn-outline:hover {
+      background-color: var(--sage-light);
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(245, 247, 241, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+
+    .nav-brand-badge {
+      width: 38px;
+      height: 38px;
+      background-color: var(--forest);
+      color: var(--bg-white);
+      border-radius: var(--radius-sm);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-links li a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--slate);
+      position: relative;
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: var(--navy);
+    }
+
+    /* Mobile Hamburger */
+    .mobile-nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--navy);
+    }
+
+    .mobile-nav-toggle svg {
+      width: 28px;
+      height: 28px;
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 90px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: var(--slate);
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-visual-frame {
+      background: #101c30;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      color: var(--bg-white);
+      box-shadow: var(--shadow-hover);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .jacket-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--amber);
+      color: var(--navy);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-family: var(--font-mono);
+    }
+
+    .jacket-graphic {
+      width: 100%;
+      height: 320px;
+      background: linear-gradient(145deg, #142442 0%, #0a1324 100%);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed rgba(220, 227, 214, 0.25);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .jacket-graphic svg {
+      width: 84px;
+      height: 84px;
+      stroke: var(--sage-light);
+      stroke-width: 1.5;
+      fill: none;
+      margin-bottom: 16px;
+    }
+
+    .jacket-caption {
+      font-size: 0.85rem;
+      color: var(--sage-light);
+      margin-top: 14px;
+      font-family: var(--font-mono);
+    }
+
+    /* Pathway Discovery Strip */
+    .pathway-strip {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 28px 0;
+    }
+
+    .pathway-strip-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .pathway-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .pathway-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--forest);
+    }
+
+    .pathway-label {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.95rem;
+    }
+
+    .pathway-sub {
+      font-size: 0.82rem;
+      color: var(--slate);
+      display: block;
+    }
+
+    /* Board Details Master Sections */
+    .board-nav-jump {
+      display: inline-flex;
+      gap: 12px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .board-nav-jump a {
+      background: var(--bg-white);
+      padding: 8px 18px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .board-nav-jump a:hover {
+      background: var(--sage-light);
+    }
+
+    .board-container {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 48px;
+    }
+
+    /* Advantage Visual (6 Months) */
+    .timeline-strip {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin: 32px 0;
+    }
+
+    .timeline-flow {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1.5fr;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .timeline-node {
+      background: var(--bg-white);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    .timeline-node.highlight {
+      background: #eef3ec;
+      border-color: var(--forest);
+    }
+
+    .timeline-arrow {
+      color: var(--slate);
+      font-size: 1.2rem;
+    }
+
+    .timeline-quote {
+      font-style: italic;
+      border-left: 3px solid var(--forest);
+      padding-left: 16px;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Practicals Grid */
+    .practicals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 36px 0;
+    }
+
+    .practical-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .practical-visual-box {
+      height: 180px;
+      background: #17243c;
+      position: relative;
+      display: grid;
+      place-items: center;
+      color: var(--bg-white);
+    }
+
+    .practical-visual-box.video-ready {
+      background: linear-gradient(135deg, #12213d 0%, #1e355c 100%);
+    }
+
+    .play-button-overlay {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      border: 2px solid var(--bg-white);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .play-button-overlay:hover {
+      transform: scale(1.08);
+      background: var(--forest);
+    }
+
+    .play-triangle {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent #ffffff;
+      margin-left: 3px;
+    }
+
+    .asset-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .practical-body {
+      padding: 20px;
+      flex-grow: 1;
+    }
+
+    .practical-body h4 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .practical-body p {
+      font-size: 0.88rem;
+      color: var(--slate);
+      margin: 0;
+    }
+
+    /* Data Tables Standard */
+    .table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 24px 0 32px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: var(--bg-white);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+      min-width: 600px;
+    }
+
+    th {
+      background-color: #ebefe7;
+      color: var(--navy);
+      padding: 14px 18px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-color);
+      letter-spacing: 0.02em;
+    }
+
+    td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--slate);
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .disclosure-box {
+      background: #faf6ed;
+      border: 1px solid #ebd4a8;
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      font-size: 0.85rem;
+      color: #7a4f0f;
+      margin-top: 12px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .status-badge.pending {
+      background: #f1f3f5;
+      color: #6c757d;
+      border: 1px solid #ced4da;
+    }
+
+    .status-badge.confirmed {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    /* Existing Core Sections Styling */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .pillar-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 32px 24px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pillar-card .num {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--forest);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .founder-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .founder-avatar-box {
+      height: 240px;
+      background: #dce3d6;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--forest);
+    }
+
+    .founder-body {
+      padding: 24px;
+    }
+
+    .founder-body h3 {
+      margin-bottom: 4px;
+      font-size: 1.3rem;
+    }
+
+    .founder-body .role {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--forest);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    /* FAQ accordion preview */
+    .faq-list {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      padding: 20px 24px;
+    }
+
+    .faq-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--navy);
+      color: var(--sage-light);
+      padding: 72px 0 36px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-col h5 {
+      color: var(--bg-white);
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a:hover {
+      color: var(--bg-white);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(220, 227, 214, 0.15);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+    }
+
+    /* Mobile Nav Overlay */
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .mobile-nav-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-white);
+        border-bottom: 1px solid var(--border-color);
+        padding: 24px;
+        gap: 18px;
+        box-shadow: var(--shadow-hover);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .board-container {
+        padding: 24px;
+      }
+      .timeline-flow {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .timeline-arrow {
+        transform: rotate(90deg);
+        margin: 4px 0;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="nav-brand">
+        <span class="nav-brand-badge">U</span>
+        <span>The Unbound School</span>
+      </a>
+
+      <button class="mobile-nav-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <ul class="nav-links" id="primaryNav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#board-details" style="font-weight: 700; color: var(--forest);">Board Details</a></li>
+        <li><a href="#founders">Founders</a></li>
+        <li><a href="#journey">8-Year Journey</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="mono-eyebrow">Academic Architecture</span>
+        <h1>Beyond Conventional Learning.</h1>
+        <p>A secondary learning institution bridging deep conceptual foundations, verified scientific laboratory rigour, and transparent international board pathways.</p>
+        
+        <div class="hero-actions">
+          <a href="#board-details" class="btn btn-primary">View Board Details</a>
+          <a href="#practicals" class="btn btn-outline">Practicals in Action</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual-frame">
+          <span class="jacket-badge">Official Identity</span>
+          <div class="jacket-graphic">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4l5 3v13L4 17V4z"></path>
+              <path d="M20 4l-5 3v13l5-3V4z"></path>
+              <path d="M9 7l3 2 3-2"></path>
+              <path d="M9 20l3-1 3 1"></path>
+              <path d="M12 9v10"></path>
+            </svg>
+            <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 600;">The Unbound School Vestment</div>
+            <div class="jacket-caption">Dark Navy / Deep Blue Formal Academic Jacket</div>
+          </div>
+          <div style="font-size: 0.8rem; color: #a0aec0; margin-top: 14px; text-align: center;">
+            Supplied visual design asset integrated into student formal identity
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="pathway-strip">
+    <div class="container pathway-strip-inner">
+      <div class="pathway-item">
+        <span class="pathway-dot"></span>
+        <div>
+          <span class="pathway-label">Grade 10 IGCSE</span>
+          <span class="pathway-sub">November Board Series with 6-Month Head Start</span>
+        </div>
+      </div>
+      <div class="pathway-item">
+        <span class="pathway-dot" style="background: var(--amber);"></span>
+        <div>
+          <span class="pathway-label">Grade 11–12 Cambridge A/AS</span>
+          <span class="pathway-sub">Global Recognition across UK, US, Canada & Europe</span>
+        </div>
+      </div>
+      <div class="pathway-item">
+        <span class="pathway-dot" style="background: var(--navy);"></span>
+        <div>
+          <span class="pathway-label">Mandatory Integrated Coaching</span>
+          <span class="pathway-sub">Dedicated SAT or JEE/NEET Pathways</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="curriculum" class="section-py">
+    <div class="container">
+      <span class="mono-eyebrow">Institutional Framework</span>
+      <h2 class="section-title">The Four Pillars</h2>
+      <p class="section-lead">Rooted in foundational knowledge, empirical laboratory validation, and individualized academic pathways.</p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="num">01</div>
+          <h3>Conceptual Mastery</h3>
+          <p>Prioritizing internal mental models over mechanical formula repetition across sciences and mathematics.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="num">02</div>
+          <h3>Empirical Practicals</h3>
+          <p>Physical instrument manipulation, precise observation, error calculation, and direct laboratory experimentation.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="num">03</div>
+          <h3>Integrated Coaching</h3>
+          <p>Streamlined alignment where board instruction directly complements national and international testing benchmarks.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="num">04</div>
+          <h3>Global Articulation</h3>
+          <p>Internationally benchmarked qualifications facilitating direct university admissions worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="board-details" class="section-py" style="background-color: var(--bg-base);">
+    <div class="container">
+      <span class="mono-eyebrow">Academic Regulations & Structure</span>
+      <h2 class="section-title">Board Details</h2>
+      <p class="section-lead">A comprehensive architectural guide to our secondary certifications, examination cycles, practical laboratory mandates, and integrated post-secondary streams.</p>
+
+      <div class="board-nav-jump">
+        <a href="#part1-igcse">Part 1: Why IGCSE in 10th Grade</a>
+        <a href="#practicals">Practicals in Action</a>
+        <a href="#grade10-subjects">Grade 10 Subject Tables</a>
+        <a href="#part2-cambridge">Part 2: Cambridge A/AS Level</a>
+        <a href="#coaching-streams">11th–12th Coaching Streams</a>
+        <a href="#subject-tables-11-12">Engineering & Medical Tables</a>
+        <a href="#fees">Fee Structure</a>
+        <a href="#igcse-vs-cbse">IGCSE vs CBSE Comparison</a>
+      </div>
+
+      <div id="part1-igcse" class="board-container">
+        <span class="mono-eyebrow">Part 1</span>
+        <h3 style="font-size: 2rem; margin-bottom: 16px;">Why IGCSE in 10th Grade</h3>
+        
+        <p>The International General Certificate of Secondary Education (IGCSE) provides an academically sound structure for Grade 10 students, focusing on rigorous conceptual testing, independent research capability, and physical laboratory practicals.</p>
+
+        <div class="timeline-strip">
+          <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 8px;">
+            The 6-Month Head-Start Advantage
+          </div>
+          
+          <div class="timeline-flow">
+            <div class="timeline-node">
+              <strong>November Series</strong>
+              <div style="font-size: 0.8rem; color: var(--slate);">IGCSE Board Exams Completed</div>
+            </div>
+            <span class="timeline-arrow">→</span>
+            <div class="timeline-node highlight">
+              <strong>Crucial 6-Month Window</strong>
+              <div style="font-size: 0.8rem; color: var(--forest); font-weight: 600;">Advanced Head-Start Phase</div>
+            </div>
+            <span class="timeline-arrow">→</span>
+            <div class="timeline-node">
+              <strong>February Session</strong>
+              <div style="font-size: 0.8rem; color: var(--slate);">Grade 11 Begins Early</div>
+            </div>
+          </div>
+
+          <blockquote class="timeline-quote">
+            "By completing your IGCSE boards in November, you gain a crucial 6-month head start before beginning 11th grade in February. This timing ensures you enter your advanced studies fully prepared and confident."
+          </blockquote>
+        </div>
+
+        <div id="practicals" style="margin-top: 48px;">
+          <span class="mono-eyebrow">Laboratory Architecture</span>
+          <h4 style="font-size: 1.6rem; margin-bottom: 8px;">Practicals in Action</h4>
+          <p style="font-size: 0.95rem; color: var(--slate);">Practicals are a central part of learning at The Unbound School. We prioritize actual laboratory engagement, measurement precision, and instrument competence.</p>
+
+          <div class="practicals-grid">
+            <div class="practical-card">
+              <div class="practical-visual-box">
+                <span class="asset-tag">Physics Lab Asset</span>
+                <div style="text-align: center;">
+                  <svg width="36" height="36" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6h18M3 12h18M3 18h18M7 6v12M11 6v6"></path></svg>
+                  <div style="font-size: 0.85rem; margin-top: 6px;">Vernier Caliper Setup</div>
+                </div>
+              </div>
+              <div class="practical-body">
+                <h4>Vernier Caliper</h4>
+                <p>High-precision measurement of internal/external diameters and depth, calculating zero error and least count.</p>
+              </div>
+            </div>
+
+            <div class="practical-card">
+              <div class="practical-visual-box video-ready">
+                <span class="asset-tag">Video Placeholder</span>
+                <div class="play-button-overlay" title="Play Video Demonstration">
+                  <div class="play-triangle"></div>
+                </div>
+              </div>
+              <div class="practical-body">
+                <h4>Screw Gauge & Micrometry</h4>
+                <p>Visual demonstration area for pitch determination, circular scale zero error, and wire diameter measurements.</p>
+              </div>
+            </div>
+
+            <div class="practical-card">
+              <div class="practical-visual-box">
+                <span class="asset-tag">Apparatus Asset</span>
+                <div style="text-align: center;">
+                  <svg width="36" height="36" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                  <div style="font-size: 0.85rem; margin-top: 6px;">Apparatus Verification</div>
+                </div>
+              </div>
+              <div class="practical-body">
+                <h4>Physics Laboratory</h4>
+                <p>Optical benches, resistance verification, circuit builders, and mechanical equilibrium benches.</p>
+              </div>
+            </div>
+
+            <div class="practical-card">
+              <div class="practical-visual-box video-ready">
+                <span class="asset-tag">Video Placeholder</span>
+                <div class="play-button-overlay" title="Play Lab Walkthrough">
+                  <div class="play-triangle"></div>
+                </div>
+              </div>
+              <div class="practical-body">
+                <h4>Chemistry Laboratory</h4>
+                <p>Volumetric titration, salt analysis, qualitative inorganic testing, and reaction enthalpy experiments.</p>
+              </div>
+            </div>
+
+            <div class="practical-card">
+              <div class="practical-visual-box">
+                <span class="asset-tag">Specimen Analysis</span>
+                <div style="text-align: center;">
+                  <svg width="36" height="36" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"></path></svg>
+                  <div style="font-size: 0.85rem; margin-top: 6px;">Microscopy Stations</div>
+                </div>
+              </div>
+              <div class="practical-body">
+                <h4>Biology Laboratory</h4>
+                <p>Cellular slide staining, physiological analysis, osmosis monitoring, and enzyme rate reactions.</p>
+              </div>
+            </div>
+
+            <div class="practical-card">
+              <div class="practical-visual-box">
+                <span class="asset-tag">Active Session</span>
+                <div style="text-align: center;">
+                  <svg width="36" height="36" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  <div style="font-size: 0.85rem; margin-top: 6px;">Student Cohort Setup</div>
+                </div>
+              </div>
+              <div class="practical-body">
+                <h4>Experimental Work</h4>
+                <p>Students recording raw observational data, evaluating uncertainty margins, and collaborating on test runs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="grade10-subjects" style="margin-top: 48px;">
+          <h4 style="font-size: 1.4rem; margin-bottom: 12px;">Grade 10 Subject Structure</h4>
+          <p style="font-size: 0.95rem; color: var(--slate);">Subject structures are divided into core mandatory competencies and an elective fifth component.</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 35%;">Category</th>
+                  <th>Subjects Included</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Core Subjects</strong><br><span style="font-size: 0.8rem; color: var(--slate);">Mandatory Foundation</span></td>
+                  <td>
+                    • English<br>
+                    • Physics<br>
+                    • Chemistry<br>
+                    • Mathematics
+                  </td>
+                  <td>Four foundational board examinations completed under IGCSE.</td>
+                </tr>
+                <tr>
+                  <td><strong>Fifth Subject</strong><br><span style="font-size: 0.8rem; color: var(--slate);">Elective Component</span></td>
+                  <td>
+                    • Biology<br>
+                    • Environmental Management<br>
+                    • Thinking Skills<br>
+                    • Economics
+                  </td>
+                  <td>
+                    <strong>Economics:</strong> Explicitly recommended for SAT-oriented students.<br>
+                    <strong>Thinking Skills:</strong> Subject to teacher availability and institutional quality assurance standards.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="disclosure-box">
+            <strong>Disclosure:</strong> The offering of Thinking Skills as a fifth subject option is strictly contingent upon verified teacher availability and institutional quality assurance.
+          </div>
+        </div>
+      </div>
+
+      <div id="part2-cambridge" class="board-container">
+        <span class="mono-eyebrow">Part 2</span>
+        <h3 style="font-size: 2rem; margin-bottom: 16px;">Highlights of Cambridge A/AS Level (11th & 12th)</h3>
+        
+        <p>Cambridge Advanced (A/AS Level) delivers globally respected depth, allowing students to tailor their subject focus according to planned degree trajectories.</p>
+
+        <div style="margin: 28px 0;">
+          <h4 style="font-size: 1.25rem; margin-bottom: 12px;">Exam Windows & Institutional Schedule</h4>
+          <p>Cambridge provides three distinct international series: <strong>November, February, and June</strong>. The Unbound School demonstrates preference for the <strong>November/February windows</strong> to systematically reduce learning interruptions and smoothly connect with higher education admissions.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 32px;">
+          <div style="background: var(--bg-base); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+            <strong style="color: var(--navy); display: block; margin-bottom: 6px;">English Assessment</strong>
+            <p style="font-size: 0.9rem; margin: 0;">Comprehensive English language assessment is maintained to ensure academic fluency meets leading worldwide university entry requirements.</p>
+          </div>
+          <div style="background: var(--bg-base); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+            <strong style="color: var(--navy); display: block; margin-bottom: 6px;">Global Articulation Pathways</strong>
+            <p style="font-size: 0.9rem; margin: 0;">Accepted and credited by top tier institutions across the <strong>United Kingdom, United States, Canada, Australia, Europe</strong>, and internationally.</p>
+          </div>
+        </div>
+
+        <div style="background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: var(--radius-sm); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px;">
+          <div>
+            <strong style="color: var(--navy); font-size: 0.9rem;">Sofomo</strong>
+            <span style="font-size: 0.85rem; color: var(--slate); margin-left: 8px;">Institutional module specification</span>
+          </div>
+          <span class="status-badge pending">Details to be added</span>
+        </div>
+
+        <div id="coaching-streams" style="border-top: 1px solid var(--border-color); padding-top: 36px;">
+          <h4 style="font-size: 1.5rem; margin-bottom: 14px;">11th–12th Integrated Coaching Streams</h4>
+          
+          <div style="background: #fdfaf3; border-left: 4px solid var(--amber); padding: 16px 20px; margin-bottom: 28px;">
+            <strong style="color: var(--navy);">Mandatory Enrollment Policy:</strong>
+            <p style="margin: 4px 0 0; font-size: 0.95rem; color: #6d4610;">
+              All students must choose an integrated coaching stream. Schooling without integrated coaching is not available.
+            </p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 32px;">
+            <div style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 28px;">
+              <span class="mono-eyebrow" style="color: var(--amber);">Path 1</span>
+              <h4 style="font-size: 1.35rem; margin-bottom: 10px;">SAT Coaching</h4>
+              <p style="font-size: 0.9rem; color: var(--slate); margin-bottom: 16px;">Designed for scholars aiming for international universities abroad.</p>
+              
+              <ul style="list-style: none; font-size: 0.9rem; margin-bottom: 16px;">
+                <li style="margin-bottom: 8px;">✓ Structured SAT preparation conducted concurrently with board modules.</li>
+                <li style="margin-bottom: 8px;">✓ Balanced A Level study load to sustain intensive SAT prep.</li>
+                <li style="margin-bottom: 8px;">✓ Core: English, Physics, Chemistry, Mathematics.</li>
+                <li style="margin-bottom: 8px;">✓ Fifth subject elective options available.</li>
+                <li style="margin-bottom: 8px;">✓ <strong>Economics</strong> recommended for international university alignment.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 28px;">
+              <span class="mono-eyebrow" style="color: var(--forest);">Path 2</span>
+              <h4 style="font-size: 1.35rem; margin-bottom: 10px;">JEE / NEET Coaching — NV Coaching</h4>
+              <p style="font-size: 0.9rem; color: var(--slate); margin-bottom: 16px;">Tailored specifically for candidates preparing for competitive engineering and medical entrances in India.</p>
+              
+              <ul style="list-style: none; font-size: 0.9rem; margin-bottom: 16px;">
+                <li style="margin-bottom: 8px;">✓ Rigorous entrance pedagogy delivered by NV Coaching.</li>
+                <li style="margin-bottom: 8px;">✓ Available under both <strong>PU (Pre-University)</strong> and <strong>IGCSE/A-Level</strong> configurations.</li>
+                <li style="margin-bottom: 8px;">✓ Integrated timetable to prevent curriculum collision.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="subject-tables-11-12" style="margin-top: 36px;">
+          <h4 style="font-size: 1.35rem; margin-bottom: 12px;">Coaching Stream Subject Combinations</h4>
+          <p style="font-size: 0.92rem; color: var(--slate);">Subject structures organized by board qualification and targeted discipline.</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Board Track</th>
+                  <th>Discipline</th>
+                  <th>Prescribed Subject Combination</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2" style="font-weight: 600;">IGCSE / Cambridge Track</td>
+                  <td><strong>Engineering</strong></td>
+                  <td>English + Physics + Chemistry + Mathematics</td>
+                </tr>
+                <tr>
+                  <td><strong>Medical</strong></td>
+                  <td>English + Physics + Chemistry + Biology</td>
+                </tr>
+                <tr>
+                  <td rowspan="2" style="font-weight: 600;">PU (Pre-University) Track</td>
+                  <td><strong>Engineering</strong></td>
+                  <td>English + Physics + Chemistry + Mathematics + Second Language</td>
+                </tr>
+                <tr>
+                  <td><strong>Medical</strong></td>
+                  <td>English + Physics + Chemistry + Biology + Second Language</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--navy); background: #ebefe7; padding: 10px 16px; border-radius: var(--radius-sm);">
+            Rule Note: Pure Science will include Mathematics by default.
+          </div>
+        </div>
+
+        <div id="fees" style="margin-top: 48px; border-top: 1px solid var(--border-color); padding-top: 36px;">
+          <span class="mono-eyebrow">Financial Structure</span>
+          <h4 style="font-size: 1.4rem; margin-bottom: 8px;">Fee Schedule</h4>
+          <p style="font-size: 0.92rem; color: var(--slate);">Fee components are shown exclusively using verified discussion figures. Total cost reflects IGCSE base plus the designated coaching stream.</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Fee Particulars</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>IGCSE Coaching Base</strong></td>
+                  <td>Approximately ₹2.5 lakh</td>
+                  <td><span class="status-badge confirmed">Confirmed Estimate</span></td>
+                </tr>
+                <tr>
+                  <td><strong>SAT Coaching</strong></td>
+                  <td>Approximately ₹1 lakh</td>
+                  <td><span class="status-badge confirmed">Confirmed Estimate</span></td>
+                </tr>
+                <tr>
+                  <td><strong>JEE / NEET Coaching (NV Coaching)</strong></td>
+                  <td>To be provided</td>
+                  <td><span class="status-badge pending">Pending Finalization</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Total Academic Fee</strong></td>
+                  <td>IGCSE + applicable coaching combination</td>
+                  <td><span class="status-badge confirmed">Composite Structure</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="background: var(--bg-base); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 20px 24px; margin-top: 24px;">
+            <h5 style="font-size: 1.05rem; margin-bottom: 6px; color: var(--navy);">National Institute of Open Schooling (NIOS) Track</h5>
+            <p style="font-size: 0.88rem; color: var(--slate); margin-bottom: 12px;">Track reserved for <strong>Class 10</strong> and <strong>Class 12</strong> candidates.</p>
+            <div style="display: flex; gap: 16px; font-size: 0.82rem; color: var(--slate);">
+              <span>Eligibility: <span class="status-badge pending">To be provided</span></span>
+              <span>Requirements: <span class="status-badge pending">To be provided</span></span>
+              <span>Fees: <span class="status-badge pending">To be provided</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="igcse-vs-cbse" style="margin-top: 48px; border-top: 1px solid var(--border-color); padding-top: 36px;">
+          <span class="mono-eyebrow">Board Comparison</span>
+          <h4 style="font-size: 1.4rem; margin-bottom: 8px;">IGCSE vs CBSE Framework</h4>
+          <p style="font-size: 0.92rem; color: var(--slate);">An objective, professional comparison designed to help parents select the learning structure best suited to their student's strengths and educational goals.</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Comparison Area</th>
+                  <th>IGCSE</th>
+                  <th>CBSE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Subject Structure</strong></td>
+                  <td>Linear framework with core foundational subjects and specific specialized electives.</td>
+                  <td>Standardized national curriculum framework across all central boards.</td>
+                </tr>
+                <tr>
+                  <td><strong>Organization of Subjects</strong></td>
+                  <td>Focused study with flexible tiered levels tailored to student capability.</td>
+                  <td>Prescribed subject bundles with predetermined national grouping.</td>
+                </tr>
+                <tr>
+                  <td><strong>Curricular Focus</strong></td>
+                  <td>Critical inquiry, practical application, data interpretation, and analytical writing.</td>
+                  <td>Comprehensive theoretical grounding with high alignment to national Indian entrance testing.</td>
+                </tr>
+                <tr>
+                  <td><strong>Flexibility</strong></td>
+                  <td>High flexibility in choosing elective combinations (e.g., Economics alongside core sciences).</td>
+                  <td>Stream-based groupings (Science/Commerce/Arts) with fixed subject boundaries.</td>
+                </tr>
+                <tr>
+                  <td><strong>Practical Component</strong></td>
+                  <td>Direct lab assessment, measurement technique verification, and experimental coursework.</td>
+                  <td>Practical lab exams conducted per internal and external board schemes.</td>
+                </tr>
+                <tr>
+                  <td><strong>Learning Approach</strong></td>
+                  <td>Student-centered investigations, evaluation of evidence, and continuous analytical reasoning.</td>
+                  <td>Syllabus-driven mastery, strong textbook recall, and extensive cumulative testing.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="journey" class="section-py">
+    <div class="container">
+      <span class="mono-eyebrow">Long-Term Trajectory</span>
+      <h2 class="section-title">The Eight-Year Journey</h2>
+      <p class="section-lead">A unified continuum preparing the learner from middle school foundations to global university and competitive readiness.</p>
+
+      <div style="border-left: 2px solid var(--forest); padding-left: 24px; margin-left: 12px;">
+        <div style="margin-bottom: 24px;">
+          <span style="font-family: var(--font-mono); color: var(--forest); font-size: 0.85rem; font-weight: 600;">YEARS 1–3</span>
+          <h4 style="font-size: 1.25rem;">Foundational Inquiry (Grades 6–8)</h4>
+          <p style="font-size: 0.95rem; color: var(--slate);">Core scientific curiosity, mathematical logic, language mastery, and manual workshop competence.</p>
+        </div>
+        <div style="margin-bottom: 24px;">
+          <span style="font-family: var(--font-mono); color: var(--forest); font-size: 0.85rem; font-weight: 600;">YEARS 4–5</span>
+          <h4 style="font-size: 1.25rem;">Secondary Mastery & IGCSE (Grades 9–10)</h4>
+          <p style="font-size: 0.95rem; color: var(--slate);">Rigorous core board studies, November series completion, and the 6-month competitive head-start phase.</p>
+        </div>
+        <div>
+          <span style="font-family: var(--font-mono); color: var(--forest); font-size: 0.85rem; font-weight: 600;">YEARS 6–8</span>
+          <h4 style="font-size: 1.25rem;">Advanced Specialization & Higher Articulation (Grades 11–12 & Beyond)</h4>
+          <p style="font-size: 0.95rem; color: var(--slate);">Cambridge A/AS levels or PU streams combined with dedicated SAT or JEE/NEET coaching pathways.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="founders" class="section-py" style="background: var(--bg-white);">
+    <div class="container">
+      <span class="mono-eyebrow">Leadership & Vision</span>
+      <h2 class="section-title">Founders</h2>
+      <p class="section-lead">Architected by educators and researchers committed to establishing an uncompromised standard in secondary education.</p>
+
+      <div class="founders-grid">
+        <div class="founder-card">
+          <div class="founder-avatar-box">US</div>
+          <div class="founder-body">
+            <h3>Academic Council Directorate</h3>
+            <span class="role">Pedagogy & Curriculum Standards</span>
+            <p style="font-size: 0.9rem; color: var(--slate); margin: 0;">Governing core instructional delivery, lab safety protocols, and board syllabus alignment.</p>
+          </div>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-avatar-box">ST</div>
+          <div class="founder-body">
+            <h3>Competitive Programs Directorate</h3>
+            <span class="role">Integrated Streams Architecture</span>
+            <p style="font-size: 0.9rem; color: var(--slate); margin: 0;">Managing test-preparation synchronization between board calendars and entrance exam requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section-py">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <span class="mono-eyebrow">Clarifications</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <h4>Why does The Unbound School conduct IGCSE exams in November?</h4>
+          <p>Completing the IGCSE board examinations in November allows Grade 11 to begin in February. This provides students with a crucial 6-month academic head start before their advanced secondary or entrance studies get underway.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Can a student enroll without an integrated coaching stream in 11th & 12th?</h4>
+          <p>No. All students must select an integrated coaching stream (SAT Coaching or JEE/NEET Coaching). Schooling without integrated coaching is not available.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Are lab practicals included in internal evaluations?</h4>
+          <p>Yes. Practicals are a central pillar of instruction at The Unbound School, involving physical instruments such as vernier calipers, screw gauges, and full chemical analysis benches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--bg-white); margin-bottom: 12px;">
+            The Unbound School
+          </div>
+          <p style="font-size: 0.9rem; max-width: 360px; color: var(--sage-light);">
+            An institution dedicated to academic precision, empirical laboratory practice, and international curriculum alignment.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Navigation</h5>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#curriculum">Curriculum</a></li>
+            <li><a href="#board-details">Board Details</a></li>
+            <li><a href="#practicals">Practicals</a></li>
+            <li><a href="#founders">Founders</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Information</h5>
+          <ul class="footer-links">
+            <li><a href="#fees">Fee Structure</a></li>
+            <li><a href="#igcse-vs-cbse">IGCSE vs CBSE</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 The Unbound School. All rights reserved.</div>
+        <div style="font-family: var(--font-mono); font-size: 0.8rem;">V2 Implementation — Controlled Release</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileBtn = document.getElementById('mobileMenuBtn');
+      const primaryNav = document.getElementById('primaryNav');
+
+      if (mobileBtn && primaryNav) {
+        mobileBtn.addEventListener('click', function() {
+          primaryNav.classList.toggle('open');
+        });
+
+        // Close mobile nav when link clicked
+        const navLinks = primaryNav.querySelectorAll('a');
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            primaryNav.classList.remove('open');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>
