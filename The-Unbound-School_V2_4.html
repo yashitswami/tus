@@ -1,0 +1,3077 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Unbound School — Unbound by Design | Cambridge IGCSE & A/AS Levels Grades 5–12</title>
+  <meta name="description" content="A K-12 school (Grades 5–12) unbound from a single curriculum board — Cambridge IGCSE rigor blended with CBSE/ICSE, unhurried mastery, and labs-first learning.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:ital,wght@0,300..800;1,300..700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --paper: #F5F7F1;
+      --paper-raised: #FFFFFF;
+      --paper-subtle: #EBF0E6;
+      --paper-muted: #E2E8DC;
+      --ink: #12213D;
+      --ink-soft: #495B70;
+      --ink-faint: #7C8F9F;
+      --line: #DCE3D6;
+      --line-strong: #C4D0BC;
+      --teal: #146E62;
+      --teal-hover: #0E534A;
+      --teal-light: #E4F1EE;
+      --teal-glow: rgba(20, 110, 98, 0.14);
+      --gold: #BD7A1E;
+      --gold-light: #FAF2E6;
+      --gold-glow: rgba(189, 122, 30, 0.14);
+      
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+      
+      --shadow-sm: 0 2px 8px rgba(18, 33, 61, 0.04);
+      --shadow-md: 0 8px 24px rgba(18, 33, 61, 0.06);
+      --shadow-lg: 0 16px 40px rgba(18, 33, 61, 0.08);
+      --shadow-float: 0 24px 60px rgba(18, 33, 61, 0.12);
+      
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --radius-pill: 9999px;
+      
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      --header-height: 76px;
+    }
+
+    [data-theme="dark"] {
+      --paper: #0C1826;
+      --paper-raised: #132235;
+      --paper-subtle: #192D44;
+      --paper-muted: #233C5B;
+      --ink: #F0F4F8;
+      --ink-soft: #9DB0C6;
+      --ink-faint: #627790;
+      --line: #1E334D;
+      --line-strong: #2A486C;
+      --teal: #38B7A2;
+      --teal-hover: #4ED2BD;
+      --teal-light: rgba(56, 183, 162, 0.12);
+      --teal-glow: rgba(56, 183, 162, 0.25);
+      --gold: #F0B25A;
+      --gold-light: rgba(240, 178, 90, 0.12);
+      --gold-glow: rgba(240, 178, 90, 0.22);
+      
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.45);
+      --shadow-float: 0 24px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--paper);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: var(--font-body);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .container-wide {
+      width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .font-serif { font-family: var(--font-display); }
+    .font-mono { font-family: var(--font-mono); }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--teal);
+    }
+
+    .eyebrow-gold { color: var(--gold); }
+    .eyebrow-gold::before { background-color: var(--gold); }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .section-lead {
+      font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+      color: var(--ink-soft);
+      font-weight: 400;
+      line-height: 1.7;
+      max-width: 780px;
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245, 247, 241, 0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    [data-theme="dark"] .site-header {
+      background: rgba(12, 24, 38, 0.90);
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      font-family: 'Times New Roman', Times, Baskerville, Georgia, serif;
+      font-size: 1.625rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding-left: 8px;
+      border-left: 1px solid var(--line);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      transition: var(--transition);
+      position: relative;
+      padding: 4px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--teal);
+      transition: var(--transition);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--ink);
+    }
+
+    .nav-link:hover::after, .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--paper-raised);
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      transform: rotate(15deg);
+    }
+
+    .nav-cta {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: var(--ink);
+      color: var(--paper-raised);
+      padding: 10px 20px;
+      border-radius: var(--radius-pill);
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    [data-theme="dark"] .nav-cta {
+      background: var(--teal);
+      color: #0C1826;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+      background: var(--teal);
+      color: #FFFFFF;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--line);
+      background: var(--paper-raised);
+      color: var(--ink);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    /* Hero Section - Clean Unobscured School Photo Card */
+    .hero-section {
+      padding: clamp(60px, 8vw, 100px) 0 clamp(60px, 8vw, 90px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      padding: 8px 18px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--teal);
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--teal);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px var(--teal-glow);
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(3.25rem, 6.2vw, 5.25rem);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -0.035em;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+
+    .hero-headline span.highlight {
+      font-style: italic;
+      color: var(--teal);
+      font-weight: 400;
+    }
+
+    .hero-subheading {
+      font-size: clamp(1.125rem, 1.5vw, 1.3125rem);
+      color: var(--ink-soft);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 620px;
+    }
+
+    .highlight-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .pill-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-pill);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .pill-item:hover {
+      border-color: var(--teal);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pill-icon {
+      color: var(--gold);
+      font-size: 0.875rem;
+    }
+
+    /* Fixed Clean Hero Visual Card (No overlapping graphics) */
+    .hero-visual-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-float);
+      border: 1px solid var(--line);
+      background: var(--paper-raised);
+      height: 520px;
+    }
+
+    .hero-visual-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-visual-card:hover img {
+      transform: scale(1.02);
+    }
+
+    /* Pathway Discovery Strip */
+    .pathway-strip {
+      background: var(--paper-raised);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 0;
+    }
+
+    .pathway-strip-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .pathway-box {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .pathway-indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .pathway-indicator.gold { background: var(--gold); }
+    .pathway-indicator.navy { background: var(--ink-soft); }
+
+    .pathway-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .pathway-sub {
+      font-size: 0.8125rem;
+      color: var(--ink-soft);
+      font-family: var(--font-mono);
+    }
+
+    /* Vision Section */
+    .vision-section {
+      padding: 100px 0;
+      background-color: var(--paper);
+      position: relative;
+    }
+
+    .pull-quote-wrapper {
+      margin: 32px 0 54px;
+      padding: 36px 44px;
+      background: var(--paper-raised);
+      border-radius: var(--radius-lg);
+      border-left: 4px solid var(--teal);
+      border-top: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pull-quote {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.5vw, 2.125rem);
+      font-weight: 500;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .pull-quote-author {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+    }
+
+    .goals-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin: 56px 0;
+    }
+
+    .goal-card {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .goal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--teal);
+    }
+
+    .goal-image-wrap {
+      height: 240px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      background: var(--paper-subtle);
+    }
+
+    .goal-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .goal-card:hover .goal-image-wrap img {
+      transform: scale(1.04);
+    }
+
+    .goal-body {
+      padding: 28px 32px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .goal-num {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .goal-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+
+    .goal-desc {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .promise-card {
+      margin-top: 64px;
+      background: linear-gradient(135deg, var(--ink) 0%, #1c3258 100%);
+      border-radius: var(--radius-xl);
+      color: #FFFFFF;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      border: 1px solid var(--line-strong);
+    }
+
+    [data-theme="dark"] .promise-card {
+      background: linear-gradient(135deg, #132235 0%, #192D44 100%);
+    }
+
+    .promise-content {
+      padding: 56px 48px;
+    }
+
+    .promise-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .promise-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 3vw, 2.5rem);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      color: #FFFFFF;
+    }
+
+    .promise-text {
+      font-size: 1.0625rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 20px;
+    }
+
+    .promise-quote-highlight {
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--gold);
+      font-size: 1.25rem;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .promise-image-wrap {
+      position: relative;
+      min-height: 380px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .promise-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Curriculum Section */
+    .curriculum-section {
+      padding: 110px 0;
+      background: var(--paper-subtle);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin: 56px 0 72px;
+    }
+
+    .pillar-card {
+      background: var(--paper-raised);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      padding: 40px 36px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--teal);
+    }
+
+    .pillar-card:hover::before {
+      opacity: 1;
+    }
+
+    .pillar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .pillar-num {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--teal);
+    }
+
+    .pillar-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--teal-light);
+      color: var(--teal);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+    }
+
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+
+    .pillar-desc {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .curriculum-visual-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .gallery-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .gallery-caption {
+      padding: 16px 20px;
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--ink);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .gallery-caption span {
+      color: var(--teal);
+    }
+
+    /* Board Details Section */
+    .board-details-section {
+      padding: 110px 0;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+    }
+
+    .board-panel {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 56px 48px;
+      margin-bottom: 56px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .board-part-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .board-panel-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 3vw, 2.4rem);
+      color: var(--ink);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    /* 6-Month Head-Start Timeline */
+    .headstart-timeline-card {
+      background: var(--paper-subtle);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      margin: 36px 0;
+    }
+
+    .timeline-milestones {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1.2fr;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .timeline-node {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .timeline-node.highlighted {
+      background: var(--teal-light);
+      border-color: var(--teal);
+    }
+
+    .timeline-node .month {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timeline-node .event {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 4px;
+    }
+
+    .timeline-arrow {
+      color: var(--ink-soft);
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .headstart-quote {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--ink);
+      border-left: 3px solid var(--teal);
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    /* 3. Revised Practicals in Action Grid (STEM, Bio, Chem, Phys, Math, Theme Room) */
+    .practicals-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .practical-item {
+      background: var(--paper-subtle);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .practical-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--teal);
+    }
+
+    .practical-media-box {
+      height: 200px;
+      background: #0C1826;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .practical-media-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+
+    .practical-item:hover .practical-media-box img {
+      opacity: 0.95;
+    }
+
+    .practical-media-box.video-placeholder {
+      background: linear-gradient(135deg, #0C1826 0%, #162C47 100%);
+    }
+
+    .video-play-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border: 2px solid #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition);
+      z-index: 2;
+    }
+
+    .video-play-btn:hover {
+      transform: scale(1.1);
+      background: var(--teal);
+      border-color: var(--teal);
+    }
+
+    .video-play-icon {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 0 8px 14px;
+      border-color: transparent transparent transparent #FFFFFF;
+      margin-left: 3px;
+    }
+
+    .media-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(18, 33, 61, 0.85);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .practical-body {
+      padding: 24px;
+      flex-grow: 1;
+    }
+
+    .practical-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .practical-desc {
+      font-size: 0.90625rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* Structured Data Tables */
+    .table-card-wrapper {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow-x: auto;
+      margin: 28px 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .unbound-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      min-width: 620px;
+    }
+
+    .unbound-table th {
+      background: var(--paper-subtle);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--line);
+      letter-spacing: 0.02em;
+    }
+
+    .unbound-table td {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-soft);
+      font-size: 0.9375rem;
+      vertical-align: top;
+    }
+
+    .unbound-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .disclosure-banner {
+      background: var(--gold-light);
+      border: 1px solid rgba(189, 122, 30, 0.3);
+      border-radius: var(--radius-sm);
+      padding: 14px 20px;
+      font-size: 0.875rem;
+      color: var(--ink);
+      margin-top: 16px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .disclosure-banner span.icon {
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    .rule-box {
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 18px 24px;
+      margin: 24px 0;
+      color: var(--ink);
+    }
+
+    .rule-box strong {
+      font-family: var(--font-display);
+      font-size: 1.0625rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* Model Section */
+    .model-section {
+      padding: 110px 0;
+      background: var(--paper);
+    }
+
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .model-card {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .model-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--teal);
+    }
+
+    .model-image-wrap {
+      height: 180px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      background: var(--paper-subtle);
+    }
+
+    .model-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .model-card:hover .model-image-wrap img {
+      transform: scale(1.06);
+    }
+
+    .model-body {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .model-tag {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-light);
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      align-self: flex-start;
+      margin-bottom: 12px;
+    }
+
+    .model-title {
+      font-family: var(--font-display);
+      font-size: 1.1875rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    .model-desc {
+      font-size: 0.90625rem;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    /* Subjects Section */
+    .subjects-section {
+      padding: 100px 0;
+      background: var(--paper-subtle);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 56px;
+    }
+
+    .subject-card {
+      background: var(--paper-raised);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .subject-card:hover {
+      border-color: var(--teal);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .subject-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--teal-light);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    .subject-card.gold-accent .subject-icon-wrap {
+      background: var(--gold-light);
+      color: var(--gold);
+    }
+
+    .subject-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+
+    .subject-desc {
+      font-size: 0.9375rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    /* Journey Section */
+    .journey-section {
+      padding: 110px 0;
+      background: var(--paper);
+    }
+
+    .timeline-nav {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 48px 0 40px;
+      flex-wrap: wrap;
+    }
+
+    .timeline-btn {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--line);
+      background: var(--paper-raised);
+      color: var(--ink-soft);
+      transition: var(--transition);
+    }
+
+    .timeline-btn:hover {
+      border-color: var(--teal);
+      color: var(--ink);
+    }
+
+    .timeline-btn.active {
+      background: var(--teal);
+      color: #FFFFFF;
+      border-color: var(--teal);
+      box-shadow: 0 4px 16px var(--teal-glow);
+    }
+
+    .stage-card-display {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+
+    .stage-content-wrap {
+      padding: 56px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stage-grade-label {
+      font-family: var(--font-mono);
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .stage-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+
+    .stage-desc {
+      font-size: 1.0625rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .stage-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .stage-bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.9375rem;
+      color: var(--ink);
+    }
+
+    .stage-bullet-icon {
+      color: var(--teal);
+      font-weight: bold;
+    }
+
+    .stage-image-wrap {
+      position: relative;
+      background: var(--paper-subtle);
+      overflow: hidden;
+    }
+
+    .stage-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    /* 7. Founders - Strictly Standardized Ratios and Uniform Height */
+    .founders-section {
+      padding: 110px 0;
+      background: var(--paper-subtle);
+      border-top: 1px solid var(--line);
+    }
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+      margin-top: 56px;
+    }
+
+    .founder-card {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .founder-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--teal);
+    }
+
+    /* Strict aspect ratio wrapper for identical photo dimensions */
+    .founder-photo-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1.15;
+      overflow: hidden;
+      position: relative;
+      background: var(--paper-muted);
+    }
+
+    .founder-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.6s ease;
+      display: block;
+    }
+
+    .founder-card:hover .founder-photo-wrap img {
+      transform: scale(1.05);
+    }
+
+    .founder-details {
+      padding: 24px 22px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .founder-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 6px;
+    }
+
+    .founder-role {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .founder-bio {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      margin-top: auto;
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 110px 0;
+      background: var(--paper);
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .faq-intro-card {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 100px;
+    }
+
+    .faq-feature-img {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      margin-top: 28px;
+      border: 1px solid var(--line);
+    }
+
+    .accordion-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .accordion-item {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .accordion-item:hover {
+      border-color: var(--teal);
+    }
+
+    .accordion-item.active {
+      border-color: var(--teal);
+      box-shadow: var(--shadow-md);
+    }
+
+    .accordion-header {
+      width: 100%;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+      font-family: var(--font-display);
+      font-size: 1.1875rem;
+      font-weight: 600;
+      color: var(--ink);
+      gap: 16px;
+    }
+
+    .accordion-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--paper-subtle);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 1.125rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-icon {
+      transform: rotate(45deg);
+      background: var(--teal);
+      color: #FFFFFF;
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+      padding: 0 28px;
+    }
+
+    .accordion-item.active .accordion-content {
+      padding: 0 28px 28px 28px;
+      max-height: 500px;
+    }
+
+    .accordion-content p {
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--ink);
+      color: #FFFFFF;
+      padding: 80px 0 40px;
+      border-top: 1px solid var(--line-strong);
+    }
+
+    [data-theme="dark"] .site-footer {
+      background: #08111B;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 64px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.1875rem;
+      color: var(--gold);
+      max-width: 540px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .footer-meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 18px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links-list a {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9375rem;
+      transition: var(--transition);
+    }
+
+    .footer-links-list a:hover {
+      color: #FFFFFF;
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      padding-top: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.5);
+      font-family: var(--font-mono);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .model-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .founders-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .subjects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .practicals-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .timeline-milestones {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .timeline-arrow {
+        transform: rotate(90deg);
+      }
+      .promise-card {
+        grid-template-columns: 1fr;
+      }
+      .promise-image-wrap {
+        min-height: 280px;
+      }
+      .faq-layout {
+        grid-template-columns: 1fr;
+      }
+      .stage-card-display {
+        grid-template-columns: 1fr;
+      }
+      .stage-image-wrap {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background: var(--paper-raised);
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 28px;
+        gap: 20px;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .nav-actions .nav-cta {
+        display: none;
+      }
+
+      .nav-menu-mobile-cta {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+      }
+
+      .board-panel {
+        padding: 32px 20px;
+      }
+
+      .practicals-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .goals-grid {
+        grid-template-columns: 1fr;
+      }
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+      .curriculum-visual-gallery {
+        grid-template-columns: 1fr;
+      }
+      .subjects-grid {
+        grid-template-columns: 1fr;
+      }
+      .model-grid {
+        grid-template-columns: 1fr;
+      }
+      .founders-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container-wide nav-wrapper">
+      <a href="#" class="brand-mark">
+        <span class="brand-logo">Unbound</span>
+        <span class="brand-sub">The Unbound School</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#vision" class="nav-link">Vision</a></li>
+          <li><a href="#curriculum" class="nav-link">Curriculum</a></li>
+          <li><a href="#board-details" class="nav-link" style="color: var(--teal); font-weight: 600;">Board Details</a></li>
+          <li><a href="#founders" class="nav-link">Founders</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li class="nav-menu-mobile-cta" style="display: none;">
+            <a href="https://forms.gle/p1sNK2bsTbmHhM8J7" target="_blank" rel="noopener noreferrer" class="nav-cta" style="display: block;">Enquiry Form</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle light and dark theme">
+          <svg id="themeIconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="themeIconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Google Form Link in new window -->
+        <a href="https://forms.gle/p1sNK2bsTbmHhM8J7" target="_blank" rel="noopener noreferrer" class="nav-cta">Enquiry Form</a>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Cambridge IGCSE & A/AS Levels · Grades 5–12
+          </div>
+
+          <h1 class="hero-headline">
+            Unbound <br><span class="highlight">by design.</span>
+          </h1>
+
+          <p class="hero-subheading">
+            A curriculum that isn't limited to a single board. We take Cambridge IGCSE as our foundation and enrich it with the best of CBSE, ICSE and beyond — built around one belief: every child deserves an unhurried path to real mastery.
+          </p>
+
+          <div class="highlight-pills">
+            <div class="pill-item">
+              <span class="pill-icon">✦</span>
+              <span>Labs first, books next</span>
+            </div>
+            <div class="pill-item">
+              <span class="pill-icon">✦</span>
+              <span>Integrated entrance coaching</span>
+            </div>
+            <div class="pill-item">
+              <span class="pill-icon">✦</span>
+              <span>6-month head-start window</span>
+            </div>
+            <div class="pill-item">
+              <span class="pill-icon">✦</span>
+              <span>Global university recognition</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Clean Hero Image Without Overlapping Graphics -->
+        <div class="hero-visual-card">
+          <img src="https://lh3.googleusercontent.com/d/1s0zA4EYfDu7e7OcetQmur5pWFzKqBY4-" 
+               alt="The Unbound School Campus Learning Environment" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=view&id=1s0zA4EYfDu7e7OcetQmur5pWFzKqBY4-';" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pathway Strip -->
+  <div class="pathway-strip">
+    <div class="container pathway-strip-grid">
+      <div class="pathway-box">
+        <div class="pathway-indicator"></div>
+        <div>
+          <div class="pathway-title">Grade 10 IGCSE</div>
+          <div class="pathway-sub">November Board Exam · 6-Month Head Start</div>
+        </div>
+      </div>
+      <div class="pathway-box">
+        <div class="pathway-indicator gold"></div>
+        <div>
+          <div class="pathway-title">Cambridge A/AS Level</div>
+          <div class="pathway-sub">Nov & Feb Exam Preference · Global Pathway</div>
+        </div>
+      </div>
+      <div class="pathway-box">
+        <div class="pathway-indicator navy"></div>
+        <div>
+          <div class="pathway-title">Mandatory Coaching</div>
+          <div class="pathway-sub">SAT or JEE / NEET Integrated Streams</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Our Vision -->
+  <section id="vision" class="vision-section">
+    <div class="container">
+      <div class="eyebrow">Our Vision</div>
+      <h2 class="section-title">Educating for the world beyond the exam.</h2>
+      
+      <div class="pull-quote-wrapper">
+        <blockquote class="pull-quote">
+          “The goal of education is not to fill a vessel but to ignite a fire.”
+        </blockquote>
+        <div class="pull-quote-author">— Plutarch / Educational Philosophy of The Unbound School</div>
+      </div>
+
+      <p class="section-lead">
+        Every parent asks the same question: will this school truly prepare my child — not just for the next examination, but for the opportunities and challenges that lie beyond school? At The Unbound School, the answer is woven into every lesson, every experience, and every stage of our curriculum. True to our name, our curriculum prioritises the student's quest for knowledge over the bureaucratic boundaries of any one board.
+      </p>
+
+      <div class="goals-grid">
+        <div class="goal-card">
+          <div class="goal-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/15cYmodu4PeKf2WiPZ6VrUtjwifaz96DK" 
+                 alt="Strong Academic Foundation" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=15cYmodu4PeKf2WiPZ6VrUtjwifaz96DK&sz=w1200';" />
+          </div>
+          <div class="goal-body">
+            <div class="goal-num">01 / FOUNDATION</div>
+            <h3 class="goal-title">Strong Academic Foundation</h3>
+            <p class="goal-desc">Build deep conceptual understanding across every subject, from the ground up.</p>
+          </div>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1N-h_Hyo2GOt_Y6YIju9es596R4tgw1mV" 
+                 alt="Edge in Competitive Exams" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1N-h_Hyo2GOt_Y6YIju9es596R4tgw1mV&sz=w1200';" />
+          </div>
+          <div class="goal-body">
+            <div class="goal-num">02 / EXCELLENCE</div>
+            <h3 class="goal-title">Edge in Competitive Exams</h3>
+            <p class="goal-desc">Develop the depth, problem-solving ability and confidence needed to excel in competitive examinations.</p>
+          </div>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1BPYJjtEKjPyob2Oih4THe2AyigzhVvw5" 
+                 alt="Mastery in an Area of Interest" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1BPYJjtEKjPyob2Oih4THe2AyigzhVvw5&sz=w1200';" />
+          </div>
+          <div class="goal-body">
+            <div class="goal-num">03 / MASTERY</div>
+            <h3 class="goal-title">Mastery in an Area of Interest</h3>
+            <p class="goal-desc">Enable every student to explore their interests and develop genuine expertise.</p>
+          </div>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/11LrXMbzjDWMwatJWODzMVg0nP7V0kJYl" 
+                 alt="Building Life Skills" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=11LrXMbzjDWMwatJWODzMVg0nP7V0kJYl&sz=w1200';" />
+          </div>
+          <div class="goal-body">
+            <div class="goal-num">04 / CHARACTER</div>
+            <h3 class="goal-title">Building Life Skills</h3>
+            <p class="goal-desc">Equip students with the skills, mindset and character to thrive beyond the classroom.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="promise-card">
+        <div class="promise-content">
+          <div class="promise-badge">The Unbound Promise</div>
+          <h3 class="promise-heading">Prepared for life — truly Unbound.</h3>
+          <p class="promise-text">
+            They will have learned to solve problems they have never encountered before, think independently, and approach uncertainty with curiosity rather than fear. They will have built, created, explored, questioned, and discovered — not simply memorised.
+          </p>
+          <p class="promise-text">
+            Most importantly, they will have developed the most valuable skill of all: the ability to learn anything they choose to learn. They will graduate not only prepared for university, but prepared for life — truly Unbound, free from fear, free from convention, and free from the limitations that others may place upon them.
+          </p>
+          <div class="promise-quote-highlight">
+            “Free from fear. Free from convention. Free from limitations.”
+          </div>
+        </div>
+        <div class="promise-image-wrap">
+          <img src="https://lh3.googleusercontent.com/d/18Lsp9QPUGJt3xYBXsb2tox0AyalS09PK" 
+               alt="The Unbound Promise" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=18Lsp9QPUGJt3xYBXsb2tox0AyalS09PK&sz=w1200';" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Our Curriculum -->
+  <section id="curriculum" class="curriculum-section">
+    <div class="container">
+      <div class="eyebrow">Our Curriculum</div>
+      <h2 class="section-title">Four pillars, built to compound over eight years.</h2>
+      <p class="section-lead">
+        Accredited with Cambridge IGCSE, we use its rigorous framework as a foundation and enrich it with carefully selected elements from CBSE, ICSE and other leading curricula — combining academic rigor with experiential, project-based learning.
+      </p>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-num">01</span>
+            <span class="pillar-tag">IGCSE Extended</span>
+          </div>
+          <h3 class="pillar-title">Academic depth through the Cambridge IGCSE Extended curriculum</h3>
+          <p class="pillar-desc">
+            We prepare every student for the more rigorous Extended curriculum — Mathematics 0580 Extended, and extended Science papers that demand analytical thinking and higher-order application. This equips students to confidently meet the intellectual challenges of university education and competitive entrance examinations.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-num">02</span>
+            <span class="pillar-tag">Early Start</span>
+          </div>
+          <h3 class="pillar-title">Key concepts introduced early, for an unhurried path to mastery</h3>
+          <p class="pillar-desc">
+            Algebra begins in Grade 5, giving students years to build fluency instead of learning it under time pressure. Trigonometry is introduced in Grade 7, so it arrives as a familiar tool rather than an intimidating new topic in Grade 10 — reducing academic stress in the senior years.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-num">03</span>
+            <span class="pillar-tag">Integrated Prep</span>
+          </div>
+          <h3 class="pillar-title">A strong foundation for college entrance examinations</h3>
+          <p class="pillar-desc">
+            Preparing students for JEE, NEET, SAT, CUET and CLAT is integrated into school learning — not left to external coaching institutes. Students receive comprehensive preparation as part of their school day, while maintaining a healthy balance between academic excellence and well-being.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-header">
+            <span class="pillar-num">04</span>
+            <span class="pillar-tag">Olympiads</span>
+          </div>
+          <h3 class="pillar-title">Preparing students for Olympiads and academic excellence</h3>
+          <p class="pillar-desc">
+            Our curriculum incorporates the knowledge and skills required for NSEJS, IOQM, RMO, NSEP, NSEC, IMO and other recognised competitions — developing analytical thinking, perseverance, and a strong academic profile, with personalised guidance for students who show aptitude and interest.
+          </p>
+        </div>
+      </div>
+
+      <div class="curriculum-visual-gallery">
+        <div class="gallery-card">
+          <img src="https://lh3.googleusercontent.com/d/10iZiOA9sjw8uG8XWXbZ8fq-vp9mwyiDn" 
+               alt="Academic Rigor & Laboratory Discovery" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=10iZiOA9sjw8uG8XWXbZ8fq-vp9mwyiDn&sz=w1200';" />
+          <div class="gallery-caption">
+            <span>01 / RIGOR</span> Cambridge Extended Depth
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="https://lh3.googleusercontent.com/d/1HU9mAWX0abUfCRkjvb4hwH2a1GBUG7FM" 
+               alt="Integrated Entrance Foundation" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1HU9mAWX0abUfCRkjvb4hwH2a1GBUG7FM&sz=w1200';" />
+          <div class="gallery-caption">
+            <span>02 / MASTERY</span> Integrated School-Day Prep
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="https://lh3.googleusercontent.com/d/1ov_XxVL8ILn1TsQiWhSXWDmudimz3axI" 
+               alt="Olympiad & Problem Solving Culture" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1ov_XxVL8ILn1TsQiWhSXWDmudimz3axI&sz=w1200';" />
+          <div class="gallery-caption">
+            <span>03 / COMPETITIONS</span> Olympiad Mentorship
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Board Details Section -->
+  <section id="board-details" class="board-details-section">
+    <div class="container">
+      <div class="eyebrow eyebrow-gold">Academic Framework & Certifications</div>
+      <h2 class="section-title">Board Details</h2>
+      <p class="section-lead">
+        A comprehensive guide to secondary and senior secondary board pathways at The Unbound School — highlighting practical rigour, Cambridge international standards, and aligned coaching integrations.
+      </p>
+
+      <!-- PART 1: Why IGCSE in 10th Grade -->
+      <div class="board-panel" id="part1-igcse">
+        <span class="board-part-tag">PART 1</span>
+        <h3 class="board-panel-title">Why IGCSE in 10th Grade</h3>
+        <p class="section-lead" style="font-size: 1.0625rem; margin-bottom: 24px;">
+          The Cambridge IGCSE framework for Grade 10 delivers international academic recognition, deep subject flexibility, and an education where physical laboratory inquiry forms a central part of everyday learning.
+        </p>
+
+        <!-- 6-Month Head Start Visual -->
+        <div class="headstart-timeline-card">
+          <div class="eyebrow" style="margin-bottom: 12px;">Visual Schedule</div>
+          <h4 style="font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 20px;">
+            The 6-Month Advantage Pathway
+          </h4>
+
+          <div class="timeline-milestones">
+            <div class="timeline-node">
+              <div class="month">November</div>
+              <div class="event">IGCSE Board Examinations</div>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-node highlighted">
+              <div class="month">Strategic Window</div>
+              <div class="event" style="color: var(--teal);">6-Month Head-Start Margin</div>
+            </div>
+            <div class="timeline-arrow">→</div>
+            <div class="timeline-node">
+              <div class="month">February</div>
+              <div class="event">11th Grade Curriculum Begins</div>
+            </div>
+          </div>
+
+          <blockquote class="headstart-quote">
+            “By completing your IGCSE boards in November, you gain a crucial 6-month head start before beginning 11th grade in February. This timing ensures you enter your advanced studies fully prepared and confident.”
+          </blockquote>
+        </div>
+
+        <!-- 3. Revised Practicals in Action Sequence -->
+        <div style="margin-top: 48px;">
+          <div class="eyebrow">Experimental Inquiry</div>
+          <h4 style="font-family: var(--font-display); font-size: 1.625rem; color: var(--ink); margin-bottom: 12px;">
+            Practicals in Action
+          </h4>
+          <p style="font-size: 1rem; color: var(--ink-soft); max-width: 760px;">
+            Practicals are not treated as secondary assessments — they are a central component of learning. Students engage directly with calibrated scientific instruments, error analysis, and quantitative recording across all three experimental sciences.
+          </p>
+
+          <div class="practicals-grid">
+            <!-- i. STEM Lab -->
+            <div class="practical-item">
+              <div class="practical-media-box video-placeholder">
+                <div class="video-play-btn" title="Play STEM Lab Demonstration">
+                  <div class="video-play-icon"></div>
+                </div>
+                <span class="media-badge">STEM Lab</span>
+              </div>
+              <div class="practical-body">
+                <div class="practical-name">STEM Lab</div>
+                <div class="practical-desc">Students fly DIY drones in specialized high-clearance spaces with certified protective gear, testing aerodynamics and telemetry.</div>
+              </div>
+            </div>
+
+            <!-- ii. Biology Lab -->
+            <div class="practical-item">
+              <div class="practical-media-box">
+                <img src="https://lh3.googleusercontent.com/d/1HU9mAWX0abUfCRkjvb4hwH2a1GBUG7FM" 
+                     alt="Biology Lab Organ Observation" 
+                     onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1HU9mAWX0abUfCRkjvb4hwH2a1GBUG7FM&sz=w800';" />
+                <span class="media-badge">Biology Lab</span>
+              </div>
+              <div class="practical-body">
+                <div class="practical-name">Biology Lab</div>
+                <div class="practical-desc">Students directly observe and examine anatomical specimens, such as hearts preserved in glass beakers, paired with histology.</div>
+              </div>
+            </div>
+
+            <!-- iii. Chemistry Lab -->
+            <div class="practical-item">
+              <div class="practical-media-box video-placeholder">
+                <div class="video-play-btn" title="Play Chemistry Experiment">
+                  <div class="video-play-icon"></div>
+                </div>
+                <span class="media-badge">Chemistry Lab</span>
+              </div>
+              <div class="practical-body">
+                <div class="practical-name">Chemistry Lab</div>
+                <div class="practical-desc">Hands-on qualitative and quantitative reaction experiments conducted using specialized personal safety equipment and glassware.</div>
+              </div>
+            </div>
+
+            <!-- iv. Physics Lab -->
+            <div class="practical-item">
+              <div class="practical-media-box">
+                <img src="https://lh3.googleusercontent.com/d/1kg7Dw7RPE2gAYZoN5AJ3rudUSjmFSRnD" 
+                     alt="Physics Lab Calorimetry Experiment" 
+                     onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1kg7Dw7RPE2gAYZoN5AJ3rudUSjmFSRnD&sz=w800';" />
+                <span class="media-badge">Physics Lab</span>
+              </div>
+              <div class="practical-body">
+                <div class="practical-name">Physics Lab</div>
+                <div class="practical-desc">Calorimetry and thermodynamics experiments investigating specific heat capacities using copper vessels and precision thermometers.</div>
+              </div>
+            </div>
+
+            <!-- v. Mathematics Lab -->
+            <div class="practical-item">
+              <div class="practical-media-box video-placeholder">
+                <div class="video-play-btn" title="Play Mathematics Experiment">
+                  <div class="video-play-icon"></div>
+                </div>
+                <span class="media-badge">Mathematics Lab</span>
+              </div>
+              <div class="practical-body">
+                <div class="practical-name">Mathematics Lab</div>
+                <div class="practical-desc">Hands-on discovery of mathematical proofs, spatial coordinate geometry, 3D structural models, and algorithmic problem sets.</div>
+              </div>
+            </div>
+
+            <!-- vi. Theme Room -->
+            <div class="practical-item">
+              <div class="practical-media-box">
+                <img src="https://lh3.googleusercontent.com/d/10iZiOA9sjw8uG8XWXbZ8fq-vp9mwyiDn" 
+                     alt="Social Studies Theme Room" 
+                     onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=10iZiOA9sjw8uG8XWXbZ8fq-vp9mwyiDn&sz=w800';" />
+                <span class="media-badge">Theme Room</span>
+              </div>
+              <div class="practical-body">
+                <div class="practical-name">Theme Room</div>
+                <div class="practical-desc">An immersive humanities installation featuring an expansive historical and geographical wall mural for collaborative inquiry.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grade 10 Subject Combinations -->
+        <div style="margin-top: 56px;">
+          <div class="eyebrow">Subject Grouping</div>
+          <h4 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 8px;">
+            Grade 10 Subject Combinations
+          </h4>
+          <p style="font-size: 0.95rem; color: var(--ink-soft);">
+            All combinations are structured into core mandatory disciplines and a designated fifth elective.
+          </p>
+
+          <div class="table-card-wrapper">
+            <table class="unbound-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">Category</th>
+                  <th style="width: 35%;">Subjects Included</th>
+                  <th>Guidance & Alignment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>IGCSE Core Subjects</strong></td>
+                  <td>
+                    • English<br>
+                    • Physics<br>
+                    • Chemistry<br>
+                    • Mathematics
+                  </td>
+                  <td>Mandatory four-subject academic foundation for all Grade 10 candidates.</td>
+                </tr>
+                <tr>
+                  <td><strong>Fifth Subject Electives</strong></td>
+                  <td>
+                    • Biology<br>
+                    • Environmental Management<br>
+                    • Thinking Skills<br>
+                    • Economics
+                  </td>
+                  <td>
+                    <strong>Economics:</strong> Specifically recommended for SAT-oriented students.<br>
+                    <strong>Thinking Skills:</strong> Elective offering subject to teacher availability and institutional quality assurance.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="disclosure-banner">
+            <span class="icon">ℹ</span>
+            <div>
+              <strong>Disclosure regarding Thinking Skills:</strong> The provision of Thinking Skills as a fifth subject elective is strictly dependent on teacher availability and rigorous quality assurance standards.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PART 2: Highlights of Cambridge A/AS Level -->
+      <div class="board-panel" id="part2-cambridge">
+        <span class="board-part-tag">PART 2</span>
+        <h3 class="board-panel-title">Highlights of Cambridge A/AS Level (11th & 12th)</h3>
+        
+        <p class="section-lead" style="font-size: 1.0625rem; margin-bottom: 24px;">
+          Cambridge International A and AS Levels offer specialized, deep academic subject grounding, providing recognized qualifications for premier universities worldwide.
+        </p>
+
+        <!-- Exam Windows & Preferences -->
+        <div style="margin-bottom: 36px;">
+          <h4 style="font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 12px;">
+            Examination Windows & Institutional Schedule
+          </h4>
+          <p style="color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7;">
+            Cambridge conducts exam series across three annual windows: <strong>November, February, and June</strong>. The Unbound School prioritises the <strong>November and February examination windows</strong> to deliberately minimise learning interruption and seamlessly align student progressions with higher education admissions.
+          </p>
+          <p style="color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7;">
+            <strong>English Language Assessment:</strong> The curriculum includes comprehensive English language assessment as supplied in the academic regulations, ensuring proficiency benchmarks for global higher education are rigorously validated.
+          </p>
+          <p style="color: var(--ink-soft); font-size: 0.95rem; line-height: 1.7;">
+            <strong>Global University Recognition:</strong> Direct articulation pathways and course credits across leading institutions in the <strong>UK, USA, Canada, Australia, Europe</strong>, and across global higher education systems.
+          </p>
+        </div>
+
+        <!-- 11th–12th Coaching Streams -->
+        <div style="border-top: 1px solid var(--line); padding-top: 36px;">
+          <div class="eyebrow eyebrow-gold">Mandatory Integration</div>
+          <h4 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--ink); margin-bottom: 12px;">
+            11th–12th Coaching Streams
+          </h4>
+
+          <div class="rule-box">
+            <strong>Mandatory Stream Policy</strong>
+            All students must choose an integrated coaching stream. Schooling without integrated coaching is not available.
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 24px;">
+            <div style="background: var(--paper-subtle); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px 28px;">
+              <span class="board-part-tag" style="color: var(--gold);">PATHWAY 1</span>
+              <h5 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">SAT Coaching</h5>
+              <p style="font-size: 0.9375rem; color: var(--ink-soft); margin-bottom: 16px;">
+                Designed for students targeting university admissions abroad.
+              </p>
+              <ul style="list-style: none; font-size: 0.90625rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 8px;">
+                <li>• Comprehensive SAT preparation scheduled alongside board studies.</li>
+                <li>• Calibrated, less rigorous A Level study load to sustain rigorous SAT balance.</li>
+                <li>• Core subjects: English, Physics, Chemistry, Mathematics.</li>
+                <li>• Fifth subject elective options available.</li>
+                <li>• <strong>Economics</strong> recommended for international university alignment.</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--paper-subtle); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 32px 28px;">
+              <span class="board-part-tag" style="color: var(--teal);">PATHWAY 2</span>
+              <h5 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">JEE / NEET Coaching — NV Coaching</h5>
+              <p style="font-size: 0.9375rem; color: var(--ink-soft); margin-bottom: 16px;">
+                Tailored for students targeting national engineering or medical admissions in India.
+              </p>
+              <ul style="list-style: none; font-size: 0.90625rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 8px;">
+                <li>• Specialized competitive mentorship integrated directly within the timetable.</li>
+                <li>• Available under both <strong>PU (Pre-University)</strong> and <strong>IGCSE/A-Level</strong> configurations.</li>
+                <li>• Seamless synchronization between board syllabi and national entrance benchmarks.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering / Medical Subject Tables -->
+        <div style="margin-top: 48px;">
+          <div class="eyebrow">Subject Streams</div>
+          <h4 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--ink); margin-bottom: 8px;">
+            Engineering & Medical Subject Combinations
+          </h4>
+
+          <div class="table-card-wrapper">
+            <table class="unbound-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">Board Pathway</th>
+                  <th style="width: 25%;">Discipline</th>
+                  <th>Prescribed Subject Combination</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2" style="font-weight: 600;">IGCSE / Cambridge Track</td>
+                  <td><strong>Engineering</strong></td>
+                  <td>English + Physics + Chemistry + Mathematics</td>
+                </tr>
+                <tr>
+                  <td><strong>Medical</strong></td>
+                  <td>English + Physics + Chemistry + Biology</td>
+                </tr>
+                <tr>
+                  <td rowspan="2" style="font-weight: 600;">PU (Pre-University) Track</td>
+                  <td><strong>Engineering</strong></td>
+                  <td>English + Physics + Chemistry + Mathematics + Second Language</td>
+                </tr>
+                <tr>
+                  <td><strong>Medical</strong></td>
+                  <td>English + Physics + Chemistry + Biology + Second Language</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink); background: var(--paper-subtle); padding: 12px 18px; border-radius: var(--radius-sm); border: 1px solid var(--line);">
+            <strong>Rule:</strong> Pure Science will include Mathematics by default.
+          </div>
+        </div>
+
+        <!-- NIOS Track -->
+        <div style="margin-top: 48px;">
+          <div style="background: var(--paper-subtle); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 24px;">
+            <h5 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); margin-bottom: 8px;">
+              National Institute of Open Schooling (NIOS) Pathway
+            </h5>
+            <p style="font-size: 0.90625rem; color: var(--ink-soft); margin: 0;">
+              Dedicated track reserved for <strong>Class 10</strong> and <strong>Class 12</strong> candidates.
+            </p>
+          </div>
+        </div>
+
+        <!-- IGCSE vs CBSE Comparison Table -->
+        <div style="margin-top: 48px;">
+          <div class="eyebrow">Objective Assessment</div>
+          <h4 style="font-family: var(--font-display); font-size: 1.4rem; color: var(--ink); margin-bottom: 8px;">
+            IGCSE vs CBSE Curriculum Comparison
+          </h4>
+          <p style="font-size: 0.95rem; color: var(--ink-soft);">
+            A balanced and informative analysis to help parents assess structural and pedagogical differences.
+          </p>
+
+          <div class="table-card-wrapper">
+            <table class="unbound-table">
+              <thead>
+                <tr>
+                  <th style="width: 25%;">Dimension</th>
+                  <th style="width: 37%;">Cambridge IGCSE</th>
+                  <th style="width: 38%;">CBSE</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Subject Structure</strong></td>
+                  <td>Linear structure combining core competencies with tailored higher-level elective options.</td>
+                  <td>Standardized national curriculum framework across secondary levels.</td>
+                </tr>
+                <tr>
+                  <td><strong>Organization of Subjects</strong></td>
+                  <td>Focused study with flexible tiered levels tailored to candidate capability.</td>
+                  <td>Prescribed subject bundles with predetermined national grouping.</td>
+                </tr>
+                <tr>
+                  <td><strong>Focus</strong></td>
+                  <td>Analytical inquiry, practical data interpretation, and conceptual application.</td>
+                  <td>Strong theoretical mastery, content breadth, and national entrance alignment.</td>
+                </tr>
+                <tr>
+                  <td><strong>Flexibility</strong></td>
+                  <td>High flexibility in choosing elective combinations (e.g., Economics alongside pure sciences).</td>
+                  <td>Structured stream-based grouping (Science/Commerce/Humanities) with fixed subjects.</td>
+                </tr>
+                <tr>
+                  <td><strong>Practical Component</strong></td>
+                  <td>Central part of assessment — laboratory technique, error calculation, and experimentation.</td>
+                  <td>Practical lab assessments conducted per internal and annual board regulations.</td>
+                </tr>
+                <tr>
+                  <td><strong>Learning Approach</strong></td>
+                  <td>Inquiry-driven discovery, evidence evaluation, and structured problem solving.</td>
+                  <td>Systematic syllabus coverage, structured recall, and cumulative testing.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Model Section -->
+  <section class="model-section">
+    <div class="container">
+      <div class="eyebrow">Pedagogical Framework</div>
+      <h2 class="section-title">A research-based, proprietary model.</h2>
+      <p class="section-lead">
+        Eight deliberate classroom mechanisms designed to turn curriculum design into lived student capability.
+      </p>
+
+      <div class="model-grid">
+        <div class="model-card">
+          <div class="model-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1kg7Dw7RPE2gAYZoN5AJ3rudUSjmFSRnD" 
+                 alt="Labs First, Books Next" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1kg7Dw7RPE2gAYZoN5AJ3rudUSjmFSRnD&sz=w1200';" />
+          </div>
+          <div class="model-body">
+            <span class="model-tag">In the classroom</span>
+            <h3 class="model-title">Labs First, Books Next</h3>
+            <p class="model-desc">25% of classroom time is dedicated to laboratory learning — concepts are discovered by doing, then strengthened through textbooks.</p>
+          </div>
+        </div>
+
+        <div class="model-card">
+          <div class="model-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1NflfJDh3FqeUbvErb4wjFf5wirQ2AJI0" 
+                 alt="Focus Period" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1NflfJDh3FqeUbvErb4wjFf5wirQ2AJI0&sz=w1200';" />
+          </div>
+          <div class="model-body">
+            <span class="model-tag">Deep work</span>
+            <h3 class="model-title">Focus Period</h3>
+            <p class="model-desc">Dedicated time to tackle challenging problems and build the advanced problem-solving skills Olympiads and entrance exams demand.</p>
+          </div>
+        </div>
+
+        <div class="model-card">
+          <div class="model-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1LSWESOCvy9DN6nLI1auMbLB85DC0io2p" 
+                 alt="ME Period" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1LSWESOCvy9DN6nLI1auMbLB85DC0io2p&sz=w1200';" />
+          </div>
+          <div class="model-body">
+            <span class="model-tag">Autonomy–Mastery–Purpose</span>
+            <h3 class="model-title">ME Period</h3>
+            <p class="model-desc">Dedicated time and freedom for every student to pursue excellence in a field of their own choosing.</p>
+          </div>
+        </div>
+
+        <div class="model-card">
+          <div class="model-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/11LB3nYlb_gqLLufxjMFwe6xf9v6NyG_u" 
+                 alt="Peer Teaching" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=11LB3nYlb_gqLLufxjMFwe6xf9v6NyG_u&sz=w1200';" />
+          </div>
+          <div class="model-body">
+            <span class="model-tag">Learn by teaching</span>
+            <h3 class="model-title">Peer Teaching</h3>
+            <p class="model-desc">Students deepen their own understanding by explaining concepts to their peers — building mastery and communication together.</p>
+          </div>
+        </div>
+
+        <div class="model-card">
+          <div class="model-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1t__nQgdpZAM1q8VPVdt4YO_K5Y_C-hOj" 
+                 alt="The DEEPLE Platform" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1t__nQgdpZAM1q8VPVdt4YO_K5Y_C-hOj&sz=w1200';" />
+          </div>
+          <div class="model-body">
+            <span class="model-tag">Technology-enabled</span>
+            <h3 class="model-title">The DEEPLE Platform</h3>
+            <p class="model-desc">Our proprietary platform enables personalised, differentiated learning and gives real-time insight into every student's progress.</p>
+          </div>
+        </div>
+
+        <div class="model-card">
+          <div class="model-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1eSvPE2d_FwY-6bIwEqt9P7XV-kAlRwXr" 
+                 alt="Multi-Modal Assessment" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1eSvPE2d_FwY-6bIwEqt9P7XV-kAlRwXr&sz=w1200';" />
+          </div>
+          <div class="model-body">
+            <span class="model-tag">Beyond a single test</span>
+            <h3 class="model-title">Multi-Modal Assessment</h3>
+            <p class="model-desc">A continuum of projects, prototypes, debates, presentations and dramas gives a richer picture of learning and supports holistic development.</p>
+          </div>
+        </div>
+
+        <div class="model-card">
+          <div class="model-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1ySHyBkxEgemfzIW68_ITVLXdeAoqCDcq" 
+                 alt="Interdisciplinary Learning" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1ySHyBkxEgemfzIW68_ITVLXdeAoqCDcq&sz=w1200';" />
+          </div>
+          <div class="model-body">
+            <span class="model-tag">Woven together</span>
+            <h3 class="model-title">Interdisciplinary Learning</h3>
+            <p class="model-desc">Languages and social studies are thoughtfully integrated to build deeper connections and make the most of classroom time.</p>
+          </div>
+        </div>
+
+        <div class="model-card">
+          <div class="model-image-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1kfiM7MvdnU0hmBcjADDOVD_ZI7tj80sO" 
+                 alt="Unbound Learning" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1kfiM7MvdnU0hmBcjADDOVD_ZI7tj80sO&sz=w1200';" />
+          </div>
+          <div class="model-body">
+            <span class="model-tag">Past the syllabus</span>
+            <h3 class="model-title">Unbound Learning</h3>
+            <p class="model-desc">Space to go beyond the prescribed curriculum — to pursue interests, explore advanced concepts, and build real expertise.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subjects Section -->
+  <section class="subjects-section">
+    <div class="container">
+      <div class="eyebrow eyebrow-gold">Subject Architecture</div>
+      <h2 class="section-title">A balanced, deliberately broad foundation.</h2>
+      <p class="section-lead">
+        Five interconnected pillars spanning rigorous academic inquiry, rich cultural literature, and real-world life competencies.
+      </p>
+
+      <div class="subjects-grid">
+        <div class="subject-card">
+          <div class="subject-icon-wrap">Σ</div>
+          <h3 class="subject-name">Core Subjects</h3>
+          <p class="subject-desc">
+            Mathematics (Extended), Physics, Chemistry, Biology, ICT, and Global Perspectives spanning History, Geography, Economics and Civics.
+          </p>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon-wrap">Aa</div>
+          <h3 class="subject-name">English</h3>
+          <p class="subject-desc">
+            Aligned with Cambridge IGCSE (0500), bridging academic writing, classical literature, and the personal essays global university applications demand.
+          </p>
+        </div>
+
+        <div class="subject-card gold-accent">
+          <div class="subject-icon-wrap">ಅ</div>
+          <h3 class="subject-name">Indian Languages</h3>
+          <p class="subject-desc">
+            Alongside Kannada, our "Voices of India" programme explores Tagore, Thiruvalluvar, Kabir, Bhupen Hazarika and more, in translation.
+          </p>
+        </div>
+
+        <div class="subject-card gold-accent">
+          <div class="subject-icon-wrap">★</div>
+          <h3 class="subject-name">Life Skills</h3>
+          <p class="subject-desc">
+            Structured courses in Growth Mindset, Learning How to Learn, Time Management, Financial Literacy, Emotional Intelligence and Leadership.
+          </p>
+        </div>
+
+        <div class="subject-card">
+          <div class="subject-icon-wrap">⚡</div>
+          <h3 class="subject-name">Electives & Enrichment</h3>
+          <p class="subject-desc">
+            Computer Science & AI, Art & Design, Music & Drama, and Physical Education — discovering passions alongside academics.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journey Section -->
+  <section class="journey-section">
+    <div class="container">
+      <div class="eyebrow">Progression Map</div>
+      <h2 class="section-title">Every stage builds the foundation for the next.</h2>
+      <p class="section-lead">
+        Rather than treating each grade as an isolated milestone, our curriculum follows a carefully designed progression — building knowledge, skills, confidence and independence over eight transformative years.
+      </p>
+
+      <div class="timeline-nav">
+        <button class="timeline-btn active" data-stage="1">Grade 5–6</button>
+        <button class="timeline-btn" data-stage="2">Grade 7–8</button>
+        <button class="timeline-btn" data-stage="3">Grade 9–10</button>
+        <button class="timeline-btn" data-stage="4">Grade 11–12</button>
+      </div>
+
+      <div id="stageCard1" class="stage-card-display">
+        <div class="stage-content-wrap">
+          <div class="stage-grade-label">STAGE 01 · GRADES 5–6</div>
+          <h3 class="stage-title">Laying Strong Foundations</h3>
+          <p class="stage-desc">
+            Deep conceptual understanding across every subject. Students build fluency in arithmetic, language and scientific observation, and are introduced to algebra, geometry, logical reasoning, lab investigations and structured research projects — while learning to organise, communicate and collaborate.
+          </p>
+          <ul class="stage-bullets">
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Early introduction to Algebra & Geometry</span>
+            </li>
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>25% Classroom time in hands-on Science Labs</span>
+            </li>
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Structured inquiry and collaborative communication</span>
+            </li>
+          </ul>
+        </div>
+        <div class="stage-image-wrap">
+          <img src="https://lh3.googleusercontent.com/d/1AGdRrKrs1hE13Ry7fsflsVzt9YBVOfHM" 
+               alt="Grade 5-6 Laying Strong Foundations" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1AGdRrKrs1hE13Ry7fsflsVzt9YBVOfHM&sz=w1200';" />
+        </div>
+      </div>
+
+      <div id="stageCard2" class="stage-card-display" style="display: none;">
+        <div class="stage-content-wrap">
+          <div class="stage-grade-label">STAGE 02 · GRADES 7–8</div>
+          <h3 class="stage-title">Deepening Understanding, Discovering Potential</h3>
+          <p class="stage-desc">
+            The curriculum expands in depth and complexity — Trigonometry, Quadratic Equations, Functions and Sequences, alongside inquiry-driven science. Students are exposed to competition-level problem solving, and those with exceptional aptitude receive additional mentoring.
+          </p>
+          <ul class="stage-bullets">
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Trigonometry & Quadratic Equations introduced as familiar tools</span>
+            </li>
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Exposure to competition-level problem sets (IOQM, NSEJS)</span>
+            </li>
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Inquiry-driven experiments with quantitative analysis</span>
+            </li>
+          </ul>
+        </div>
+        <div class="stage-image-wrap">
+          <img src="https://lh3.googleusercontent.com/d/1Kxf_wAPCzANQDTOMH5Bqkw2xiNn0x_1R" 
+               alt="Grade 7-8 Deepening Understanding" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1Kxf_wAPCzANQDTOMH5Bqkw2xiNn0x_1R&sz=w1200';" />
+        </div>
+      </div>
+
+      <div id="stageCard3" class="stage-card-display" style="display: none;">
+        <div class="stage-content-wrap">
+          <div class="stage-grade-label">STAGE 03 · GRADES 9–10</div>
+          <h3 class="stage-title">Building Mastery</h3>
+          <p class="stage-desc">
+            By Grade 9, 50–85% of the high-school curriculum has already been introduced — so students refine concepts and exam strategy rather than learn entirely new material under pressure, while being gradually introduced to SAT, JEE and NEET-level thinking.
+          </p>
+          <ul class="stage-bullets">
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>50–85% of high-school syllabus pre-mastered without rush</span>
+            </li>
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Cambridge IGCSE Extended Board examinations mastery</span>
+            </li>
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Gradual bridge to JEE / NEET / SAT analytical depth</span>
+            </li>
+          </ul>
+        </div>
+        <div class="stage-image-wrap">
+          <img src="https://lh3.googleusercontent.com/d/1YIqzdl3q-aOwNPDyzYr3di6L-jtZz3DD" 
+               alt="Grade 9-10 Building Mastery" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1YIqzdl3q-aOwNPDyzYr3di6L-jtZz3DD&sz=w1200';" />
+        </div>
+      </div>
+
+      <div id="stageCard4" class="stage-card-display" style="display: none;">
+        <div class="stage-content-wrap">
+          <div class="stage-grade-label">STAGE 04 · GRADES 11–12</div>
+          <h3 class="stage-title">Preparing for the World Beyond School</h3>
+          <p class="stage-desc">
+            Students choose Science, Commerce or Humanities pathways, combining board exam preparation with JEE, NEET, CUET, CLAT and SAT coaching — plus personalised mentoring, career counselling, university application guidance and interview preparation.
+          </p>
+          <ul class="stage-bullets">
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Integrated entrance coaching in the regular school day</span>
+            </li>
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Global university admissions & portfolio mentorship</span>
+            </li>
+            <li class="stage-bullet-item">
+              <span class="stage-bullet-icon">✓</span>
+              <span>Career counseling, interview prep, and life skills execution</span>
+            </li>
+          </ul>
+        </div>
+        <div class="stage-image-wrap">
+          <img src="https://lh3.googleusercontent.com/d/16OBBnniCB5AGp8uHYiOcPM0acusGeO6t" 
+               alt="Grade 11-12 Preparing for the World Beyond School" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=16OBBnniCB5AGp8uHYiOcPM0acusGeO6t&sz=w1200';" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Section: Our Founding Team (Identical Aspect Ratios and Standardized Images) -->
+  <section id="founders" class="founders-section">
+    <div class="container">
+      <div class="eyebrow">Leadership</div>
+      <h2 class="section-title">Built by educators, for the world our children will inherit.</h2>
+      <p class="section-lead">
+        A collective of proven institution-builders, competitive exam mentors, and academic leaders dedicated to redefining Indian schooling.
+      </p>
+
+      <div class="founders-grid">
+        <!-- Founder 1 -->
+        <div class="founder-card">
+          <div class="founder-photo-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1FftbDG-drCDeYTnHjeY1ReQ7WITi0-0i" 
+                 alt="Capt. Unni Gopala Krishnan" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1FftbDG-drCDeYTnHjeY1ReQ7WITi0-0i&sz=w1200';" />
+          </div>
+          <div class="founder-details">
+            <h3 class="founder-name">Capt. Unni Gopala Krishnan</h3>
+            <div class="founder-role">Director, The Unbound School</div>
+            <p class="founder-bio">Founder of many reputed schools in India</p>
+          </div>
+        </div>
+
+        <!-- Founder 2: Nimish Vikas -->
+        <div class="founder-card">
+          <div class="founder-photo-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1JgvyGB-Ux3NLAzY7AF6AhY9QPMnv3GLZ" 
+                 alt="Nimish Vikas" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1JgvyGB-Ux3NLAzY7AF6AhY9QPMnv3GLZ&sz=w1200';" />
+          </div>
+          <div class="founder-details">
+            <h3 class="founder-name">Nimish Vikas</h3>
+            <div class="founder-role">Director, The Unbound School</div>
+            <p class="founder-bio">Founder & Director, NV Classes</p>
+          </div>
+        </div>
+
+        <!-- Founder 3: Rakhi Bhatia -->
+        <div class="founder-card">
+          <div class="founder-photo-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1d63VAN26PCR51jr66M08JU2To92J4f6a" 
+                 alt="Rakhi Bhatia" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1d63VAN26PCR51jr66M08JU2To92J4f6a&sz=w1200';" />
+          </div>
+          <div class="founder-details">
+            <h3 class="founder-name">Rakhi Bhatia</h3>
+            <div class="founder-role">Director, The Unbound School</div>
+            <p class="founder-bio">Co-Founder, NV Classes</p>
+          </div>
+        </div>
+
+        <!-- Founder 4: Rajeev Kumar Singh -->
+        <div class="founder-card">
+          <div class="founder-photo-wrap">
+            <img src="https://lh3.googleusercontent.com/d/1bIswIrMOAY_nKk-64ABd9pf3TndpTKvO" 
+                 alt="Rajeev Kumar Singh" 
+                 onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1bIswIrMOAY_nKk-64ABd9pf3TndpTKvO&sz=w1200';" />
+          </div>
+          <div class="founder-details">
+            <h3 class="founder-name">Rajeev Kumar Singh</h3>
+            <div class="founder-role">Director, The Unbound School</div>
+            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Frequently Asked Questions -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div class="faq-layout">
+        <div class="faq-intro-card">
+          <div class="eyebrow">Frequently Asked</div>
+          <h2 class="section-title" style="font-size: 2.25rem;">Questions parents ask us most.</h2>
+          <p class="section-lead" style="font-size: 1.05rem;">
+            Clear, straightforward answers about how our integrated model supports every child's academic aspirations and well-being.
+          </p>
+          <!-- School campus photo at bottom of page -->
+          <img src="https://lh3.googleusercontent.com/d/1s0zA4EYfDu7e7OcetQmur5pWFzKqBY4-" 
+               alt="The Unbound School Campus & Learning Facilities" 
+               class="faq-feature-img" 
+               onerror="this.onerror=null; this.src='https://drive.google.com/uc?export=view&id=1s0zA4EYfDu7e7OcetQmur5pWFzKqBY4-';" />
+        </div>
+
+        <div class="accordion-list">
+          <div class="accordion-item active">
+            <button class="accordion-header" aria-expanded="true">
+              <span>Will my child need external coaching classes?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                No. Our curriculum is intentionally designed to eliminate the need for external coaching at every stage. Olympiad preparation in the middle years, and JEE, NEET, CUET, CLAT and SAT preparation in the senior years, are integrated into the school day — through extended learning hours, expert faculty and structured practice — so students can excel while maintaining a healthier, more balanced lifestyle.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>Is Cambridge IGCSE recognised by Indian and international universities?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Yes. Cambridge IGCSE is recognised by leading universities across India and around the world. Students are eligible to pursue admissions through JEE, NEET, CUET and CLAT, as well as universities in the UK, US, Canada, Australia, Singapore and beyond.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>What if my child needs additional support — or is ready for greater challenges?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Every child learns differently. Students requiring additional assistance receive timely, targeted interventions based on continuous assessment and real-time analytics from our DEEPLE platform. Students who demonstrate advanced ability are supported through enrichment programmes, competition preparation and accelerated learning opportunities.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>How is technology used in the classroom?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Technology enhances learning — it never replaces meaningful teaching. Our DEEPLE platform provides adaptive practice, personalised recommendations and progress tracking, while the heart of the classroom remains an inspiring teacher, a well-designed lesson and hands-on experimentation.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span>What makes The Unbound School different from other IGCSE schools?</span>
+              <span class="accordion-icon">+</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Three things: we introduce key concepts earlier, giving students years rather than months to build understanding; roughly one in four classes is experiential — labs, projects, debates and design challenges; and we recognise every child learns differently, with accelerated pathways for some and personalised support for others.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">Unbound</div>
+          <p class="footer-tagline">
+            “Free from fear. Free from convention. Free from the limitations others may place on you.”
+          </p>
+          <div class="footer-meta-badges">
+            <span class="footer-badge">The Unbound School</span>
+            <span class="footer-badge">Cambridge IGCSE Accredited</span>
+            <span class="footer-badge">Grades 5–12</span>
+          </div>
+        </div>
+
+        <div class="footer-links-grid">
+          <div>
+            <div class="footer-col-title">Navigation</div>
+            <ul class="footer-links-list">
+              <li><a href="#vision">Our Vision</a></li>
+              <li><a href="#curriculum">Four Pillars</a></li>
+              <li><a href="#board-details">Board Details</a></li>
+              <li><a href="#founders">Founding Team</a></li>
+              <li><a href="#faq">Parent FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer-col-title">Framework</div>
+            <ul class="footer-links-list">
+              <li><a href="#curriculum">Labs-First Model</a></li>
+              <li><a href="#curriculum">The DEEPLE Platform</a></li>
+              <li><a href="#board-details">Integrated Coaching Streams</a></li>
+              <li><a href="#curriculum">Life Skills Courses</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 The Unbound School. All rights reserved.</div>
+        <div>Cambridge IGCSE Extended & Integrated Academic Curriculum</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Theme Switcher (Light / Dark Mode)
+    const themeToggleBtn = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('themeIconSun');
+    const moonIcon = document.getElementById('themeIconMoon');
+    const htmlEl = document.documentElement;
+
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let currentTheme = localStorage.getItem('unbound-theme') || (prefersDark ? 'dark' : 'light');
+
+    function applyTheme(theme) {
+      htmlEl.setAttribute('data-theme', theme);
+      localStorage.setItem('unbound-theme', theme);
+      if (theme === 'dark') {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+      } else {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+      }
+    }
+
+    applyTheme(currentTheme);
+
+    themeToggleBtn.addEventListener('click', () => {
+      currentTheme = (currentTheme === 'light') ? 'dark' : 'light';
+      applyTheme(currentTheme);
+    });
+
+    // Mobile Navigation Drawer Toggle
+    const mobileToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    if (mobileToggle && navMenu) {
+      mobileToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('open');
+      });
+
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+        });
+      });
+    }
+
+    // Interactive Eight-Year Journey Tabs
+    const timelineButtons = document.querySelectorAll('.timeline-btn');
+    const stageCards = {
+      '1': document.getElementById('stageCard1'),
+      '2': document.getElementById('stageCard2'),
+      '3': document.getElementById('stageCard3'),
+      '4': document.getElementById('stageCard4')
+    };
+
+    timelineButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const stageNum = button.getAttribute('data-stage');
+        
+        timelineButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        Object.keys(stageCards).forEach(key => {
+          if (key === stageNum) {
+            stageCards[key].style.display = 'grid';
+            stageCards[key].style.opacity = '0';
+            setTimeout(() => {
+              stageCards[key].style.transition = 'opacity 0.4s ease';
+              stageCards[key].style.opacity = '1';
+            }, 10);
+          } else {
+            stageCards[key].style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // FAQ Accordion
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isActive = item.classList.contains('active');
+
+        document.querySelectorAll('.accordion-item').forEach(otherItem => {
+          otherItem.classList.remove('active');
+          otherItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          header.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Smooth Scroll Active Link Highlight
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.pageYOffset;
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 100;
+        const sectionId = current.getAttribute('id');
+        const link = document.querySelector(`.nav-menu a[href*='${sectionId}']`);
+        
+        if (link) {
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
