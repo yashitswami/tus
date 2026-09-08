@@ -1354,99 +1354,118 @@
     }
 
     /* ==========================================================================
-       Founders Grid - Exact Aspect Ratio Lock & Horizontal Alignment Fix
-       ========================================================================== */
-    .founders-section {
-      padding: 110px 0;
-      background: var(--paper-subtle);
-      border-top: 1px solid var(--line);
-    }
+   Founders Grid - Exact Aspect Ratio Lock & Optical Head-Scale Balance
+   ========================================================================== */
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+  align-items: stretch;
+}
 
-    .founders-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 28px;
-      margin-top: 56px;
-      align-items: stretch;
-    }
+.founder-card {
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-    .founder-card {
-      background: var(--paper-raised);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
+.founder-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--teal);
+}
 
-    .founder-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--teal);
-    }
+/* Strict uniform image container */
+.founder-photo-wrap {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  background-color: #f1f5f0;
+  flex-shrink: 0;
+}
 
-    .founder-photo-wrap {
-      width: 100%;
-      height: 310px;
-      position: relative;
-      overflow: hidden;
-      background-color: var(--paper-muted);
-      flex-shrink: 0;
-    }
+.founder-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
 
-    .founder-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      display: block;
-      transition: transform 0.6s ease;
-    }
+/* Optical framing corrections:
+   Zooms in on wide/half-body shots to equalize head sizes with Founders 1 & 4 */
+.founder-card .founder-zoom-nimish {
+  transform: scale(1.42) translateY(2%);
+  transform-origin: 50% 18%;
+}
 
-    .founder-card:hover .founder-photo-wrap img {
-      transform: scale(1.05);
-    }
+.founder-card .founder-zoom-rakhi {
+  transform: scale(1.85) translateY(4%);
+  transform-origin: 50% 16%;
+}
 
-    .founder-details {
-      padding: 24px 20px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      background: var(--paper-raised);
-    }
+.founder-details {
+  padding: 24px 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper-raised);
+}
 
-    .founder-name {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--ink);
-      line-height: 1.25;
-      margin-bottom: 6px;
-      min-height: 3rem;
-      display: flex;
-      align-items: flex-end;
-    }
+.founder-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 6px;
+  min-height: 2.8rem;
+  display: flex;
+  align-items: flex-end;
+}
 
-    .founder-role {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 12px;
-    }
+.founder-role {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
 
-    .founder-bio {
-      font-size: 0.875rem;
-      color: var(--ink-soft);
-      line-height: 1.55;
-      margin-top: auto;
-    }
+.founder-bio {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  margin-top: auto;
+}
 
+@media (max-width: 1024px) {
+  .founders-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .founder-photo-wrap {
+    height: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+  .founder-photo-wrap {
+    height: 360px;
+  }
+}
     /* FAQ Section */
     .faq-section {
       padding: 110px 0;
@@ -2788,7 +2807,7 @@
       </p>
 
       <div class="founders-grid">
-        <!-- Founder 1 -->
+        <!-- Founder 1: Capt. Unni Gopala Krishnan -->
         <div class="founder-card">
           <div class="founder-photo-wrap">
             <img src="https://lh3.googleusercontent.com/d/1FftbDG-drCDeYTnHjeY1ReQ7WITi0-0i" 
@@ -2798,35 +2817,37 @@
           <div class="founder-details">
             <h3 class="founder-name">Capt. Unni Gopala Krishnan</h3>
             <div class="founder-role">Director, The Unbound School</div>
-            <p class="founder-bio">Founder of many reputed schools in India[cite: 1]</p>
+            <p class="founder-bio">Founder of many reputed schools in India</p>
           </div>
         </div>
 
-        <!-- Founder 2: Nimish Vikas -->
+        <!-- Founder 2: Nimish Vikas (Zoomed to match close-up framing) -->
         <div class="founder-card">
           <div class="founder-photo-wrap">
-            <img src="https://lh3.googleusercontent.com/d/1JgvyGB-Ux3NLAzY7AF6AhY9QPMnv3GLZ" 
+            <img class="founder-zoom-nimish" 
+                 src="https://lh3.googleusercontent.com/d/1JgvyGB-Ux3NLAzY7AF6AhY9QPMnv3GLZ" 
                  alt="Nimish Vikas" 
                  onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1JgvyGB-Ux3NLAzY7AF6AhY9QPMnv3GLZ&sz=w1000';" />
           </div>
           <div class="founder-details">
             <h3 class="founder-name">Nimish Vikas</h3>
             <div class="founder-role">Director, The Unbound School</div>
-            <p class="founder-bio">Founder & Director, NV Classes[cite: 1]</p>
+            <p class="founder-bio">Founder & Director, NV Classes</p>
           </div>
         </div>
 
-        <!-- Founder 3: Rakhi Bhatia -->
+        <!-- Founder 3: Rakhi Bhatia (Zoomed from knees-up to close portrait framing) -->
         <div class="founder-card">
           <div class="founder-photo-wrap">
-            <img src="https://lh3.googleusercontent.com/d/1d63VAN26PCR51jr66M08JU2To92J4f6a" 
+            <img class="founder-zoom-rakhi" 
+                 src="https://lh3.googleusercontent.com/d/1d63VAN26PCR51jr66M08JU2To92J4f6a" 
                  alt="Rakhi Bhatia" 
                  onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1d63VAN26PCR51jr66M08JU2To92J4f6a&sz=w1000';" />
           </div>
           <div class="founder-details">
             <h3 class="founder-name">Rakhi Bhatia</h3>
             <div class="founder-role">Director, The Unbound School</div>
-            <p class="founder-bio">Co-Founder, NV Classes[cite: 1]</p>
+            <p class="founder-bio">Co-Founder, NV Classes</p>
           </div>
         </div>
 
@@ -2840,13 +2861,12 @@
           <div class="founder-details">
             <h3 class="founder-name">Rajeev Kumar Singh</h3>
             <div class="founder-role">Director, The Unbound School</div>
-            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor[cite: 1]</p>
+            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor</p>
           </div>
         </div>
       </div>
     </div>
   </section>
-
   <!-- Section: Frequently Asked Questions -->
   <section id="faq" class="faq-section">
     <div class="container">
