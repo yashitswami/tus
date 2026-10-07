@@ -1,9 +1,14 @@
-<!-- The Unbound School V2.7 
-     Compiled and finalized based on the approved website brief:
-     1. Version standardized strictly to Version 2.7 across internal headers and footer.
-     2. "Educating for the world beyond the exam." removed; "Our Vision" established as primary heading.
-     3. Standalone "Highlights of Cambridge AS / A Level" block completely removed.
-     4. Verified DOM section sequence:
+<!-- The Unbound School V2.7
+     Final Targeted Update:
+     1. Practicals in Action images mapped to the approved lab photo series:
+        - 01 STEM Lab: Stem Lab.png (drone quadcopter & electronics)
+        - 02 Biology Lab: Biology Lab.png (specimen in container & microscopy)
+        - 03 Chemistry Lab: Chemistry Lab.png (glassware & reaction titration)
+        - 04 Physics Lab: Physics Lab.png (optical laser experiment)
+        - 05 Mathematics Lab: Mathematics Lab.png (spatial geometry models)
+        - 06 Theme Room: Theme Room.png (world map mural discussion)
+     2. Standardized 3:2 landscape aspect-ratio presentation across all 6 cards.
+     3. Exact DOM sequence verified:
         Practicals in Action 
         -> Board Details & Academic Pathways (Step 01 & Step 02)
         -> Integrated Academic Architecture (JEE/NEET, SAT, and NIOS)
@@ -11,12 +16,7 @@
         -> Founders
         -> FAQ
         -> Footer
-     5. NIOS restored and grouped under Integrated Academic Architecture.
-     6. Board Details streamlined (Step 01: Choice of Subjects with 5-subject norm; Step 02: AS / A Level 6-Month Head Start).
-     7. Language regulation updated: "Kannada is taught till Grade 8".
-     8. "objective national board comparisons" removed from Board Details intro.
-     9. Canonical Founder sequence verified: Capt Unni Krishnan, Nimish Vikas, Rakhi Bhatia, Rajeev Kumar Singh.
-     10. Bright institutional theme, responsive navigation, and active enquiry links preserved.
+     4. Bright institutional theme, Literata headings, and all approved copy strictly preserved.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -591,7 +591,7 @@
     }
 
     /* ==========================================================================
-       Practicals in Action (Immediately preceding Board Details)
+       Practicals in Action (3:2 Aspect Ratio Presentation)
        ========================================================================== */
     .practicals-section {
       padding: 96px 0;
@@ -622,8 +622,10 @@
       border-color: var(--teal);
     }
 
+    /* Strict uniform 3:2 aspect-ratio presentation */
     .practical-media-box {
-      height: 200px;
+      width: 100%;
+      aspect-ratio: 3 / 2;
       background: var(--paper-subtle);
       position: relative;
       display: flex;
@@ -636,6 +638,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .practical-item:hover .practical-media-box img {
+      transform: scale(1.03);
     }
 
     .media-badge {
@@ -1521,7 +1530,7 @@
   </section>
 
   <!-- ==========================================================================
-       PRACTICALS IN ACTION (Directly BEFORE Board Details)
+       PRACTICALS IN ACTION (Positioned BEFORE Board Details)
        ========================================================================== -->
   <section id="practicals" class="practicals-section">
     <div class="container">
@@ -1535,7 +1544,9 @@
         <!-- 01 STEM Lab -->
         <div class="practical-item">
           <div class="practical-media-box">
-            <img src="https://lh3.googleusercontent.com/d/1kg7Dw7RPE2gAYZoN5AJ3rudUSjmFSRnD" alt="STEM Lab at The Unbound School" />
+            <img src="Stem Lab.png" 
+                 alt="Students in STEM lab assembling and testing a drone electronics project" 
+                 onerror="this.onerror=null; this.src='stem-lab.png';" />
             <span class="media-badge">01 · STEM Lab</span>
           </div>
           <div class="practical-body">
@@ -1549,7 +1560,9 @@
         <!-- 02 Biology Lab -->
         <div class="practical-item">
           <div class="practical-media-box">
-            <img src="https://lh3.googleusercontent.com/d/1HU9mAWX0abUfCRkjvb4hwH2a1GBUG7FM" alt="Biology Lab Specimen Analysis" />
+            <img src="Biology Lab.png" 
+                 alt="Students in Biology lab studying a biological specimen in a laboratory container" 
+                 onerror="this.onerror=null; this.src='biology-lab.png';" />
             <span class="media-badge">02 · Biology Lab</span>
           </div>
           <div class="practical-body">
@@ -1563,7 +1576,9 @@
         <!-- 03 Chemistry Lab -->
         <div class="practical-item">
           <div class="practical-media-box">
-            <img src="https://lh3.googleusercontent.com/d/10iZiOA9sjw8uG8XWXbZ8fq-vp9mwyiDn" alt="Chemistry Lab at The Unbound School" />
+            <img src="Chemistry Lab.png" 
+                 alt="Students conducting chemistry experiments with laboratory glassware and coloured liquids" 
+                 onerror="this.onerror=null; this.src='chemistry-lab.png';" />
             <span class="media-badge">03 · Chemistry Lab</span>
           </div>
           <div class="practical-body">
@@ -1577,7 +1592,9 @@
         <!-- 04 Physics Lab -->
         <div class="practical-item">
           <div class="practical-media-box">
-            <img src="https://lh3.googleusercontent.com/d/1AGdRrKrs1hE13Ry7fsflsVzt9YBVOfHM" alt="Physics Lab Calorimetry & Measurement" />
+            <img src="Physics Lab.png" 
+                 alt="Students conducting an optical laser physics experiment" 
+                 onerror="this.onerror=null; this.src='physics-lab.png';" />
             <span class="media-badge">04 · Physics Lab</span>
           </div>
           <div class="practical-body">
@@ -1591,7 +1608,9 @@
         <!-- 05 Mathematics Lab -->
         <div class="practical-item">
           <div class="practical-media-box">
-            <img src="https://lh3.googleusercontent.com/d/1Kxf_wAPCzANQDTOMH5Bqkw2xiNn0x_1R" alt="Mathematics Spatial Geometry Lab" />
+            <img src="Mathematics Lab.png" 
+                 alt="Student exploring mathematics, geometry, and 3D mathematical models" 
+                 onerror="this.onerror=null; this.src='Mathematics Lab.jpg';" />
             <span class="media-badge">05 · Mathematics Lab</span>
           </div>
           <div class="practical-body">
@@ -1605,7 +1624,9 @@
         <!-- 06 Theme Room -->
         <div class="practical-item">
           <div class="practical-media-box">
-            <img src="https://lh3.googleusercontent.com/d/1ov_XxVL8ILn1TsQiWhSXWDmudimz3axI" alt="Social Studies Immersive Theme Room" />
+            <img src="Theme Room.png" 
+                 alt="Students in a discussion and debate setting in front of a world map wall mural" 
+                 onerror="this.onerror=null; this.src='theme-room.png';" />
             <span class="media-badge">06 · Theme Room</span>
           </div>
           <div class="practical-body">
