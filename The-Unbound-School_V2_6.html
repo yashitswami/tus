@@ -1,19 +1,16 @@
-<!-- The Unbound School V2.6 — Version 2.6.1 Final Revision
-     Updated from V2.5/V2.6 based on the 7-Oct-2026 meeting markup:
-     1. Bright/Light institutional theme reinstated (Dark-mode toggle removed).
-     2. Monogram removed from header; font standardized to Literata for "The Unbound School".
-     3. Official logo image integrated into the Hero visual card replacing the jacket vector.
-     4. Redundant hero badges/pills cleaned up.
-     5. Standalone "Academics at Unbound" block removed.
-     6. "Our Philosophy" streamlined: "Every parent asks... conventional ways of schooling."
-     7. The Promise text color made dark/contrast-compliant for optimal legibility.
-     8. "What is special at Unbound" principles cleaned of label words like "PRINCIPLE".
-     9. STRUCTURAL SHIFT: "Practicals in Action" moved directly BEFORE Board Details.
-     10. Choice of Subjects: Added 5-subject norm note; removed "Applied Science Elective" & "Global Context" rows.
-     11. Board Comparisons: Removed redundant comparison block.
-     12. IGCSE Advantages: Renamed to Step 02 with AS/A Level pathway integration; timeline preserved.
-     13. Founders: Strictly re-ordered: 1. Capt Unni Krishnan, 2. Nimish Vikas, 3. Rakhi Bhatia, 4. Rajeev Kumar Singh.
-     14. Footer: Removed stray CLAT reference.
+<!-- The Unbound School V2.7
+     Compiled and finalized based on the approved website brief:
+     1. Version standardized strictly to Version 2.7 across internal headers and footer.
+     2. "Educating for the world beyond the exam." removed; "Our Vision" established as primary heading.
+     3. Standalone "Highlights of Cambridge AS / A Level" block completely removed.
+     4. "Integrated Academic Architecture" positioned before "Board Details".
+     5. NIOS restored and grouped under Integrated Academic Architecture.
+     6. Board Details streamlined (Step 01: Choice of Subjects with 5-subject norm; Step 02: AS / A Level Head Start).
+     7. Language regulation updated: "Kannada is taught till Grade 8".
+     8. "objective national board comparisons" removed from Board Details intro.
+     9. Section sequence verified: Practicals -> Integrated Academic Architecture -> Board Details.
+     10. Canonical Founder sequence verified: Capt Unni Krishnan, Nimish Vikas, Rakhi Bhatia, Rajeev Kumar Singh.
+     11. Bright institutional theme, responsive navigation, and active enquiry links preserved.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -23,14 +20,14 @@
   <title>The Unbound School — Unbound in Thinking, Unbound in Courage | Cambridge IGCSE & A/AS Levels Grades 5–12</title>
   <meta name="description" content="The Unbound School (Grades 5–12). Cambridge IGCSE rigor enriched with CBSE/ICSE, unhurried mastery, labs-first learning, and integrated coaching." />
 
-  <!-- Fonts: Literata (Headings), Public Sans (Body), IBM Plex Mono (Eyebrows/Labels) -->
+  <!-- Typography: Literata (Headings), Public Sans (Body), IBM Plex Mono (Eyebrows/Labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Public+Sans:ital,wght@0,300..800;1,300..700&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
-       CSS Design System — Bright Institutional Theme (Requested Revision)
+       CSS Design System — Bright Institutional Theme (Version 2.7)
        ========================================================================== */
     :root {
       --paper: #F6F8F3;
@@ -182,7 +179,7 @@
     }
 
     /* ==========================================================================
-       Site Header & Navigation (Monogram removed; Literata font applied)
+       Header & Navigation
        ========================================================================== */
     .site-header {
       position: sticky;
@@ -294,7 +291,7 @@
     }
 
     /* ==========================================================================
-       Hero Section (Clean visual card with official emblem)
+       Hero Section
        ========================================================================== */
     .hero-section {
       padding: clamp(56px, 7vw, 92px) 0 clamp(56px, 7vw, 84px);
@@ -428,14 +425,14 @@
     }
 
     /* ==========================================================================
-       Our Philosophy & Vision
+       Our Vision & Philosophy
        ========================================================================== */
-    .philosophy-section {
+    .vision-section {
       padding: 96px 0 80px;
       background-color: var(--paper);
     }
 
-    .philosophy-lead-block {
+    .vision-lead-block {
       background: #FFFFFF;
       border: 1px solid var(--line);
       border-left: 4px solid var(--teal);
@@ -445,14 +442,14 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .philosophy-lead-block p {
+    .vision-lead-block p {
       font-size: 1.1rem;
       color: var(--ink);
       line-height: 1.75;
       margin: 0;
     }
 
-    /* The Unbound Promise (Contrast Fixed: Clear high-contrast dark text) */
+    /* The Unbound Promise (Clear High-Contrast Text) */
     .promise-card {
       margin-top: 56px;
       background: #FFFFFF;
@@ -512,7 +509,7 @@
     }
 
     /* ==========================================================================
-       What is Special at Unbound ("PRINCIPLE" label word removed)
+       What is Special at Unbound
        ========================================================================== */
     .special-section {
       padding: 88px 0;
@@ -588,7 +585,7 @@
     }
 
     /* ==========================================================================
-       PRACTICALS IN ACTION (Moved directly BEFORE Board Details)
+       Practicals in Action
        ========================================================================== */
     .practicals-section {
       padding: 96px 0;
@@ -668,13 +665,20 @@
     }
 
     /* ==========================================================================
-       BOARD DETAILS & ACADEMIC PATHWAYS (Updated Sequence)
-       Step 01: Choice of Subjects (5-subject norm note + cleaned rows)
-       Step 02: IGCSE / AS / A Level Advantages & 6-Month Timeline
+       Integrated Academic Architecture & Coaching Pathways
+       ========================================================================== */
+    .integrated-architecture-section {
+      padding: 96px 0;
+      background: var(--paper-subtle);
+      border-top: 1px solid var(--line);
+    }
+
+    /* ==========================================================================
+       Board Details & Academic Pathways
        ========================================================================== */
     .board-details-section {
       padding: 96px 0;
-      background: var(--paper-subtle);
+      background: var(--paper);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
     }
@@ -890,7 +894,7 @@
     }
 
     /* ==========================================================================
-       Founders (Re-ordered: 1. Capt Unni, 2. Nimish, 3. Rakhi, 4. Rajeev)
+       Founders (Canonical Order: 1. Capt Unni, 2. Nimish, 3. Rakhi, 4. Rajeev)
        ========================================================================== */
     .founders-section {
       padding: 96px 0;
@@ -1058,7 +1062,7 @@
     }
 
     /* ==========================================================================
-       Footer (Clean light/navy standard; CLAT reference removed)
+       Footer (Version 2.7)
        ========================================================================== */
     .site-footer {
       background: var(--ink);
@@ -1275,7 +1279,7 @@
       <nav>
         <ul class="nav-menu" id="navMenu">
           <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#philosophy" class="nav-link">About Unbound</a></li>
+          <li><a href="#vision" class="nav-link">About Unbound</a></li>
           <li><a href="#special" class="nav-link">Life At Unbound</a></li>
           <li><a href="#practicals" class="nav-link">Practicals</a></li>
           <li><a href="#board-details" class="nav-link" style="color: var(--teal); font-weight: 600;">Board Details</a></li>
@@ -1335,11 +1339,12 @@
           </div>
         </div>
 
-        <!-- Official Logo Image Placement in Hero Card -->
+        <!-- Official Logo Image Placement in Hero Card with safe fallback -->
         <div class="hero-visual-card">
           <img src="The Unbound School final logo-02.png" 
                alt="The Unbound School Logo" 
-               class="hero-logo-img" />
+               class="hero-logo-img" 
+               onerror="this.onerror=null; this.src='https://lh3.googleusercontent.com/d/1s0zA4EYfDu7e7OcetQmur5pWFzKqBY4-';" />
         </div>
       </div>
     </div>
@@ -1372,19 +1377,26 @@
     </div>
   </div>
 
-  <!-- Section: Our Philosophy & Vision -->
-  <section id="philosophy" class="philosophy-section">
+  <!-- Section: Our Vision & Philosophy -->
+  <section id="vision" class="vision-section">
     <div class="container">
-      <div class="eyebrow">Our Philosophy</div>
-      <h2 class="section-title">Educating for the world beyond the exam.</h2>
+      <div class="eyebrow">Institutional Direction</div>
+      <h2 class="section-title">Our Vision</h2>
 
-      <div class="philosophy-lead-block">
+      <div class="vision-lead-block">
         <p>
           Every parent asks the same question: will this school truly prepare my child—not just for the next examination, but for the opportunities and challenges that lie beyond school? At The Unbound School, the answer is woven into every lesson, every experience, and every stage of our curriculum. True to our name, our curriculum prioritises the student's quest for knowledge over the conventional ways of schooling.
         </p>
       </div>
 
-      <!-- The Unbound Promise (High Contrast Readable Text) -->
+      <div class="vision-lead-block" style="border-left-color: var(--gold); margin-top: -16px;">
+        <h3 style="font-family: var(--font-display); font-size: 1.25rem; color: var(--ink); margin-bottom: 8px;">Our Philosophy</h3>
+        <p style="font-size: 1.05rem; color: var(--ink-soft); line-height: 1.7; margin: 0;">
+          We believe that genuine education is never about passive compliance. It is about kindling curiosity, cultivating analytical independence, and inspiring students to lead with conviction and moral resilience in an evolving world.
+        </p>
+      </div>
+
+      <!-- The Unbound Promise -->
       <div class="promise-card">
         <div class="promise-content">
           <div class="promise-badge">The Unbound Promise</div>
@@ -1504,7 +1516,7 @@
   </section>
 
   <!-- ==========================================================================
-       PRACTICALS IN ACTION (Moved directly BEFORE Board Details)
+       PRACTICALS IN ACTION (Positioned BEFORE Board Details)
        ========================================================================== -->
   <section id="practicals" class="practicals-section">
     <div class="container">
@@ -1603,16 +1615,96 @@
   </section>
 
   <!-- ==========================================================================
-       BOARD DETAILS & ACADEMIC PATHWAYS
-       Step 01: Choice of Subjects (Norms updated; rows cleaned)
-       Step 02: AS / A Level Advantages (Renamed & updated)
+       INTEGRATED ACADEMIC ARCHITECTURE & COACHING PATHWAYS (Moved before Board Details)
        ========================================================================== -->
+  <section id="integrated-architecture" class="integrated-architecture-section">
+    <div class="container">
+      <div class="editorial-block">
+        <span class="eyebrow eyebrow-gold">Integrated Academic Architecture</span>
+        <h2 class="section-title">Choose the pathway that matches your ambition.</h2>
+        <p class="section-lead" style="margin-bottom: 24px;">
+          Integrated coaching is an essential component of the school's Grades 11–12 model. Rather than leaving students to manage exhausting external tuitions, advanced competitive preparation is fully synthesized into the school day.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 28px;">
+          <!-- PATHWAY 1: JEE / NEET -->
+          <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 32px 28px;">
+            <span class="eyebrow" style="color: var(--teal);">Pathway 1</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">
+              JEE / NEET (NV Coaching)
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 16px;">
+              Tailored for students targeting national engineering and medical entrances in India. Available under both PU and IGCSE formats.
+            </p>
+
+            <div class="table-responsive" style="margin: 16px 0; background: #FFFFFF;">
+              <table class="editorial-table" style="min-width: 100%;">
+                <thead>
+                  <tr>
+                    <th>Stream</th>
+                    <th>Curricular Structure</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Engineering</strong></td>
+                    <td>English + Physics + Chemistry + Mathematics</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Medical</strong></td>
+                    <td>English + Physics + Chemistry + Biology + Mathematics</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6;">
+              <em>Note:</em> Mathematics is not "Basic Math" by default. The standard recommendation for medical preparation is Biology + Mathematics. If a student chooses not to take Biology, the student may drop Biology and take Basic Math, subject to the applicable structure.
+            </p>
+          </div>
+
+          <!-- PATHWAY 2: SAT -->
+          <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 32px 28px;">
+            <span class="eyebrow eyebrow-gold">Pathway 2</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">
+              SAT Coaching
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 16px;">
+              Designed for students targeting international universities. SAT preparation is integrated alongside board modules with a calibrated academic load.
+            </p>
+            <ul style="list-style: none; font-size: 0.9rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 8px;">
+              <li>• Concurrent SAT preparation integrated during school hours.</li>
+              <li>• Rigorous Cambridge AS / A Level qualification framework.</li>
+              <li>• Focused application writing and portfolio readiness.</li>
+              <li>• Subject combination flexibility aligned with global majors.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- NIOS Component Restored -->
+        <div style="margin-top: 36px; padding: 24px; background: var(--paper); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); margin-bottom: 4px;">National Institute of Open Schooling (NIOS)</h4>
+              <div style="font-size: 0.9rem; color: var(--ink-soft);">Secondary (Class 10) &amp; Senior Secondary (Class 12)</div>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-faint); border: 1px dashed var(--line-strong); padding: 5px 12px; border-radius: var(--radius-pill);">
+              Details to be updated.
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       BOARD DETAILS & ACADEMIC PATHWAYS
+       ========================================================================= -->
   <section id="board-details" class="board-details-section">
     <div class="container">
       <div class="eyebrow eyebrow-gold">Decision-Making Guide</div>
       <h2 class="section-title">Board Details & Academic Pathways</h2>
       <p class="section-lead">
-        Transparent subject structures, objective national board comparisons, and Cambridge international qualifications designed for clear parent decisions.
+        Transparent subject structures and Cambridge international qualifications designed for clear parent decisions.
       </p>
 
       <!-- STEP 01: CHOICE OF SUBJECTS -->
@@ -1665,11 +1757,11 @@
           <strong>Norms for IGCSE:</strong> Mandates minimum 5 subjects for 10th Board examinations.
         </div>
         <div class="disclosure-box" style="margin-top: 8px;">
-          <strong>Language Regulation:</strong> Kannada is taught through Grade 9; Grade 10 board exams are not available under the Cambridge board scheme.
+          <strong>Language Regulation:</strong> Kannada is taught till Grade 8; Grade 10 board exams are not available under the Cambridge board scheme.
         </div>
       </div>
 
-      <!-- STEP 02: AS / A LEVEL ADVANTAGES (Renamed from Step 03) -->
+      <!-- STEP 02: AS / A LEVEL ADVANTAGES -->
       <div class="editorial-block" id="as-a-level-advantages">
         <span class="eyebrow eyebrow-gold">Step 02</span>
         <h3 style="font-family: var(--font-display); font-size: 1.85rem; margin-bottom: 16px; color: var(--ink);">
@@ -1704,96 +1796,6 @@
 
           <div class="disclosure-box" style="border-left-color: var(--gold);">
             <strong>Strategic Benefit:</strong> By completing Grade 10 board examinations in November, students gain approximately six months of unhurried preparation before their senior secondary studies launch in February.
-          </div>
-        </div>
-      </div>
-
-      <!-- Highlights of Cambridge A/AS Level & Integrated Pathways -->
-      <div class="editorial-block">
-        <div class="eyebrow">Advanced Qualifications</div>
-        <h3 style="font-family: var(--font-display); font-size: 1.85rem; margin-bottom: 12px; color: var(--ink);">
-          Highlights of Cambridge AS / A Level
-        </h3>
-        <p class="section-lead" style="margin-bottom: 24px;">
-          Cambridge International AS and A Levels represent the senior secondary stage of academic progression, serving as your primary doorway to study abroad.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-bottom: 32px;">
-          <div style="background: var(--paper); padding: 22px; border-radius: var(--radius-sm); border: 1px solid var(--line);">
-            <strong style="color: var(--ink); display: block; margin-bottom: 6px;">Examination Scheduling</strong>
-            <p style="font-size: 0.92rem; color: var(--ink-soft); margin: 0;">
-              Exams are offered across November, February, and June series. The school prioritises the November and February windows to reduce learning interruptions and streamline college entry.
-            </p>
-          </div>
-          <div style="background: var(--paper); padding: 22px; border-radius: var(--radius-sm); border: 1px solid var(--line);">
-            <strong style="color: var(--ink); display: block; margin-bottom: 6px;">English Language Assessment</strong>
-            <p style="font-size: 0.92rem; color: var(--ink-soft); margin: 0;">
-              English is assessed only once across the combined Grade 11–12 period, freeing focused academic bandwidth for stream specializations.
-            </p>
-          </div>
-        </div>
-
-        <div style="border-top: 1px solid var(--line); padding-top: 36px; margin-top: 36px;">
-          <span class="eyebrow eyebrow-gold">Integrated Academic Architecture</span>
-          <h4 style="font-family: var(--font-display); font-size: 1.55rem; color: var(--ink); margin-bottom: 12px;">
-            Choose the pathway that matches your ambition.
-          </h4>
-          <p style="font-size: 0.98rem; color: var(--ink-soft); max-width: 800px; margin-bottom: 24px;">
-            Integrated coaching is an essential component of the school's Grades 11–12 model. Rather than leaving students to manage exhausting external tuitions, advanced competitive preparation is fully synthesized into the school day.
-          </p>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 24px;">
-            <!-- PATHWAY 1: JEE / NEET -->
-            <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 32px 28px;">
-              <span class="eyebrow" style="color: var(--teal);">Pathway 1</span>
-              <h5 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">
-                JEE / NEET (NV Coaching)
-              </h5>
-              <p style="font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 16px;">
-                Tailored for students targeting national engineering and medical entrances in India. Available under both PU and IGCSE formats.
-              </p>
-
-              <div class="table-responsive" style="margin: 16px 0; background: #FFFFFF;">
-                <table class="editorial-table" style="min-width: 100%;">
-                  <thead>
-                    <tr>
-                      <th>Stream</th>
-                      <th>Curricular Structure</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td><strong>Engineering</strong></td>
-                      <td>English + Physics + Chemistry + Mathematics</td>
-                    </tr>
-                    <tr>
-                      <td><strong>Medical</strong></td>
-                      <td>English + Physics + Chemistry + Biology + Mathematics</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <p style="font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6;">
-                <em>Note:</em> Mathematics is not "Basic Math" by default. The standard recommendation for medical preparation is Biology + Mathematics. If a student chooses not to take Biology, the student may drop Biology and take Basic Math, subject to the applicable structure.
-              </p>
-            </div>
-
-            <!-- PATHWAY 2: SAT -->
-            <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 32px 28px;">
-              <span class="eyebrow eyebrow-gold">Pathway 2</span>
-              <h5 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">
-                SAT Coaching
-              </h5>
-              <p style="font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 16px;">
-                Designed for students targeting international universities. SAT preparation is integrated alongside board modules with a calibrated academic load.
-              </p>
-              <ul style="list-style: none; font-size: 0.9rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 8px;">
-                <li>• Concurrent SAT preparation integrated during school hours.</li>
-                <li>• Rigorous Cambridge AS / A Level qualification framework.</li>
-                <li>• Focused application writing and portfolio readiness.</li>
-                <li>• Subject combination flexibility aligned with global majors.</li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -1956,7 +1958,7 @@
   </section>
 
   <!-- ==========================================================================
-       FOUNDERS (Re-ordered: 1. Capt Unni, 2. Nimish, 3. Rakhi, 4. Rajeev)
+       FOUNDERS (Canonical Order: 1. Capt Unni, 2. Nimish, 3. Rakhi, 4. Rajeev)
        ========================================================================== -->
   <section id="founders" class="founders-section">
     <div class="container">
@@ -1977,7 +1979,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Capt Unni Krishnan</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Founder of many reputed schools in India</p>
+            <p class="founder-bio">Founder of many reputed schools in India[cite: 1]</p>
           </div>
         </div>
 
@@ -1992,7 +1994,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Nimish Vikas</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Founder & Director, NV Classes</p>
+            <p class="founder-bio">Founder & Director, NV Classes[cite: 1]</p>
           </div>
         </div>
 
@@ -2007,7 +2009,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Rakhi Bhatia</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Co-Founder, NV Classes</p>
+            <p class="founder-bio">Co-Founder, NV Classes[cite: 1]</p>
           </div>
         </div>
 
@@ -2021,14 +2023,14 @@
           <div class="founder-details">
             <h3 class="founder-name">Rajeev Kumar Singh</h3>
             <div class="founder-role">Director, The Unbound School</div>
-            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor</p>
+            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor[cite: 1]</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section: FAQ (Question 1 Answer Updated; Others Strictly Unchanged) -->
+  <!-- Section: FAQ -->
   <section id="faq" class="faq-section">
     <div class="container">
       <div class="faq-layout">
@@ -2045,7 +2047,7 @@
         </div>
 
         <div class="accordion-list">
-          <!-- 1. External Coaching (Updated canonical answer) -->
+          <!-- 1. External Coaching -->
           <div class="accordion-item active">
             <button class="accordion-header" aria-expanded="true">
               <span>Do students need external coaching?</span>
@@ -2114,7 +2116,7 @@
     </div>
   </section>
 
-  <!-- Footer (Clean dark branding; CLAT reference completely removed) -->
+  <!-- Footer (Version 2.7) -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
@@ -2135,7 +2137,7 @@
             <div class="footer-col-title">Navigation</div>
             <ul class="footer-links-list">
               <li><a href="#home">Home</a></li>
-              <li><a href="#philosophy">About Unbound</a></li>
+              <li><a href="#vision">About Unbound</a></li>
               <li><a href="#special">Life At Unbound</a></li>
               <li><a href="#practicals">Practicals</a></li>
               <li><a href="#board-details">Board Details</a></li>
@@ -2148,7 +2150,7 @@
             <ul class="footer-links-list">
               <li><a href="#special">What is Special at Unbound</a></li>
               <li><a href="#practicals">Practicals in Action</a></li>
-              <li><a href="#journey">Eight-Year Journey</a></li>
+              <li><a href="#integrated-architecture">Integrated Pathways</a></li>
               <li><a href="#board-details">Subject Combinations</a></li>
             </ul>
           </div>
@@ -2157,7 +2159,7 @@
 
       <div class="footer-bottom">
         <div>© 2026 The Unbound School. All rights reserved.</div>
-        <div>Cambridge IGCSE & A/AS Levels · Version 2.6.1 Release</div>
+        <div>The Unbound School · Version 2.7</div>
       </div>
     </div>
   </footer>
