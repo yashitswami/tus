@@ -3,14 +3,20 @@
      1. Version standardized strictly to Version 2.7 across internal headers and footer.
      2. "Educating for the world beyond the exam." removed; "Our Vision" established as primary heading.
      3. Standalone "Highlights of Cambridge AS / A Level" block completely removed.
-     4. "Integrated Academic Architecture" positioned before "Board Details".
+     4. Verified DOM section sequence:
+        Practicals in Action 
+        -> Board Details & Academic Pathways (Step 01 & Step 02)
+        -> Integrated Academic Architecture (JEE/NEET, SAT, and NIOS)
+        -> The Eight-Year Journey
+        -> Founders
+        -> FAQ
+        -> Footer
      5. NIOS restored and grouped under Integrated Academic Architecture.
-     6. Board Details streamlined (Step 01: Choice of Subjects with 5-subject norm; Step 02: AS / A Level Head Start).
+     6. Board Details streamlined (Step 01: Choice of Subjects with 5-subject norm; Step 02: AS / A Level 6-Month Head Start).
      7. Language regulation updated: "Kannada is taught till Grade 8".
      8. "objective national board comparisons" removed from Board Details intro.
-     9. Section sequence verified: Practicals -> Integrated Academic Architecture -> Board Details.
-     10. Canonical Founder sequence verified: Capt Unni Krishnan, Nimish Vikas, Rakhi Bhatia, Rajeev Kumar Singh.
-     11. Bright institutional theme, responsive navigation, and active enquiry links preserved.
+     9. Canonical Founder sequence verified: Capt Unni Krishnan, Nimish Vikas, Rakhi Bhatia, Rajeev Kumar Singh.
+     10. Bright institutional theme, responsive navigation, and active enquiry links preserved.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -585,7 +591,7 @@
     }
 
     /* ==========================================================================
-       Practicals in Action
+       Practicals in Action (Immediately preceding Board Details)
        ========================================================================== */
     .practicals-section {
       padding: 96px 0;
@@ -665,22 +671,12 @@
     }
 
     /* ==========================================================================
-       Integrated Academic Architecture & Coaching Pathways
-       ========================================================================== */
-    .integrated-architecture-section {
-      padding: 96px 0;
-      background: var(--paper-subtle);
-      border-top: 1px solid var(--line);
-    }
-
-    /* ==========================================================================
-       Board Details & Academic Pathways
+       Board Details & Academic Pathways (Preceding Integrated Architecture)
        ========================================================================== */
     .board-details-section {
-      padding: 96px 0;
-      background: var(--paper);
+      padding: 96px 0 48px;
+      background: var(--paper-subtle);
       border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
     }
 
     .editorial-block {
@@ -788,6 +784,15 @@
       color: var(--ink-soft);
       font-size: 1.4rem;
       text-align: center;
+    }
+
+    /* ==========================================================================
+       Integrated Academic Architecture (Positioned AFTER Board Details)
+       ========================================================================== */
+    .integrated-architecture-section {
+      padding: 0 0 96px;
+      background: var(--paper-subtle);
+      border-bottom: 1px solid var(--line);
     }
 
     /* ==========================================================================
@@ -1292,7 +1297,7 @@
       </nav>
 
       <div class="nav-actions">
-        <!-- Retained Active Google Form Link -->
+        <!-- Working Enquiry Form Link -->
         <a href="https://forms.gle/p1sNK2bsTbmHhM8J7" target="_blank" rel="noopener noreferrer" class="nav-cta">Enquiry Form</a>
 
         <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle mobile navigation">
@@ -1516,7 +1521,7 @@
   </section>
 
   <!-- ==========================================================================
-       PRACTICALS IN ACTION (Positioned BEFORE Board Details)
+       PRACTICALS IN ACTION (Directly BEFORE Board Details)
        ========================================================================== -->
   <section id="practicals" class="practicals-section">
     <div class="container">
@@ -1615,90 +1620,8 @@
   </section>
 
   <!-- ==========================================================================
-       INTEGRATED ACADEMIC ARCHITECTURE & COACHING PATHWAYS (Moved before Board Details)
+       BOARD DETAILS & ACADEMIC PATHWAYS (Preceding Integrated Architecture)
        ========================================================================== -->
-  <section id="integrated-architecture" class="integrated-architecture-section">
-    <div class="container">
-      <div class="editorial-block">
-        <span class="eyebrow eyebrow-gold">Integrated Academic Architecture</span>
-        <h2 class="section-title">Choose the pathway that matches your ambition.</h2>
-        <p class="section-lead" style="margin-bottom: 24px;">
-          Integrated coaching is an essential component of the school's Grades 11–12 model. Rather than leaving students to manage exhausting external tuitions, advanced competitive preparation is fully synthesized into the school day.
-        </p>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 28px;">
-          <!-- PATHWAY 1: JEE / NEET -->
-          <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 32px 28px;">
-            <span class="eyebrow" style="color: var(--teal);">Pathway 1</span>
-            <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">
-              JEE / NEET (NV Coaching)
-            </h3>
-            <p style="font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 16px;">
-              Tailored for students targeting national engineering and medical entrances in India. Available under both PU and IGCSE formats.
-            </p>
-
-            <div class="table-responsive" style="margin: 16px 0; background: #FFFFFF;">
-              <table class="editorial-table" style="min-width: 100%;">
-                <thead>
-                  <tr>
-                    <th>Stream</th>
-                    <th>Curricular Structure</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Engineering</strong></td>
-                    <td>English + Physics + Chemistry + Mathematics</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Medical</strong></td>
-                    <td>English + Physics + Chemistry + Biology + Mathematics</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p style="font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6;">
-              <em>Note:</em> Mathematics is not "Basic Math" by default. The standard recommendation for medical preparation is Biology + Mathematics. If a student chooses not to take Biology, the student may drop Biology and take Basic Math, subject to the applicable structure.
-            </p>
-          </div>
-
-          <!-- PATHWAY 2: SAT -->
-          <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 32px 28px;">
-            <span class="eyebrow eyebrow-gold">Pathway 2</span>
-            <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">
-              SAT Coaching
-            </h3>
-            <p style="font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 16px;">
-              Designed for students targeting international universities. SAT preparation is integrated alongside board modules with a calibrated academic load.
-            </p>
-            <ul style="list-style: none; font-size: 0.9rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 8px;">
-              <li>• Concurrent SAT preparation integrated during school hours.</li>
-              <li>• Rigorous Cambridge AS / A Level qualification framework.</li>
-              <li>• Focused application writing and portfolio readiness.</li>
-              <li>• Subject combination flexibility aligned with global majors.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- NIOS Component Restored -->
-        <div style="margin-top: 36px; padding: 24px; background: var(--paper); border-radius: var(--radius-sm); border: 1px solid var(--line);">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-            <div>
-              <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); margin-bottom: 4px;">National Institute of Open Schooling (NIOS)</h4>
-              <div style="font-size: 0.9rem; color: var(--ink-soft);">Secondary (Class 10) &amp; Senior Secondary (Class 12)</div>
-            </div>
-            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-faint); border: 1px dashed var(--line-strong); padding: 5px 12px; border-radius: var(--radius-pill);">
-              Details to be updated.
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       BOARD DETAILS & ACADEMIC PATHWAYS
-       ========================================================================= -->
   <section id="board-details" class="board-details-section">
     <div class="container">
       <div class="eyebrow eyebrow-gold">Decision-Making Guide</div>
@@ -1796,6 +1719,88 @@
 
           <div class="disclosure-box" style="border-left-color: var(--gold);">
             <strong>Strategic Benefit:</strong> By completing Grade 10 board examinations in November, students gain approximately six months of unhurried preparation before their senior secondary studies launch in February.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTEGRATED ACADEMIC ARCHITECTURE (Positioned AFTER Board Details)
+       ========================================================================== -->
+  <section id="integrated-architecture" class="integrated-architecture-section">
+    <div class="container">
+      <div class="editorial-block">
+        <span class="eyebrow eyebrow-gold">Integrated Academic Architecture</span>
+        <h2 class="section-title">Choose the pathway that matches your ambition.</h2>
+        <p class="section-lead" style="margin-bottom: 24px;">
+          Integrated coaching is an essential component of the school's Grades 11–12 model. Rather than leaving students to manage exhausting external tuitions, advanced competitive preparation is fully synthesized into the school day.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-top: 28px;">
+          <!-- PATHWAY 1: JEE / NEET -->
+          <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 32px 28px;">
+            <span class="eyebrow" style="color: var(--teal);">Pathway 1</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">
+              JEE / NEET (NV Coaching)
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 16px;">
+              Tailored for students targeting national engineering and medical entrances in India. Available under both PU and IGCSE formats.
+            </p>
+
+            <div class="table-responsive" style="margin: 16px 0; background: #FFFFFF;">
+              <table class="editorial-table" style="min-width: 100%;">
+                <thead>
+                  <tr>
+                    <th>Stream</th>
+                    <th>Curricular Structure</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Engineering</strong></td>
+                    <td>English + Physics + Chemistry + Mathematics</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Medical</strong></td>
+                    <td>English + Physics + Chemistry + Biology + Mathematics</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--ink-soft); line-height: 1.6;">
+              <em>Note:</em> Mathematics is not "Basic Math" by default. The standard recommendation for medical preparation is Biology + Mathematics. If a student chooses not to take Biology, the student may drop Biology and take Basic Math, subject to the applicable structure.
+            </p>
+          </div>
+
+          <!-- PATHWAY 2: SAT -->
+          <div style="background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 32px 28px;">
+            <span class="eyebrow eyebrow-gold">Pathway 2</span>
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; color: var(--ink); margin-bottom: 12px;">
+              SAT Coaching
+            </h3>
+            <p style="font-size: 0.92rem; color: var(--ink-soft); margin-bottom: 16px;">
+              Designed for students targeting international universities. SAT preparation is integrated alongside board modules with a calibrated academic load.
+            </p>
+            <ul style="list-style: none; font-size: 0.9rem; color: var(--ink-soft); display: flex; flex-direction: column; gap: 8px;">
+              <li>• Concurrent SAT preparation integrated during school hours.</li>
+              <li>• Rigorous Cambridge AS / A Level qualification framework.</li>
+              <li>• Focused application writing and portfolio readiness.</li>
+              <li>• Subject combination flexibility aligned with global majors.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- NIOS Component Restored -->
+        <div style="margin-top: 36px; padding: 24px; background: var(--paper); border-radius: var(--radius-sm); border: 1px solid var(--line);">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h4 style="font-family: var(--font-display); font-size: 1.15rem; color: var(--ink); margin-bottom: 4px;">National Institute of Open Schooling (NIOS)</h4>
+              <div style="font-size: 0.9rem; color: var(--ink-soft);">Secondary (Class 10) &amp; Senior Secondary (Class 12)</div>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-faint); border: 1px dashed var(--line-strong); padding: 5px 12px; border-radius: var(--radius-pill);">
+              Details to be updated.
+            </span>
           </div>
         </div>
       </div>
@@ -2150,8 +2155,8 @@
             <ul class="footer-links-list">
               <li><a href="#special">What is Special at Unbound</a></li>
               <li><a href="#practicals">Practicals in Action</a></li>
-              <li><a href="#integrated-architecture">Integrated Pathways</a></li>
               <li><a href="#board-details">Subject Combinations</a></li>
+              <li><a href="#integrated-architecture">Integrated Pathways</a></li>
             </ul>
           </div>
         </div>
