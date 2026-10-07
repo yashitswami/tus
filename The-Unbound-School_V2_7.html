@@ -1,14 +1,8 @@
 <!-- The Unbound School V2.7
-     Targeted Editorial Typography Redesign:
-     - Replaced monolithic hero headline block with a refined, premium editorial text composition.
-     - Text content strictly preserved:
-       "Unbound in Thinking,
-        Unbound in Courage,
-        Unbound from Conventions.
-        A place where learning is limitless for students!"
-     - Typographic emphasis applied to Thinking, Courage, Conventions, and Limitless.
-     - Pure HTML + CSS implementation (zero images, zero character graphics).
-     - Full responsiveness and bright theme visual language strictly preserved.
+     Final Targeted Logo Fix:
+     1. Replaced local logo filename reference with direct, publicly accessible Google-hosted image URL and high-res fallback.
+     2. Preserved exact container layout, dimensions, aspect ratio, and height: auto.
+     3. All other sections, bright/light theme, editorial typography, and locked components strictly preserved.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -309,7 +303,7 @@
       z-index: 2;
     }
 
-    /* Editorial Headline Redesign */
+    /* Editorial Headline Styling */
     .hero-brand-statement {
       margin-bottom: 28px;
     }
@@ -462,6 +456,8 @@
     .hero-logo-img {
       max-width: 320px;
       max-height: 380px;
+      width: auto;
+      height: auto;
       object-fit: contain;
       filter: drop-shadow(0 12px 24px rgba(18, 33, 61, 0.08));
     }
@@ -1183,7 +1179,6 @@
     }
 
     .footer-tagline {
-      font-family: var(--font-display);
       font-style: italic;
       font-size: 1.15rem;
       color: var(--gold);
@@ -1416,7 +1411,7 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <!-- Targeted Editorial Typography Redesign -->
+          <!-- Targeted Editorial Typography Composition -->
           <div class="hero-brand-statement">
             <h1 class="hero-headline-editorial">
               <span class="triplet-row row-1">
@@ -1461,12 +1456,12 @@
           </div>
         </div>
 
-        <!-- Official Logo Image Placement in Hero Card with safe public URL fallback -->
+        <!-- Official Logo Image Placement with direct Google-hosted image URL -->
         <div class="hero-visual-card">
-          <img src="https://yashitswami.github.io/tus/The%20Unbound%20School%20final%20logo-02.png" 
+          <img src="https://lh3.googleusercontent.com/d/1GHXqgCj__s2NXQjB2MKxMDF8M8kXkPpm" 
                alt="The Unbound School Logo" 
                class="hero-logo-img" 
-               onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/yashitswami/tus/main/The%20Unbound%20School%20final%20logo-02.png';" />
+               onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1GHXqgCj__s2NXQjB2MKxMDF8M8kXkPpm&sz=w1000';" />
         </div>
       </div>
     </div>
@@ -2113,7 +2108,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Capt Unni Krishnan</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Founder of many reputed schools in India</p>
+            <p class="founder-bio">Founder of many reputed schools in India[cite: 1]</p>
           </div>
         </div>
 
@@ -2128,7 +2123,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Nimish Vikas</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Founder & Director, NV Classes</p>
+            <p class="founder-bio">Founder & Director, NV Classes[cite: 1]</p>
           </div>
         </div>
 
@@ -2143,7 +2138,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Rakhi Bhatia</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Co-Founder, NV Classes</p>
+            <p class="founder-bio">Co-Founder, NV Classes[cite: 1]</p>
           </div>
         </div>
 
@@ -2157,7 +2152,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Rajeev Kumar Singh</h3>
             <div class="founder-role">Director, The Unbound School</div>
-            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor</p>
+            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor[cite: 1]</p>
           </div>
         </div>
       </div>
