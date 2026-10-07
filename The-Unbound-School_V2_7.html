@@ -1,22 +1,14 @@
 <!-- The Unbound School V2.7
-     Final Targeted Update:
-     1. Practicals in Action images mapped to approved public Google-hosted URLs:
-        - 01 STEM Lab: drone quadcopter & electronics
-        - 02 Biology Lab: specimen container & microscopy
-        - 03 Chemistry Lab: glassware & reaction titration
-        - 04 Physics Lab: optical laser experiment
-        - 05 Mathematics Lab: spatial geometry models
-        - 06 Theme Room: world map mural discussion
-     2. Standardized 3:2 landscape presentation across all 6 cards.
-     3. Exact DOM sequence verified:
-        Practicals in Action 
-        -> Board Details & Academic Pathways (Step 01 & Step 02)
-        -> Integrated Academic Architecture (JEE/NEET, SAT, and NIOS)
-        -> The Eight-Year Journey
-        -> Founders
-        -> FAQ
-        -> Footer
-     4. Bright institutional theme, Literata headings, and all approved copy strictly preserved.
+     Targeted Editorial Typography Redesign:
+     - Replaced monolithic hero headline block with a refined, premium editorial text composition.
+     - Text content strictly preserved:
+       "Unbound in Thinking,
+        Unbound in Courage,
+        Unbound from Conventions.
+        A place where learning is limitless for students!"
+     - Typographic emphasis applied to Thinking, Courage, Conventions, and Limitless.
+     - Pure HTML + CSS implementation (zero images, zero character graphics).
+     - Full responsiveness and bright theme visual language strictly preserved.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +21,7 @@
   <!-- Typography: Literata (Headings), Public Sans (Body), IBM Plex Mono (Eyebrows/Labels) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Public+Sans:ital,wght@0,300..800;1,300..700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;0,7..72,800;1,7..72,400;1,7..72,600;1,7..72,700&family=Public+Sans:ital,wght@0,300..800;1,300..700&display=swap" rel="stylesheet" />
 
   <style>
     /* ==========================================================================
@@ -130,7 +122,6 @@
     /* Headings & Subheadings Font Standardization -> Literata */
     h1, h2, h3, h4, h5, h6,
     .section-title,
-    .hero-headline,
     .brand-logo,
     .goal-title,
     .pillar-title,
@@ -297,7 +288,7 @@
     }
 
     /* ==========================================================================
-       Hero Section
+       Hero Section & Editorial Typography Composition
        ========================================================================== */
     .hero-section {
       padding: clamp(56px, 7vw, 92px) 0 clamp(56px, 7vw, 84px);
@@ -308,7 +299,7 @@
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.18fr 0.82fr;
       gap: 52px;
       align-items: center;
     }
@@ -318,13 +309,103 @@
       z-index: 2;
     }
 
-    .hero-headline {
-      font-size: clamp(2.3rem, 4.2vw, 3.6rem);
-      font-weight: 700;
-      line-height: 1.15;
-      letter-spacing: -0.025em;
-      margin-bottom: 24px;
+    /* Editorial Headline Redesign */
+    .hero-brand-statement {
+      margin-bottom: 28px;
+    }
+
+    .hero-headline-editorial {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.4vw, 3.25rem);
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: -0.022em;
       color: var(--ink);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .triplet-row {
+      display: block;
+    }
+
+    .triplet-base {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .em-thinking,
+    .em-courage {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: -0.01em;
+      padding-left: 2px;
+    }
+
+    .row-3 {
+      margin-top: 2px;
+    }
+
+    .em-conventions {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.015em;
+      position: relative;
+      display: inline-block;
+      padding: 0 4px;
+      background: linear-gradient(180deg, transparent 65%, rgba(189, 122, 30, 0.18) 65%);
+      border-radius: 2px;
+    }
+
+    .triplet-period {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 1.1em;
+    }
+
+    .hero-statement-divider {
+      width: 44px;
+      height: 2.5px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      border-radius: 2px;
+      margin: 22px 0 18px;
+      opacity: 0.85;
+    }
+
+    .hero-supporting-editorial {
+      font-family: var(--font-display);
+      font-size: clamp(1.15rem, 1.65vw, 1.32rem);
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0;
+      max-width: 580px;
+      letter-spacing: -0.01em;
+    }
+
+    .em-limitless {
+      font-weight: 700;
+      font-style: italic;
+      color: var(--ink);
+      position: relative;
+      display: inline-block;
+      white-space: nowrap;
+      padding: 0 2px;
+    }
+
+    .em-limitless::after {
+      content: "";
+      position: absolute;
+      left: -2px;
+      right: -2px;
+      bottom: -3px;
+      height: 5px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' preserveAspectRatio='none'%3E%3Cpath d='M2 9 C 28 2, 72 2, 98 7' stroke='%23BD7A1E' stroke-width='2.8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E") no-repeat center bottom / 100% 100%;
     }
 
     .hero-principles-list {
@@ -455,7 +536,7 @@
       margin: 0;
     }
 
-    /* The Unbound Promise (Clear High-Contrast Text) */
+    /* The Unbound Promise */
     .promise-card {
       margin-top: 56px;
       background: #FFFFFF;
@@ -1268,6 +1349,16 @@
     }
 
     @media (max-width: 600px) {
+      .hero-headline-editorial {
+        font-size: clamp(1.75rem, 6.8vw, 2.2rem);
+        line-height: 1.24;
+      }
+      .hero-statement-divider {
+        margin: 18px 0 14px;
+      }
+      .hero-supporting-editorial {
+        font-size: clamp(1.05rem, 4vw, 1.18rem);
+      }
       .founders-grid {
         grid-template-columns: 1fr;
       }
@@ -1325,9 +1416,26 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
-          <h1 class="hero-headline">
-            Unbound in Thinking, Unbound in Courage, Unbound from Conventions. A place where learning is limitless for students!
-          </h1>
+          <!-- Targeted Editorial Typography Redesign -->
+          <div class="hero-brand-statement">
+            <h1 class="hero-headline-editorial">
+              <span class="triplet-row row-1">
+                <span class="triplet-base">Unbound in</span> <em class="em-thinking">Thinking</em><span class="triplet-comma">,</span>
+              </span>
+              <span class="triplet-row row-2">
+                <span class="triplet-base">Unbound in</span> <em class="em-courage">Courage</em><span class="triplet-comma">,</span>
+              </span>
+              <span class="triplet-row row-3">
+                <span class="triplet-base">Unbound from</span> <span class="em-conventions">Conventions</span><span class="triplet-period">.</span>
+              </span>
+            </h1>
+
+            <div class="hero-statement-divider" aria-hidden="true"></div>
+
+            <p class="hero-supporting-editorial">
+              A place where learning is <span class="em-limitless">limitless</span> for students!
+            </p>
+          </div>
 
           <div class="hero-principles-list">
             <div class="hero-principle-item">
