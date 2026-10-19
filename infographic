@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Eight-Year Journey — Infographic Concepts | The Unbound School</title>
+
+  <!-- Typography: Literata (Headings), Public Sans (Body), IBM Plex Mono (Eyebrows/Badges) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&family=Public+Sans:ital,wght@0,300..800;1,300..700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       Unbound School Design Tokens (Bright Theme Standard)
+       ========================================================================== */
+    :root {
+      --paper: #F6F8F3;
+      --paper-raised: #FFFFFF;
+      --paper-subtle: #EBF0E5;
+      --paper-muted: #DFE6D8;
+      --ink: #12213D;
+      --ink-soft: #3D4F65;
+      --ink-faint: #677A8E;
+      --line: #D5DED0;
+      --line-strong: #BDCBB6;
+      --teal: #146E62;
+      --teal-hover: #0E534A;
+      --teal-light: #E4F1EE;
+      --gold: #BD7A1E;
+      --gold-light: #FAF2E6;
+
+      --font-display: 'Literata', Georgia, serif;
+      --font-body: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+
+      --shadow-sm: 0 2px 8px rgba(18, 33, 61, 0.05);
+      --shadow-md: 0 8px 24px rgba(18, 33, 61, 0.08);
+      --shadow-lg: 0 16px 40px rgba(18, 33, 61, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      line-height: 1.65;
+      padding: 40px 20px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Concept Selector Navigation */
+    .concept-selector-bar {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-pill, 9999px);
+      padding: 6px;
+      display: inline-flex;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 36px;
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+
+    .tab-btn {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 10px 22px;
+      border-radius: 9999px;
+      border: none;
+      background: transparent;
+      color: var(--ink-soft);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--teal);
+      color: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(20, 110, 98, 0.25);
+    }
+
+    .concept-view {
+      display: none;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    .concept-view.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .infographic-header {
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 760px;
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    /* Common Card Styling */
+    .info-card {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .info-card h3, .info-card h4 {
+      font-family: var(--font-display);
+      color: var(--ink);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+
+    .info-card p {
+      font-size: 0.94rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .bullet-list {
+      list-style: none;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .bullet-list li {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.55;
+    }
+
+    .bullet-list li strong {
+      color: var(--ink);
+    }
+
+    .bullet-dot {
+      color: var(--teal);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       OPTION A: Stepped Pathway (Linear 1->6, branching into 7 & 8)
+       ========================================================================== */
+    .pathway-spine {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+    }
+
+    .pathway-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .spine-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .node-bubble {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--paper-raised);
+      border: 2px solid var(--teal);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--teal);
+      font-size: 1rem;
+      z-index: 2;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .node-bubble.gold {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .spine-line {
+      flex-grow: 1;
+      width: 2px;
+      background: var(--line-strong);
+      margin: 8px 0;
+    }
+
+    .fork-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 12px;
+    }
+
+    .fork-card {
+      background: var(--paper-subtle);
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius-sm);
+      padding: 22px;
+    }
+
+    /* ==========================================================================
+       OPTION B: Academic Bento Matrix
+       ========================================================================== */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .bento-card-full {
+      grid-column: span 3;
+    }
+
+    .bento-card-half {
+      grid-column: span 1.5;
+    }
+
+    .bento-card-2col {
+      grid-column: span 2;
+    }
+
+    .bento-card-1col {
+      grid-column: span 1;
+    }
+
+    .bento-card-split {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    /* ==========================================================================
+       OPTION C: Metro Transit Circuit
+       ========================================================================== */
+    .metro-canvas {
+      background: #FFFFFF;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metro-track {
+      position: relative;
+      padding-left: 56px;
+    }
+
+    .metro-rail {
+      position: absolute;
+      left: 18px;
+      top: 24px;
+      bottom: 120px;
+      width: 6px;
+      background: linear-gradient(180deg, var(--teal) 0%, var(--teal) 70%, var(--gold) 100%);
+      border-radius: 4px;
+    }
+
+    .metro-station {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .metro-station:last-child {
+      margin-bottom: 0;
+    }
+
+    .metro-pin {
+      position: absolute;
+      left: -56px;
+      top: 6px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 4px solid var(--teal);
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      font-size: 0.65rem;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--teal);
+    }
+
+    .metro-pin.gold {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .bento-card-full, .bento-card-half, .bento-card-2col, .bento-card-1col, .bento-card-split {
+        grid-column: span 1;
+      }
+      .bento-card-split, .fork-container {
+        grid-template-columns: 1fr;
+      }
+      .pathway-row {
+        grid-template-columns: 48px 1fr;
+        gap: 16px;
+      }
+      .node-bubble {
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Concept Switcher Bar -->
+    <div style="text-align: center;">
+      <div class="concept-selector-bar">
+        <button class="tab-btn active" onclick="switchConcept('conceptA')">Option A: Stepped Pathway (Sequential)</button>
+        <button class="tab-btn" onclick="switchConcept('conceptB')">Option B: Academic Bento Matrix</button>
+        <button class="tab-btn" onclick="switchConcept('conceptC')">Option C: Metro Circuit</button>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         OPTION A: Stepped Pathway (Linear 1->6, terminating in 7 & 8 Fork)
+         ==================================================================== -->
+    <div id="conceptA" class="concept-view active">
+      <div class="infographic-header">
+        <div class="eyebrow">Option A · Stepped Progression</div>
+        <h1 class="title">The Eight-Year Journey</h1>
+        <p class="subtitle">A linear educational progression where foundational mastery and campus enablers (05 & 06) directly prepare students for their Grade 11–12 specialization tracks (07 & 08).</p>
+      </div>
+
+      <div class="pathway-spine">
+        <!-- 1. Grade 5–6 -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble">01</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="info-card">
+            <span class="step-number">Stage 01 · Grade 5–6</span>
+            <h3>Laying Strong Foundations</h3>
+            <p>The middle school journey begins with establishing deep conceptual understanding across every subject. During these formative years, students build strong foundations in Mathematics, Science, English and the Humanities while developing the habits that underpin lifelong learning.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span>Early introduction to Algebra & Geometry fluency.</span></li>
+              <li><span class="bullet-dot">✓</span><span>25% classroom time devoted to physical laboratory investigation.</span></li>
+              <li><span class="bullet-dot">✓</span><span>Building work organization, effective communication, and collaborative inquiry.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Grade 7–8 -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble">02</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="info-card">
+            <span class="step-number">Stage 02 · Grade 7–8</span>
+            <h3>Deepening Understanding and Discovering Potential</h3>
+            <p>As students become more confident learners, the curriculum expands both in depth and complexity. Scientific learning becomes increasingly inquiry-driven through laboratory investigations, experiments, observations, and research projects that strengthen conceptual understanding.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span>Advanced Mathematics: Trigonometry, Quadratic Equations, Functions, Sequences.</span></li>
+              <li><span class="bullet-dot">✓</span><span>Exposure to competition-level problem sets (IOQM, Olympiads).</span></li>
+              <li><span class="bullet-dot">✓</span><span>Structured Life Skills: resilience, leadership, and emotional intelligence.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. Grade 9–10 -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble">03</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="info-card">
+            <span class="step-number">Stage 03 · Grade 9–10</span>
+            <h3>Building Mastery</h3>
+            <p>Between 50% and 85% of the high school curriculum has already been introduced in earlier grades, allowing students to focus on refining concepts, strengthening application skills and developing examination strategies rather than learning entirely new material under time pressure.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span>Cambridge IGCSE Extended Board examinations mastery.</span></li>
+              <li><span class="bullet-dot">✓</span><span>November Board Series creates the crucial 6-month head-start before Grade 11.</span></li>
+              <li><span class="bullet-dot">✓</span><span>Gradual introduction to SAT, JEE, and NEET analytical problem-solving.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. Grade 11–12 Core -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble">04</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="info-card">
+            <span class="step-number">Stage 04 · Grade 11–12</span>
+            <h3>Integrated Coaching with NV Classes</h3>
+            <p>The final two years are designed to prepare students for College Entrance exams for Engineering and Medical streams with maximum school-day efficiency.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">•</span><span><strong>Maximized School Hours:</strong> Direct synthesis between board syllabi and competitive test prep.</span></li>
+              <li><span class="bullet-dot">•</span><span><strong>Integrated Laboratory Sessions:</strong> Practical lab work synced with JEE/NEET concepts rather than isolated board routines.</span></li>
+              <li><span class="bullet-dot">•</span><span><strong>Curated Resource Library:</strong> High-value reference volumes readily borrowable without external expense.</span></li>
+              <li><span class="bullet-dot">•</span><span><strong>Executive Mentorship Workshops:</strong> Periodic sessions on Learning How to Learn, EQ, and Time Management.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5. 05 / ECOSYSTEM -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble gold">05</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="info-card" style="border-left: 4px solid var(--teal);">
+            <span class="step-number">Enabler 05 · Campus Infrastructure</span>
+            <h3>05 / ECOSYSTEM: Built to Promote Intense Learning</h3>
+            <p>A focused physical and digital campus environment designed to empower independent scholars to optimize every learning hour.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span><strong>Study Pods & Library:</strong> Dedicated silent seating zones to encourage deep self-learning and daily preparation.</span></li>
+              <li><span class="bullet-dot">✓</span><span><strong>Audio-Visual Mediums:</strong> Full access to digital lecture archives and specialized video breakdowns.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 6. 06 / ENRICHMENT -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble gold">06</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="info-card" style="border-left: 4px solid var(--gold);">
+            <span class="step-number">Enabler 06 · Holistic Well-Being</span>
+            <h3>06 / ENRICHMENT: Holistic Student Life & Co-Curriculars</h3>
+            <p>Engage students in extracurriculars and sports matching their passion, ensuring scholars remember and cherish their senior school years.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span><strong>Athletic & Sports Tournaments:</strong> Competitive and recreational leagues fostering physical resilience.</span></li>
+              <li><span class="bullet-dot">✓</span><span><strong>Expeditions & Culture:</strong> School trips, educational screenings, and performing arts festivals.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 7 & 8. Terminal Specialization Fork -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble" style="border-color: var(--ink); color: var(--ink);">07/8</div>
+          </div>
+          <div class="info-card" style="background: transparent; border: none; padding: 0; box-shadow: none;">
+            <div class="fork-container">
+              <!-- 7. PU Batch -->
+              <div class="fork-card">
+                <span class="step-number">Stream 07 · National Route</span>
+                <h4>For PU Batch</h4>
+                <p style="font-size: 0.88rem; margin-bottom: 10px;">Tailored for scholars targeting national engineering and medical seats (JEE / NEET).</p>
+                <ul class="bullet-list" style="font-size: 0.85rem;">
+                  <li><span class="bullet-dot">•</span><span>Minimal classes for Hindi, English, and Computers; comprehensive notes provided.</span></li>
+                  <li><span class="bullet-dot">•</span><span>No redundant/duplicate PCM lectures; class time focused entirely on entrance rigour.</span></li>
+                  <li><span class="bullet-dot">•</span><span>PU internal assessments synced with NV Classes curriculum.</span></li>
+                  <li><span class="bullet-dot">•</span><span><strong>Saves 6+ hours every week</strong> for concentrated entrance prep.</span></li>
+                </ul>
+              </div>
+
+              <!-- 8. IGCSE Batch -->
+              <div class="fork-card">
+                <span class="step-number">Stream 08 · Global Route</span>
+                <h4>For IGCSE / Cambridge Batch</h4>
+                <p style="font-size: 0.88rem; margin-bottom: 10px;">Designed for scholars aiming for international degree articulation and global admission.</p>
+                <ul class="bullet-list" style="font-size: 0.85rem;">
+                  <li><span class="bullet-dot">•</span><span>English assessed exclusively in Grade 12, preserving junior bandwidth.</span></li>
+                  <li><span class="bullet-dot">•</span><span>Board examinations completed by the November series.</span></li>
+                  <li><span class="bullet-dot">•</span><span>All advanced Cambridge topics covered seamlessly within school coaching.</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         OPTION B: Academic Bento Matrix (Numbered 01 to 08)
+         ==================================================================== -->
+    <div id="conceptB" class="concept-view">
+      <div class="infographic-header">
+        <div class="eyebrow">Option B · Editorial Bento Matrix</div>
+        <h1 class="title">The Eight-Year Journey</h1>
+        <p class="subtitle">An architectural bento layout prioritizing high scannability across sequential stages, school-day infrastructure, and senior secondary pathways.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- 1 -->
+        <div class="info-card bento-card-1col">
+          <span class="step-number">01 / Foundation</span>
+          <h3>Grade 5–6</h3>
+          <p>Deep foundational inquiry in STEM and Humanities. 25% classroom time spent in laboratories discovering principles before textbooks.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="info-card bento-card-1col">
+          <span class="step-number">02 / Potential</span>
+          <h3>Grade 7–8</h3>
+          <p>Early introduction to Trigonometry, Quadratics, and higher-order logic alongside research labs and Olympiad problem sets.</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="info-card bento-card-1col">
+          <span class="step-number">03 / Mastery</span>
+          <h3>Grade 9–10</h3>
+          <p>50–85% of high school syllabus pre-mastered. November IGCSE examinations deliver an unhurried 6-month head start.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="info-card bento-card-full" style="border-left: 4px solid var(--teal);">
+          <span class="step-number">04 / Synthesis</span>
+          <h3>Grade 11–12: Integrated Coaching with NV Classes</h3>
+          <p>A synchronized secondary schedule eliminating after-school fatigue through built-in entrance mentoring.</p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 14px;">
+            <div style="background: var(--paper-subtle); padding: 14px; border-radius: 6px;">
+              <strong style="font-size: 0.9rem; color: var(--ink);">Synced Lab Work:</strong>
+              <div style="font-size: 0.85rem; color: var(--ink-soft);">Practicals directly integrated with JEE/NEET concepts.</div>
+            </div>
+            <div style="background: var(--paper-subtle); padding: 14px; border-radius: 6px;">
+              <strong style="font-size: 0.9rem; color: var(--ink);">Curated Library:</strong>
+              <div style="font-size: 0.85rem; color: var(--ink-soft);">Essential reference texts readily available to borrow.</div>
+            </div>
+            <div style="background: var(--paper-subtle); padding: 14px; border-radius: 6px;">
+              <strong style="font-size: 0.9rem; color: var(--ink);">Executive Mentorship:</strong>
+              <div style="font-size: 0.85rem; color: var(--ink-soft);">Workshops on EQ, Learning Mastery, and Time Management.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="info-card bento-card-2col">
+          <span class="step-number">05 / Campus Enabler</span>
+          <h3>School Ecosystem for Intense Learning</h3>
+          <p>Library study zones and quiet seating areas to encourage deep self-directed study, backed by an accessible audio-visual medium for video lectures and revisions.</p>
+        </div>
+
+        <!-- 6 -->
+        <div class="info-card bento-card-1col" style="border-top: 3px solid var(--gold);">
+          <span class="step-number">06 / Life Enabler</span>
+          <h3>Enrichment &amp; Co-Curriculars</h3>
+          <p>Sports tournaments, cinema showcases, academic expeditions, and cultural events ensuring scholars cherish their final school years.</p>
+        </div>
+
+        <!-- 7 & 8 -->
+        <div class="bento-card-split">
+          <div class="info-card" style="border-top: 3px solid var(--teal);">
+            <span class="step-number">07 / Senior Track</span>
+            <h3>For PU Batch</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 8px;">Minimal secondary language/computer hours; zero duplicate PCM lectures; assessments synced to NV Classes; <strong>saves 6+ hours weekly</strong>.</p>
+          </div>
+          <div class="info-card" style="border-top: 3px solid var(--gold);">
+            <span class="step-number">08 / Senior Track</span>
+            <h3>For IGCSE Batch</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 8px;">English examined in Grade 12 only; boards finished by November; regular timetable covers all Cambridge-specific topics.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         OPTION C: Metro Transit Circuit
+         ==================================================================== -->
+    <div id="conceptC" class="concept-view">
+      <div class="infographic-header">
+        <div class="eyebrow">Option C · Metro Transit Line</div>
+        <h1 class="title">The Eight-Year Journey</h1>
+        <p class="subtitle">A subway-style academic transit map guiding parents through stations 01 to 06, arriving at the Terminal Station that bifurcates into Track 07 (PU) and Track 08 (Cambridge).</p>
+      </div>
+
+      <div class="metro-canvas">
+        <div class="metro-track">
+          <div class="metro-rail"></div>
+
+          <!-- Station 01 -->
+          <div class="metro-station">
+            <div class="metro-pin">01</div>
+            <div class="info-card">
+              <span class="step-number">Station 01 · Grade 5–6</span>
+              <h3>Laying Strong Foundations</h3>
+              <p>Foundations in Mathematics, Science, English, and Humanities. 25% classroom time in hands-on laboratories.</p>
+            </div>
+          </div>
+
+          <!-- Station 02 -->
+          <div class="metro-station">
+            <div class="metro-pin">02</div>
+            <div class="info-card">
+              <span class="step-number">Station 02 · Grade 7–8</span>
+              <h3>Deepening Understanding and Discovering Potential</h3>
+              <p>Higher-order Mathematics (Trigonometry, Quadratics), inquiry science, and competition-level Olympiad exposure.</p>
+            </div>
+          </div>
+
+          <!-- Station 03 -->
+          <div class="metro-station">
+            <div class="metro-pin">03</div>
+            <div class="info-card">
+              <span class="step-number">Station 03 · Grade 9–10</span>
+              <h3>Building Mastery</h3>
+              <p>50–85% of high school syllabus pre-mastered. November IGCSE examinations deliver an unhurried 6-month head start.</p>
+            </div>
+          </div>
+
+          <!-- Station 04 -->
+          <div class="metro-station">
+            <div class="metro-pin">04</div>
+            <div class="info-card">
+              <span class="step-number">Station 04 · Grade 11–12</span>
+              <h3>Integrated Coaching with NV Classes</h3>
+              <p>Comprehensive entrance prep integrated into the school day; synced lab sessions; reference library; executive workshops.</p>
+            </div>
+          </div>
+
+          <!-- Station 05 -->
+          <div class="metro-station">
+            <div class="metro-pin gold">05</div>
+            <div class="info-card">
+              <span class="step-number">Station 05 · Intense Learning</span>
+              <h3>05 / ECOSYSTEM</h3>
+              <p>Curated self-learning library hubs and comprehensive audio-visual mediums for video lecture revisions.</p>
+            </div>
+          </div>
+
+          <!-- Station 06 -->
+          <div class="metro-station">
+            <div class="metro-pin gold">06</div>
+            <div class="info-card">
+              <span class="step-number">Station 06 · Student Life</span>
+              <h3>06 / ENRICHMENT</h3>
+              <p>Sports tournaments, movies and shows, school expeditions, and cultural festivals for balanced student morale.</p>
+            </div>
+          </div>
+
+          <!-- Terminal Junction: 07 & 08 -->
+          <div class="metro-station">
+            <div class="metro-pin" style="border-color: var(--gold); color: var(--gold);">⇄</div>
+            <div class="info-card" style="background: var(--paper); border: 2px dashed var(--line-strong);">
+              <span class="step-number">Terminal Junction · Specialization Tracks</span>
+              <h3>Academic Track Bifurcation</h3>
+              <div class="fork-container" style="margin-top: 14px;">
+                <div style="background: #FFFFFF; padding: 18px; border-radius: 6px; border-left: 4px solid var(--teal);">
+                  <strong style="color: var(--teal); font-family: var(--font-mono); font-size: 0.85rem;">TRACK 07 / PU BATCH</strong>
+                  <h4 style="margin: 4px 0 8px; font-size: 1.1rem;">Engineering &amp; Medical Focus</h4>
+                  <p style="font-size: 0.88rem;">Minimal language classes; zero redundant PCM classes; saves 6+ hours weekly for JEE/NEET.</p>
+                </div>
+                <div style="background: #FFFFFF; padding: 18px; border-radius: 6px; border-left: 4px solid var(--gold);">
+                  <strong style="color: var(--gold); font-family: var(--font-mono); font-size: 0.85rem;">TRACK 08 / IGCSE BATCH</strong>
+                  <h4 style="margin: 4px 0 8px; font-size: 1.1rem;">International Academic Route</h4>
+                  <p style="font-size: 0.88rem;">English in Grade 12 only; boards finished by November; regular coaching covers Cambridge syllabus.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function switchConcept(conceptId) {
+      document.querySelectorAll('.concept-view').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+      document.getElementById(conceptId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
