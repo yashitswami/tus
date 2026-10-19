@@ -1,20 +1,17 @@
 <!-- The Unbound School V2.7
-     Final Targeted Update — Founders Image Alignment:
-     1. Updated all 4 Founder photos to newly aligned Google-hosted assets:
-        - Capt Unni Krishnan
-        - Nimish Vikas
-        - Rakhi Bhatia
-        - Rajeev Kumar Singh
-     2. Standardized natural portrait rendering with artificial zoom overrides removed.
-     3. Strict DOM sequence verified:
+     Updated with Option A (Stepped Pathway Infographic) for The Eight-Year Journey:
+     1. Sequence: 
+        01 (Grades 5–6) -> 02 (Grades 7–8) -> 03 (Grades 9–10) -> 04 (Grades 11–12)
+        -> 05 / ECOSYSTEM -> 06 / ENRICHMENT -> 07 (For PU Batch) & 08 (For IGCSE Batch).
+     2. Exact DOM sequence strictly preserved:
         Practicals in Action 
         -> Board Details & Academic Pathways (Step 01 & Step 02)
         -> Integrated Academic Architecture (JEE/NEET, SAT, and NIOS)
-        -> The Eight-Year Journey
+        -> The Eight-Year Journey (Option A Stepped Pathway Infographic)
         -> Founders
         -> FAQ
-        -> Footer
-     4. Bright institutional theme, Literata headings, and all approved copy strictly preserved.
+        -> Footer.
+     3. Bright institutional theme, Literata editorial headings, 3:2 lab images, and working links verified.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -315,7 +312,6 @@
       z-index: 2;
     }
 
-    /* Editorial Headline Styling */
     .hero-brand-statement {
       margin-bottom: 28px;
     }
@@ -711,7 +707,6 @@
       border-color: var(--teal);
     }
 
-    /* Uniform 3:2 aspect-ratio presentation */
     .practical-media-box {
       width: 100%;
       aspect-ratio: 3 / 2;
@@ -769,7 +764,7 @@
     }
 
     /* ==========================================================================
-       Board Details & Academic Pathways (Preceding Integrated Architecture)
+       Board Details & Academic Pathways
        ========================================================================== */
     .board-details-section {
       padding: 96px 0 48px;
@@ -894,106 +889,117 @@
     }
 
     /* ==========================================================================
-       The Eight-Year Journey
+       The Eight-Year Journey — OPTION A STEPPED PATHWAY
        ========================================================================== */
     .journey-section {
       padding: 96px 0;
       background: var(--paper);
     }
 
-    .journey-stage-block {
-      background: #FFFFFF;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-md);
-      padding: 36px;
-      margin-bottom: 28px;
+    .pathway-spine {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 48px;
+      position: relative;
+    }
+
+    .pathway-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .spine-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .node-bubble {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--paper-raised);
+      border: 2px solid var(--teal);
+      display: grid;
+      place-items: center;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      color: var(--teal);
+      font-size: 1rem;
+      z-index: 2;
       box-shadow: var(--shadow-sm);
     }
 
-    .journey-stage-header {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 14px;
-      flex-wrap: wrap;
-    }
-
-    .journey-grade-badge {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      font-weight: 600;
+    .node-bubble.gold {
+      border-color: var(--gold);
       color: var(--gold);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
 
-    .journey-stage-title {
+    .spine-line {
+      flex-grow: 1;
+      width: 2px;
+      background: var(--line-strong);
+      margin: 8px 0;
+    }
+
+    .journey-card {
+      background: var(--paper-raised);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 32px 30px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .journey-card h3 {
       font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--ink);
+      margin-bottom: 8px;
     }
 
-    .journey-stage-body p {
-      font-size: 0.96rem;
-      color: var(--ink-soft);
-      line-height: 1.75;
-      margin-bottom: 14px;
-    }
-
-    .journey-stage-body p:last-child {
-      margin-bottom: 0;
-    }
-
-    .journey-points-list {
+    .bullet-list {
       list-style: none;
+      margin-top: 14px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin: 16px 0;
+      gap: 8px;
     }
 
-    .journey-points-list li {
-      font-size: 0.94rem;
-      color: var(--ink);
+    .bullet-list li {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
-    .journey-bullet {
+    .bullet-dot {
       color: var(--teal);
       font-weight: 700;
+      flex-shrink: 0;
     }
 
-    .batch-detail-box {
-      background: var(--paper);
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--line);
-      padding: 24px;
-      margin-top: 20px;
-    }
-
-    .batch-detail-box h5 {
-      font-size: 1.05rem;
-      color: var(--ink);
-      margin-bottom: 12px;
-    }
-
-    .ecosystem-grid {
+    .fork-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 36px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 4px;
     }
 
-    .ecosystem-card {
-      background: #FFFFFF;
+    .fork-card {
+      background: var(--paper-raised);
       border: 1px solid var(--line);
-      border-left: 4px solid var(--teal);
-      border-radius: var(--radius-sm);
-      padding: 28px;
+      border-radius: var(--radius-md);
+      padding: 26px 24px;
       box-shadow: var(--shadow-sm);
+    }
+
+    .fork-card h4 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
 
     /* ==========================================================================
@@ -1286,8 +1292,12 @@
       .faq-layout {
         grid-template-columns: 1fr;
       }
-      .ecosystem-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .pathway-row {
+        grid-template-columns: 60px 1fr;
+        gap: 18px;
+      }
+      .fork-container {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1344,6 +1354,17 @@
         gap: 16px;
         text-align: center;
       }
+
+      .pathway-row {
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+      }
+
+      .node-bubble {
+        width: 38px;
+        height: 38px;
+        font-size: 0.85rem;
+      }
     }
 
     @media (max-width: 600px) {
@@ -1386,6 +1407,7 @@
           <li><a href="#special" class="nav-link">Life At Unbound</a></li>
           <li><a href="#practicals" class="nav-link">Practicals</a></li>
           <li><a href="#board-details" class="nav-link" style="color: var(--teal); font-weight: 600;">Board Details</a></li>
+          <li><a href="#journey" class="nav-link">8-Year Journey</a></li>
           <li><a href="#founders" class="nav-link">Founders</a></li>
           <li><a href="#faq" class="nav-link">FAQ</a></li>
           <li class="nav-menu-mobile-cta" style="display: none;">
@@ -1459,7 +1481,7 @@
           </div>
         </div>
 
-        <!-- Official Logo Image Placement with direct Google-hosted image URL -->
+        <!-- Official Logo Image Placement in Hero Card with safe public URL fallback -->
         <div class="hero-visual-card">
           <img src="https://lh3.googleusercontent.com/d/1GHXqgCj__s2NXQjB2MKxMDF8M8kXkPpm" 
                alt="The Unbound School Logo" 
@@ -1935,7 +1957,7 @@
   </section>
 
   <!-- ==========================================================================
-       THE EIGHT-YEAR JOURNEY
+       THE EIGHT-YEAR JOURNEY — OPTION A STEPPED PATHWAY INFOGRAPHIC
        ========================================================================== -->
   <section id="journey" class="journey-section">
     <div class="container">
@@ -1945,146 +1967,151 @@
         05 → 06 → 07 → 08 → 09 → 10 → 11 → 12. A continuous academic continuum designed to compound knowledge, autonomy, and critical thinking over eight transformative years.
       </p>
 
-      <div style="margin-top: 48px;">
-        <!-- STAGE 1: GRADE 5–6 -->
-        <div class="journey-stage-block">
-          <div class="journey-stage-header">
-            <span class="journey-grade-badge">GRADE 5–6</span>
-            <h3 class="journey-stage-title">Laying Strong Foundations</h3>
+      <!-- Stepped Pathway (Option A) Container -->
+      <div class="pathway-spine">
+        
+        <!-- 01: Grade 5–6 -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble">01</div>
+            <div class="spine-line"></div>
           </div>
-          <div class="journey-stage-body">
-            <p>
-              The middle school journey begins with establishing deep conceptual understanding across every subject. During these formative years, students build strong foundations in Mathematics, Science, English and the Humanities while developing the habits that underpin lifelong learning.
-            </p>
-            <p>
-              Alongside academic development, students begin building essential life skills, learning to organise their work, communicate effectively, collaborate with others, and approach challenges with curiosity and confidence.
-            </p>
-          </div>
-        </div>
-
-        <!-- STAGE 2: GRADE 7–8 -->
-        <div class="journey-stage-block">
-          <div class="journey-stage-header">
-            <span class="journey-grade-badge">GRADE 7–8</span>
-            <h3 class="journey-stage-title">Deepening Understanding and Discovering Potential</h3>
-          </div>
-          <div class="journey-stage-body">
-            <p>
-              As students become more confident learners, the curriculum expands both in depth and complexity. In Mathematics, students are introduced to advanced topics such as Trigonometry, Quadratic Equations, Functions, Sequences, and higher-order problem solving. Scientific learning becomes increasingly inquiry-driven through laboratory investigations, experiments, observations, and research-based projects that strengthen conceptual understanding.
-            </p>
-            <p>
-              During these years, students are also exposed to competition-level problem solving, helping them develop analytical thinking, creativity, and perseverance while enjoying the challenge of solving unfamiliar problems.
-            </p>
-            <p>
-              Our Life Skills curriculum continues to grow alongside academic learning, ensuring that students strengthen their resilience, communication, leadership, emotional intelligence, and independent learning habits.
-            </p>
-            <p>
-              Students demonstrating exceptional aptitude or passion in particular disciplines receive additional mentoring and enrichment opportunities to nurture excellence in their chosen areas of interest.
-            </p>
-          </div>
-        </div>
-
-        <!-- STAGE 3: GRADE 9–10 -->
-        <div class="journey-stage-block">
-          <div class="journey-stage-header">
-            <span class="journey-grade-badge">GRADE 9–10</span>
-            <h3 class="journey-stage-title">Building Mastery</h3>
-          </div>
-          <div class="journey-stage-body">
-            <p>
-              By the time students enter Grade 9, they enjoy a significant academic advantage. Having encountered many key concepts during the preceding years, they approach the IGCSE curriculum with familiarity, confidence, and a deeper conceptual understanding.
-            </p>
-            <p>
-              Between 50% and 85% of the high school curriculum has already been introduced in earlier grades, allowing students to focus on refining concepts, strengthening application skills and developing examination strategies rather than learning entirely new material under time pressure.
-            </p>
-            <p>
-              Alongside comprehensive preparation for the Cambridge IGCSE examinations, students are gradually introduced to the advanced thinking and problem-solving approaches required for competitive examinations such as the SAT, JEE, NEET, and other university entrance tests.
-            </p>
-            <p>
-              Students pursuing Olympiads continue to receive specialised guidance, enabling them to compete successfully at national and international levels while further strengthening their analytical abilities.
-            </p>
-          </div>
-        </div>
-
-        <!-- STAGE 4: GRADE 11–12 -->
-        <div class="journey-stage-block">
-          <div class="journey-stage-header">
-            <span class="journey-grade-badge">GRADE 11–12</span>
-            <h3 class="journey-stage-title">Integrated Coaching with NV Classes</h3>
-          </div>
-          <div class="journey-stage-body">
-            <p>
-              The final two years are designed to prepare students for College Entrance exams for Engineering and Medical streams.
-            </p>
-
-            <ul class="journey-points-list">
-              <li>
-                <span class="journey-bullet">1.</span>
-                <span>Our students get maximum out of their time at school.</span>
-              </li>
-              <li>
-                <span class="journey-bullet">2.</span>
-                <span>Lab work synched up with JEE preparation rather than just doing labs for Board exam – helps student learn and retain the key concepts longer.</span>
-              </li>
-              <li>
-                <span class="journey-bullet">3.</span>
-                <span>Library stacked up with crucial (and sometimes expensive) reference books. Rather than buying them only for some chapters, students can borrow these books from our Library.</span>
-              </li>
-              <li>
-                <span class="journey-bullet">4.</span>
-                <span>Conduct Periodic workshops on topics that help students prepare better: Learn how to Learn, Maintaining Emotional Quotient, Time Management, and many more such crucial topics.</span>
-              </li>
+          <div class="journey-card">
+            <span class="eyebrow" style="margin-bottom: 8px;">Stage 01 · Grade 5–6</span>
+            <h3>Laying Strong Foundations</h3>
+            <p>The middle school journey begins with establishing deep conceptual understanding across every subject. During these formative years, students build strong foundations in Mathematics, Science, English and the Humanities while developing the habits that underpin lifelong learning.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span>Early introduction to Algebra &amp; Geometry fluency.</span></li>
+              <li><span class="bullet-dot">✓</span><span>25% classroom time devoted to physical laboratory investigation.</span></li>
+              <li><span class="bullet-dot">✓</span><span>Building work organization, effective communication, and collaborative inquiry.</span></li>
             </ul>
+          </div>
+        </div>
 
-            <!-- PU Batch Breakdown -->
-            <div class="batch-detail-box">
-              <h5>For PU batch:</h5>
-              <ul class="journey-points-list">
-                <li><span class="journey-bullet">•</span><span>Hindi, English, Computers – only minimal classes. Save time by providing required notes on these subjects.</span></li>
-                <li><span class="journey-bullet">•</span><span>No redundant/duplication of classes on Physics, Chem and Math – any additional class on these subjects only from the requirement of PU Board exam.</span></li>
-                <li><span class="journey-bullet">•</span><span>PU internal assessments synched with NV Classes curriculum – so students focus solely on NV’s curriculum.</span></li>
-                <li><span class="journey-bullet">•</span><span>Saves at least 6 hours’ time every week for our students – all their extra time gets devoted to JEE/NEET preparations.</span></li>
-              </ul>
+        <!-- 02: Grade 7–8 -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble">02</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="journey-card">
+            <span class="eyebrow" style="margin-bottom: 8px;">Stage 02 · Grade 7–8</span>
+            <h3>Deepening Understanding and Discovering Potential</h3>
+            <p>As students become more confident learners, the curriculum expands both in depth and complexity. Scientific learning becomes increasingly inquiry-driven through laboratory investigations, experiments, observations, and research projects that strengthen conceptual understanding.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span>Advanced Mathematics: Trigonometry, Quadratic Equations, Functions, Sequences.</span></li>
+              <li><span class="bullet-dot">✓</span><span>Exposure to competition-level problem sets (IOQM, Olympiads).</span></li>
+              <li><span class="bullet-dot">✓</span><span>Structured Life Skills: resilience, leadership, and emotional intelligence.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 03: Grade 9–10 -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble">03</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="journey-card">
+            <span class="eyebrow" style="margin-bottom: 8px;">Stage 03 · Grade 9–10</span>
+            <h3>Building Mastery</h3>
+            <p>Between 50% and 85% of the high school curriculum has already been introduced in earlier grades, allowing students to focus on refining concepts, strengthening application skills and developing examination strategies rather than learning entirely new material under time pressure.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span>Cambridge IGCSE Extended Board examinations mastery.</span></li>
+              <li><span class="bullet-dot">✓</span><span>November Board Series creates the crucial 6-month head-start before Grade 11.</span></li>
+              <li><span class="bullet-dot">✓</span><span>Gradual introduction to SAT, JEE, and NEET analytical problem-solving.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 04: Grade 11–12 Core -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble">04</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="journey-card" style="border-left: 4px solid var(--teal);">
+            <span class="eyebrow" style="margin-bottom: 8px;">Stage 04 · Grade 11–12</span>
+            <h3>Integrated Coaching with NV Classes</h3>
+            <p>The final two years are designed to prepare students for College Entrance exams for Engineering and Medical streams with maximum school-day efficiency.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">•</span><span><strong>Maximized School Hours:</strong> Direct synthesis between board syllabi and competitive test prep.</span></li>
+              <li><span class="bullet-dot">•</span><span><strong>Integrated Laboratory Sessions:</strong> Practical lab work synced with JEE/NEET concepts rather than isolated board routines.</span></li>
+              <li><span class="bullet-dot">•</span><span><strong>Curated Resource Library:</strong> High-value reference volumes readily borrowable without external expense.</span></li>
+              <li><span class="bullet-dot">•</span><span><strong>Executive Mentorship Workshops:</strong> Periodic sessions on Learning How to Learn, EQ, and Time Management.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 05: ECOSYSTEM -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble gold">05</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="journey-card" style="border-left: 4px solid var(--teal);">
+            <span class="eyebrow" style="color: var(--teal); margin-bottom: 8px;">Enabler 05 · Campus Infrastructure</span>
+            <h3>05 / ECOSYSTEM: Built to Promote Intense Learning</h3>
+            <p>A focused physical and digital campus environment designed to empower independent scholars to optimize every learning hour.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span><strong>Study Pods &amp; Library:</strong> Dedicated silent seating zones to encourage deep self-learning and daily preparation.</span></li>
+              <li><span class="bullet-dot">✓</span><span><strong>Audio-Visual Mediums:</strong> Full access to digital lecture archives and specialized video breakdowns.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 06: ENRICHMENT -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble gold">06</div>
+            <div class="spine-line"></div>
+          </div>
+          <div class="journey-card" style="border-left: 4px solid var(--gold);">
+            <span class="eyebrow eyebrow-gold" style="margin-bottom: 8px;">Enabler 06 · Holistic Well-Being</span>
+            <h3>06 / ENRICHMENT: Holistic Student Life &amp; Co-Curriculars</h3>
+            <p>Engage students in extracurriculars and sports matching their passion, ensuring scholars remember and cherish their senior school years.</p>
+            <ul class="bullet-list">
+              <li><span class="bullet-dot">✓</span><span><strong>Athletic &amp; Sports Tournaments:</strong> Competitive and recreational leagues fostering physical resilience.</span></li>
+              <li><span class="bullet-dot">✓</span><span><strong>Expeditions &amp; Culture:</strong> School trips, educational screenings, and performing arts festivals.</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 07 & 08: Terminal Bifurcation Fork -->
+        <div class="pathway-row">
+          <div class="spine-indicator">
+            <div class="node-bubble" style="border-color: var(--ink); color: var(--ink);">⇄</div>
+          </div>
+          <div style="width: 100%;">
+            <div class="fork-container">
+              <!-- 07: For PU Batch -->
+              <div class="fork-card" style="border-top: 3px solid var(--teal);">
+                <span class="eyebrow" style="color: var(--teal); margin-bottom: 8px;">Stream 07 · National Route</span>
+                <h4>For PU Batch</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">Tailored for scholars targeting national engineering and medical seats (JEE / NEET).</p>
+                <ul class="bullet-list" style="font-size: 0.88rem;">
+                  <li><span class="bullet-dot">•</span><span>Minimal classes for Hindi, English, and Computers; comprehensive notes provided.</span></li>
+                  <li><span class="bullet-dot">•</span><span>No redundant/duplicate PCM lectures; class time focused entirely on entrance rigour.</span></li>
+                  <li><span class="bullet-dot">•</span><span>PU internal assessments synced with NV Classes curriculum.</span></li>
+                  <li><span class="bullet-dot">•</span><span><strong>Saves 6+ hours every week</strong> for concentrated entrance prep.</span></li>
+                </ul>
+              </div>
+
+              <!-- 08: For IGCSE Batch -->
+              <div class="fork-card" style="border-top: 3px solid var(--gold);">
+                <span class="eyebrow eyebrow-gold" style="margin-bottom: 8px;">Stream 08 · Global Route</span>
+                <h4>For IGCSE / Cambridge Batch</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 10px;">Designed for scholars aiming for international degree articulation and global admission.</p>
+                <ul class="bullet-list" style="font-size: 0.88rem;">
+                  <li><span class="bullet-dot">•</span><span>English assessed exclusively in Grade 12, preserving junior bandwidth.</span></li>
+                  <li><span class="bullet-dot">•</span><span>Board examinations completed by the November series.</span></li>
+                  <li><span class="bullet-dot">•</span><span>All advanced Cambridge topics covered seamlessly within school coaching.</span></li>
+                </ul>
+              </div>
             </div>
-
-            <!-- IGCSE Batch Breakdown -->
-            <div class="batch-detail-box" style="margin-top: 14px;">
-              <h5>For IGCSE batch:</h5>
-              <ul class="journey-points-list">
-                <li><span class="journey-bullet">•</span><span>Leverage the advantage that English will be a subject only in 12th.</span></li>
-                <li><span class="journey-bullet">•</span><span>Also, Board exams are done by November month.</span></li>
-                <li><span class="journey-bullet">•</span><span>Extra topics of IGCSE will be covered during our regular coaching.</span></li>
-              </ul>
-            </div>
           </div>
         </div>
 
-        <!-- Ecosystem Additions: 05 & 06 -->
-        <div class="ecosystem-grid">
-          <div class="ecosystem-card">
-            <span class="eyebrow" style="color: var(--teal);">05 / ECOSYSTEM</span>
-            <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 12px; color: var(--ink);">
-              School Ecosystem built to promote intense learning
-            </h4>
-            <ul class="journey-points-list">
-              <li><span class="journey-bullet">•</span><span>Access to Library and other seating areas for self learning. Encourage students to utilise all their available time for preparation.</span></li>
-              <li><span class="journey-bullet">•</span><span>Access to Audio Visual medium (for recorded lectures/important videos).</span></li>
-            </ul>
-          </div>
-
-          <div class="ecosystem-card" style="border-left-color: var(--gold);">
-            <span class="eyebrow eyebrow-gold">06 / ENRICHMENT</span>
-            <h4 style="font-family: var(--font-display); font-size: 1.25rem; margin-bottom: 12px; color: var(--ink);">
-              Holistic Student Life & Co-curriculars
-            </h4>
-            <p style="font-size: 0.94rem; color: var(--ink-soft); line-height: 1.6; margin-bottom: 12px;">
-              Engage students in extra curriculars and sports as per their interest – to ensure our students remember and cherish their final years of schooling.
-            </p>
-            <ul class="journey-points-list">
-              <li><span class="journey-bullet">•</span><span>Sports tournaments, movies and shows, school trips, and cultural events.</span></li>
-            </ul>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -2111,7 +2138,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Capt Unni Krishnan</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Founder of many reputed schools in India</p>
+            <p class="founder-bio">Founder of many reputed schools in India[cite: 1]</p>
           </div>
         </div>
 
@@ -2125,7 +2152,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Nimish Vikas</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Founder & Director, NV Classes</p>
+            <p class="founder-bio">Founder &amp; Director, NV Classes[cite: 1]</p>
           </div>
         </div>
 
@@ -2139,7 +2166,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Rakhi Bhatia</h3>
             <div class="founder-role">Director</div>
-            <p class="founder-bio">Co-Founder, NV Classes</p>
+            <p class="founder-bio">Co-Founder, NV Classes[cite: 1]</p>
           </div>
         </div>
 
@@ -2153,7 +2180,7 @@
           <div class="founder-details">
             <h3 class="founder-name">Rajeev Kumar Singh</h3>
             <div class="founder-role">Director, The Unbound School</div>
-            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor</p>
+            <p class="founder-bio">IIT/IIM Alumnus, Student Mentor[cite: 1]</p>
           </div>
         </div>
       </div>
@@ -2271,6 +2298,7 @@
               <li><a href="#special">Life At Unbound</a></li>
               <li><a href="#practicals">Practicals</a></li>
               <li><a href="#board-details">Board Details</a></li>
+              <li><a href="#journey">8-Year Journey</a></li>
               <li><a href="#founders">Founders</a></li>
               <li><a href="#faq">FAQ</a></li>
             </ul>
